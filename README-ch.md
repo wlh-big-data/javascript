@@ -522,15 +522,6 @@ Other Style Guides
     const errorMessage = 'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.';
     ```
 
-    **自定义优化：一行代码字符数不能超过80个字符，因为一行字符数过多不方便阅读**
-    ```javascript
-    // best
-    const errorMessage = `This is a super long error that was thrown
-        because of Batman. When you stop to think about how Batman had
-        anything to do with this, you would get nowhere fast.`
-    ```
-
-
   <a name="es6-template-literals"></a><a name="6.4"></a>
   - [6.3](#es6-template-literals) 当程序化组织字符串时，使用模板而不是串联。 eslint: [`prefer-template`](http://eslint.org/docs/rules/prefer-template.html) [`template-curly-spacing`](http://eslint.org/docs/rules/template-curly-spacing) jscs: [`requireTemplateStrings`](http://jscs.info/rule/requireTemplateStrings)
 
@@ -2851,10 +2842,10 @@ Other Style Guides
 ## Accessors
 
   <a name="accessors--not-required"></a><a name="23.1"></a>
-  - [23.1](#accessors--not-required) Accessor functions for properties are not required.
+  - [23.1](#accessors--not-required) Accessor functions 属性不允许使用
 
   <a name="accessors--no-getters-setters"></a><a name="23.2"></a>
-  - [23.2](#accessors--no-getters-setters) Do not use JavaScript getters/setters as they cause unexpected side effects and are harder to test, maintain, and reason about. Instead, if you do make accessor functions, use getVal() and setVal('hello').
+  - [23.2](#accessors--no-getters-setters) 不要使用JavaScript的getters/setters，因为他们会产生副作用，并且难以测试、维护和理解。相反的，你可以用 getVal()和setVal('hello')去创造你自己的accessor函数
 
     ```javascript
     // bad
@@ -2881,7 +2872,7 @@ Other Style Guides
     ```
 
   <a name="accessors--boolean-prefix"></a><a name="23.3"></a>
-  - [23.3](#accessors--boolean-prefix) If the property/method is a `boolean`, use `isVal()` or `hasVal()`.
+  - [23.3](#accessors--boolean-prefix) 如果属性/方法是`boolean`， 用 `isVal()` 或 `hasVal()`
 
     ```javascript
     // bad
@@ -2896,7 +2887,7 @@ Other Style Guides
     ```
 
   <a name="accessors--consistent"></a><a name="23.4"></a>
-  - [23.4](#accessors--consistent) It's okay to create get() and set() functions, but be consistent.
+  - [23.4](#accessors--consistent) 用get()和set()函数是可以的，但是要一起用
 
     ```javascript
     class Jedi {
@@ -2921,7 +2912,7 @@ Other Style Guides
 ## Events
 
   <a name="events--hash"></a><a name="24.1"></a>
-  - [24.1](#events--hash) When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
+  - [24.1](#events--hash) 通过哈希而不是原始值向事件装载数据时(不论是DOM事件还是像Backbone事件的很多属性)。 这使得后续的贡献者（程序员）想这个事件装载更多的数据时不用去找或者更新每个处理器。例如：
 
     ```javascript
     // bad
@@ -2953,7 +2944,7 @@ Other Style Guides
 ## jQuery
 
   <a name="jquery--dollar-prefix"></a><a name="25.1"></a>
-  - [25.1](#jquery--dollar-prefix) Prefix jQuery object variables with a `$`. jscs: [`requireDollarBeforejQueryAssignment`](http://jscs.info/rule/requireDollarBeforejQueryAssignment)
+  - [25.1](#jquery--dollar-prefix) jQuery对象用`$`变量表示。 jscs: [`requireDollarBeforejQueryAssignment`](http://jscs.info/rule/requireDollarBeforejQueryAssignment)
 
     ```javascript
     // bad
@@ -2967,7 +2958,7 @@ Other Style Guides
     ```
 
   <a name="jquery--cache"></a><a name="25.2"></a>
-  - [25.2](#jquery--cache) Cache jQuery lookups.
+  - [25.2](#jquery--cache) 暂存jQuery查找
 
     ```javascript
     // bad
@@ -2995,10 +2986,10 @@ Other Style Guides
     ```
 
   <a name="jquery--queries"></a><a name="25.3"></a>
-  - [25.3](#jquery--queries) For DOM queries use Cascading `$('.sidebar ul')` or parent > child `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
+  - [25.3](#jquery--queries) DOM查找用层叠式`$('.sidebar ul')` 或 父节点 > 子节点 `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
 
   <a name="jquery--find"></a><a name="25.4"></a>
-  - [25.4](#jquery--find) Use `find` with scoped jQuery object queries.
+  - [25.4](#jquery--find) 用jQuery对象查询作用域的`find`方法查询
 
     ```javascript
     // bad
@@ -3031,21 +3022,21 @@ Other Style Guides
 ## ECMAScript 6+ (ES 2015+) Styles
 
   <a name="es6-styles"></a><a name="27.1"></a>
-  - [27.1](#es6-styles) This is a collection of links to the various ES6 features.
+  - [27.1](#es6-styles) 这是收集到的各种ES6特性的链接
 
-1. [Arrow Functions](#arrow-functions)
-1. [Classes](#classes--constructors)
-1. [Object Shorthand](#es6-object-shorthand)
-1. [Object Concise](#es6-object-concise)
-1. [Object Computed Properties](#es6-computed-properties)
-1. [Template Strings](#es6-template-literals)
-1. [Destructuring](#destructuring)
-1. [Default Parameters](#es6-default-parameters)
+1. [箭头函数——Arrow Functions](#arrow-functions)
+1. [类——Classes](#classes--constructors)
+1. [对象缩写——Object Shorthand](#es6-object-shorthand)
+1. [对象简写——Object Concise](#es6-object-concise)
+1. [对象计算属性——Object Computed Properties](#es6-computed-properties)
+1. [模板字符串——Template Strings](#es6-template-literals)
+1. [解构赋值——Destructuring](#destructuring)
+1. [默认参数——Default Parameters](#es6-default-parameters)
 1. [Rest](#es6-rest)
 1. [Array Spreads](#es6-array-spreads)
 1. [Let and Const](#references)
-1. [Iterators and Generators](#iterators-and-generators)
-1. [Modules](#modules)
+1. [迭代器和生成器——Iterators and Generators](#iterators-and-generators)
+1. [模块——Modules](#modules)
 
   <a name="tc39-proposals"></a>
   - [27.2](#tc39-proposals) Do not use [TC39 proposals](https://github.com/tc39/proposals) that have not reached stage 3.
