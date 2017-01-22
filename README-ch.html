@@ -1,0 +1,4111 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>README-ch</title></head><body><article class="markdown-body"><h1 id="airbnb-javascript-style-guide"><a name="user-content-airbnb-javascript-style-guide" href="#airbnb-javascript-style-guide" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Airbnb JavaScript Style Guide() {</h1>
+<p><em>JavaScript最合理的方法 A mostly reasonable approach to JavaScript</em></p>
+<p><a href="https://www.npmjs.com/package/eslint-config-airbnb"><img alt="Downloads" src="https://img.shields.io/npm/dm/eslint-config-airbnb.svg" /></a><br />
+<a href="https://www.npmjs.com/package/eslint-config-airbnb-base"><img alt="Downloads" src="https://img.shields.io/npm/dm/eslint-config-airbnb-base.svg" /></a><br />
+<a href="https://gitter.im/airbnb/javascript?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge"><img alt="Gitter" src="https://badges.gitter.im/Join" title="Chat.svg" /></a></p>
+<p>Other Style Guides<br />
+ - <a href="https://github.com/airbnb/javascript/tree/es5-deprecated/es5">ES5 (Deprecated)</a><br />
+ - <a href="/Users/kakaka/workspace/play/vue/eslint-config-airbnb/react">React</a><br />
+ - <a href="/Users/kakaka/workspace/play/vue/eslint-config-airbnb/css-in-javascript">CSS-in-JavaScript</a><br />
+ - <a href="https://github.com/airbnb/css">CSS &amp; Sass</a><br />
+ - <a href="https://github.com/airbnb/ruby">Ruby</a></p>
+<h2 id="table-of-contents"><a name="user-content-table-of-contents" href="#table-of-contents" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Table of Contents</h2>
+<ol>
+<li><a href="#types">Types</a></li>
+<li><a href="#references">References</a></li>
+<li><a href="#objects">Objects</a></li>
+<li><a href="#arrays">Arrays</a></li>
+<li><a href="#destructuring">Destructuring</a></li>
+<li><a href="#strings">Strings</a></li>
+<li><a href="#functions">Functions</a></li>
+<li><a href="#arrow-functions">Arrow Functions</a></li>
+<li><a href="#classes--constructors">Classes &amp; Constructors</a></li>
+<li><a href="#modules">Modules</a></li>
+<li><a href="#iterators-and-generators">Iterators and Generators</a></li>
+<li><a href="#properties">Properties</a></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#hoisting">Hoisting</a></li>
+<li><a href="#comparison-operators--equality">Comparison Operators &amp; Equality</a></li>
+<li><a href="#blocks">Blocks</a></li>
+<li><a href="#comments">Comments</a></li>
+<li><a href="#whitespace">Whitespace</a></li>
+<li><a href="#commas">Commas</a></li>
+<li><a href="#semicolons">Semicolons</a></li>
+<li><a href="#type-casting--coercion">Type Casting &amp; Coercion</a></li>
+<li><a href="#naming-conventions">Naming Conventions</a></li>
+<li><a href="#accessors">Accessors</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#jquery">jQuery</a></li>
+<li><a href="#ecmascript-5-compatibility">ECMAScript 5 Compatibility</a></li>
+<li><a href="#ecmascript-6-es-2015-styles">ECMAScript 6+ (ES 2015+) Styles</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#performance">Performance</a></li>
+<li><a href="#resources">Resources</a></li>
+<li><a href="#in-the-wild">In the Wild</a></li>
+<li><a href="#translation">Translation</a></li>
+<li><a href="#the-javascript-style-guide-guide">The JavaScript Style Guide Guide</a></li>
+<li><a href="#chat-with-us-about-javascript">Chat With Us About JavaScript</a></li>
+<li><a href="#contributors">Contributors</a></li>
+<li><a href="#license">License</a></li>
+</ol>
+<h2 id="types"><a name="user-content-types" href="#types" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Types</h2>
+<p><a name="types--primitives"></a><a name="1.1"></a><br />
+  - <a href="#types--primitives">1.1</a> 原始值: 相当于传值<br />
+    + <code>string</code><br />
+    + <code>number</code><br />
+    + <code>boolean</code><br />
+    + <code>null</code><br />
+    + <code>undefined</code></p>
+<pre><code>```javascript
+const foo = 1;
+let bar = foo;
+
+bar = 9;
+
+console.log(foo, bar); // =&gt; 1, 9
+```
+</code></pre>
+<p><a name="types--complex"></a><a name="1.2"></a><br />
+  - <a href="#types--complex">1.2</a>  复杂类型: 相当于传引用<br />
+    + <code>object</code><br />
+    + <code>array</code><br />
+    + <code>function</code></p>
+<pre><code>```javascript
+const foo = [1, 2];
+const bar = foo;
+
+bar[0] = 9;
+
+console.log(foo[0], bar[0]); // =&gt; 9, 9
+```
+</code></pre>
+<p><strong><a href="#目录">⬆ back to top</a></strong></p>
+<h2 id="references"><a name="user-content-references" href="#references" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>References</h2>
+<p><a name="references--prefer-const"></a><a name="2.1"></a><br />
+  - <a href="#references--prefer-const">2.1</a> 所有的赋值都用<code>const</code>，避免使用<code>var</code>. eslint: <a href="http://eslint.org/docs/rules/prefer-const.html"><code>prefer-const</code></a>, <a href="http://eslint.org/docs/rules/no-const-assign.html"><code>no-const-assign</code></a></p>
+<pre><code>&gt; 因为这个确保你不会改变你的初始值，重复引用会导致bug和代码难以理解
+
+```javascript
+// bad
+var a = 1;
+var b = 2;
+
+// good
+const a = 1;
+const b = 2;
+```
+</code></pre>
+<p><a name="references--disallow-var"></a><a name="2.2"></a><br />
+  - <a href="#references--disallow-var">2.2</a> 如果你一定要对参数重新赋值，那就用<code>let</code>，而不是<code>var</code>. eslint: <a href="http://eslint.org/docs/rules/no-var.html"><code>no-var</code></a> jscs: <a href="http://jscs.info/rule/disallowVar"><code>disallowVar</code></a></p>
+<pre><code>&gt; 因为`let`是块级作用域，而`var`是函数级作用域
+
+```javascript
+// bad
+var count = 1;
+if (true) {
+  count += 1;
+}
+
+// good, use the let.
+let count = 1;
+if (true) {
+  count += 1;
+}
+```
+</code></pre>
+<p><a name="references--block-scope"></a><a name="2.3"></a><br />
+  - <a href="#references--block-scope">2.3</a> 注意： <code>let</code>、<code>const</code>都是块级作用域</p>
+<pre><code>```javascript
+// const and let only exist in the blocks they are defined in.
+{
+  let a = 1;
+  const b = 1;
+}
+console.log(a); // ReferenceError
+console.log(b); // ReferenceError
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="objects"><a name="user-content-objects" href="#objects" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Objects</h2>
+<p><a name="objects--no-new"></a><a name="3.1"></a><br />
+  - <a href="#objects--no-new">3.1</a> - 使用字面值创建对象. eslint: <a href="http://eslint.org/docs/rules/no-new-object.html"><code>no-new-object</code></a></p>
+<pre><code>```javascript
+// bad
+const item = new Object();
+
+// good
+const item = {};
+```
+</code></pre>
+<p><a name="es6-computed-properties"></a><a name="3.4"></a><br />
+  - <a href="#es6-computed-properties">3.2</a> 当创建一个带有动态属性名的对象时，用计算后属性名</p>
+<pre><code>&gt; 为什么? 这可以使你将定义的所有属性放在对象的一个地方.
+
+```javascript
+
+function getKey(k) {
+  return `a key named ${k}`;
+}
+
+// bad
+const obj = {
+  id: 5,
+  name: 'San Francisco',
+};
+obj[getKey('enabled')] = true;
+
+// good getKey('enabled')是动态属性名
+const obj = {
+  id: 5,
+  name: 'San Francisco',
+  [getKey('enabled')]: true,
+};
+```
+</code></pre>
+<p><a name="es6-object-shorthand"></a><a name="3.5"></a><br />
+  - <a href="#es6-object-shorthand">3.3</a> 用对象方法简写. eslint: <a href="http://eslint.org/docs/rules/object-shorthand.html"><code>object-shorthand</code></a> jscs: <a href="http://jscs.info/rule/requireEnhancedObjectLiterals"><code>requireEnhancedObjectLiterals</code></a></p>
+<pre><code>```javascript
+// bad
+const atom = {
+  value: 1,
+
+  addValue: function (value) {
+    return atom.value + value;
+  },
+};
+
+// good
+const atom = {
+  value: 1,
+
+  // 对象的方法
+  addValue(value) {
+    return atom.value + value;
+  },
+};
+```
+</code></pre>
+<p><a name="es6-object-concise"></a><a name="3.6"></a><br />
+  - <a href="#es6-object-concise">3.4</a> 用属性值缩写. eslint: <a href="http://eslint.org/docs/rules/object-shorthand.html"><code>object-shorthand</code></a> jscs: <a href="http://jscs.info/rule/requireEnhancedObjectLiterals"><code>requireEnhancedObjectLiterals</code></a></p>
+<pre><code>&gt; 这样写的更少且更可读
+
+```javascript
+const lukeSkywalker = 'Luke Skywalker';
+
+// bad
+const obj = {
+  lukeSkywalker: lukeSkywalker,
+};
+
+// good
+const obj = {
+  lukeSkywalker,
+};
+```
+</code></pre>
+<p><a name="objects--grouped-shorthand"></a><a name="3.7"></a><br />
+  - <a href="#objects--grouped-shorthand">3.5</a> 将你的所有缩写放在对象声明的开始.</p>
+<pre><code>&gt; 这样也是为了更方便的知道有哪些属性用了缩写.
+
+```javascript
+const anakinSkywalker = 'Anakin Skywalker';
+const lukeSkywalker = 'Luke Skywalker';
+
+// bad
+const obj = {
+  episodeOne: 1,
+  twoJediWalkIntoACantina: 2,
+  lukeSkywalker,
+  episodeThree: 3,
+  mayTheFourth: 4,
+  anakinSkywalker,
+};
+
+// good
+const obj = {
+  lukeSkywalker,
+  anakinSkywalker,
+  episodeOne: 1,
+  twoJediWalkIntoACantina: 2,
+  episodeThree: 3,
+  mayTheFourth: 4,
+};
+```
+</code></pre>
+<p><a name="objects--quoted-props"></a><a name="3.8"></a><br />
+  - <a href="#objects--quoted-props">3.6</a> 只对那些无效的标示使用引号 <code>''</code>. eslint: <a href="http://eslint.org/docs/rules/quote-props.html"><code>quote-props</code></a> jscs: <a href="http://jscs.info/rule/disallowQuotedKeysInObjects"><code>disallowQuotedKeysInObjects</code></a></p>
+<blockquote>
+<p>Why? 通常我们认为这种方式主观上易读。他提升了代码高亮，并且页更容易被许多JS引擎压缩。</p>
+</blockquote>
+<pre><code class="javascript">// bad
+const bad = {
+  'foo': 3,
+  'bar': 4,
+  'data-blah': 5,
+};
+
+// good
+const good = {
+  foo: 3,
+  bar: 4,
+  'data-blah': 5,
+};
+</code></pre>
+
+<p><a name="objects--prototype-builtins"></a><br />
+  - <a href="#objects--prototype-builtins">3.7</a> 不要直接调用<code>Object.prototype</code>这个方法，如<code>hasOwnProperty</code>, <code>propertyIsEnumerable</code>, <code>isPrototypeOf</code>。</p>
+<blockquote>
+<p>Why? 这些方法可能是挂在一个有问题的对象的属性上 - 如：<code>{ hasOwnProperty: false }</code> - 或这是一个空对象<code>Object.create(null)</code></p>
+</blockquote>
+<pre><code class="javascript">// bad
+console.log(object.hasOwnProperty(key));
+
+// good
+console.log(Object.prototype.hasOwnProperty.call(object, key));
+
+// best
+const has = Object.prototype.hasOwnProperty; // cache the lookup once, in module scope.
+/* or */
+import has from 'has';
+…
+console.log(has.call(object, key));
+</code></pre>
+
+<p><a name="objects--rest-spread"></a><br />
+  - <a href="#objects--rest-spread">3.8</a> 涉及到<a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">对象拷贝<code>Object.assign</code></a>时，用对象的扩展运算符去拿到一个带有真是属性的新对象（而不是只是拿到了旧的对象的引用）</p>
+<pre><code class="javascript">// very bad
+const original = { a: 1, b: 2 };
+const copy = Object.assign(original, { c: 3 }); // this mutates `original` ಠ_ಠ
+delete copy.a; // so does this
+
+// bad
+const original = { a: 1, b: 2 };
+const copy = Object.assign({}, original, { c: 3 }); // copy =&gt; { a: 1, b: 2, c: 3 }
+
+// good es6扩展运算符 ...
+const original = { a: 1, b: 2 };
+const copy = { ...original, c: 3 }; // copy =&gt; { a: 1, b: 2, c: 3 }
+
+const { a, ...noA } = copy; // noA =&gt; { b: 2, c: 3 }
+</code></pre>
+
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="arrays"><a name="user-content-arrays" href="#arrays" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Arrays</h2>
+<p><a name="arrays--literals"></a><a name="4.1"></a><br />
+  - <a href="#arrays--literals">4.1</a> 用字面量赋值。 eslint: <a href="http://eslint.org/docs/rules/no-array-constructor.html"><code>no-array-constructor</code></a></p>
+<pre><code>```javascript
+// bad
+const items = new Array();
+
+// good
+const items = [];
+```
+</code></pre>
+<p><a name="arrays--push"></a><a name="4.2"></a><br />
+  - <a href="#arrays--push">4.2</a> 用<a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push">Array#push</a> 代替直接向数组中添加一个值。</p>
+<pre><code>```javascript
+const someStack = [];
+
+// bad
+someStack[someStack.length] = 'abracadabra';
+
+// good
+someStack.push('abracadabra');
+```
+</code></pre>
+<p><a name="es6-array-spreads"></a><a name="4.3"></a><br />
+  - <a href="#es6-array-spreads">4.3</a> 用数组的解构赋值<code>...</code>去赋值数组</p>
+<pre><code>```javascript
+// bad
+const len = items.length;
+const itemsCopy = [];
+let i;
+
+for (i = 0; i &lt; len; i += 1) {
+  itemsCopy[i] = items[i];
+}
+
+// good
+const itemsCopy = [...items];
+```
+</code></pre>
+<p><a name="arrays--from"></a><a name="4.4"></a><br />
+  - <a href="#arrays--from">4.4</a> 用<a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from">Array.from</a>将一个类数组的对象转换成数组.</p>
+<pre><code>```javascript
+const foo = document.querySelectorAll('.foo');
+const nodes = Array.from(foo);
+```
+</code></pre>
+<p><a name="arrays--callback-return"></a><a name="4.5"></a><br />
+  - <a href="#arrays--callback-return">4.5</a> 在数组方法的回调函数中使用renturn语句。如果函数只有一个语句就可以忽略不用<a href="#8.2">8.2</a>. eslint: <a href="http://eslint.org/docs/rules/array-callback-return"><code>array-callback-return</code></a></p>
+<pre><code>```javascript
+// good
+[1, 2, 3].map((x) =&gt; {
+  const y = x + 1;
+  return x * y;
+});
+
+// good 函数只有一个语句
+[1, 2, 3].map(x =&gt; x + 1);
+
+// bad
+const flat = {};
+[[0, 1], [2, 3], [4, 5]].reduce((memo, item, index) =&gt; {
+  const flatten = memo.concat(item);
+  flat[index] = flatten;
+});
+
+// good
+const flat = {};
+[[0, 1], [2, 3], [4, 5]].reduce((memo, item, index) =&gt; {
+  const flatten = memo.concat(item);
+  flat[index] = flatten;
+  return flatten;
+});
+
+// bad
+inbox.filter((msg) =&gt; {
+  const { subject, author } = msg;
+  if (subject === 'Mockingbird') {
+    return author === 'Harper Lee';
+  } else {
+    return false;
+  }
+});
+
+// good
+inbox.filter((msg) =&gt; {
+  const { subject, author } = msg;
+  if (subject === 'Mockingbird') {
+    return author === 'Harper Lee';
+  }
+
+  return false;
+});
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="destructuring"><a name="user-content-destructuring" href="#destructuring" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Destructuring</h2>
+<p><a name="destructuring--object"></a><a name="5.1"></a><br />
+  - <a href="#destructuring--object">5.1</a> 当需要获取并多次使用对象的属性时用对象的解构。 jscs: <a href="http://jscs.info/rule/requireObjectDestructuring"><code>requireObjectDestructuring</code></a></p>
+<pre><code>&gt; Why? 解构保存了这些属性的临时引用
+
+```javascript
+// bad
+function getFullName(user) {
+  const firstName = user.firstName;
+  const lastName = user.lastName;
+
+  return `${firstName} ${lastName}`;
+}
+
+// good
+function getFullName(user) {
+  const { firstName, lastName } = user;
+  return `${firstName} ${lastName}`;
+}
+
+// best
+function getFullName({ firstName, lastName }) {
+  return `${firstName} ${lastName}`;
+}
+```
+</code></pre>
+<p><a name="destructuring--array"></a><a name="5.2"></a><br />
+  - <a href="#destructuring--array">5.2</a> 用数组解构. jscs: <a href="http://jscs.info/rule/requireArrayDestructuring"><code>requireArrayDestructuring</code></a></p>
+<pre><code>```javascript
+const arr = [1, 2, 3, 4];
+
+// bad
+const first = arr[0];
+const second = arr[1];
+
+// good
+const [first, second] = arr;
+```
+</code></pre>
+<p><a name="destructuring--object-over-array"></a><a name="5.3"></a><br />
+  - <a href="#destructuring--object-over-array">5.3</a> 多个返回值用对象的解构，而不是数据解构。 jscs: <a href="http://jscs.info/rule/disallowArrayDestructuringReturn"><code>disallowArrayDestructuringReturn</code></a></p>
+<pre><code>&gt; Why? 你可以在之后添加新的属性或者变换变量的顺序而不会打破原有的调用
+
+```javascript
+// bad
+function processInput(input) {
+  // then a miracle occurs
+  return [left, right, top, bottom];
+}
+
+// the caller needs to think about the order of return data
+const [left, __, top] = processInput(input);
+
+// good
+function processInput(input) {
+  // then a miracle occurs
+  return { left, right, top, bottom };
+}
+
+// the caller selects only the data they need
+const { left, top } = processInput(input);
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="strings"><a name="user-content-strings" href="#strings" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Strings</h2>
+<p><a name="strings--quotes"></a><a name="6.1"></a><br />
+  - <a href="#strings--quotes">6.1</a> 对string用单引号<code>''</code>。 eslint: <a href="http://eslint.org/docs/rules/quotes.html"><code>quotes</code></a> jscs: <a href="http://jscs.info/rule/validateQuoteMarks"><code>validateQuoteMarks</code></a></p>
+<pre><code>```javascript
+// bad
+const name = "Capt. Janeway";
+
+// bad - 样例应该包含插入文字或换行
+const name = `Capt. Janeway`;
+
+// good
+const name = 'Capt. Janeway';
+```
+</code></pre>
+<p><a name="strings--line-length"></a><a name="6.2"></a><br />
+  - <a href="#strings--line-length">6.2</a> 超过100个字符的字符串不应该用string串联成多行<br />
+    &gt; Why? 被折断的字符串工作起来是糟糕的而且使得代码更不易被搜索</p>
+<pre><code>```javascript
+// bad
+const errorMessage = 'This is a super long error that was thrown because \
+of Batman. When you stop to think about how Batman had anything to do \
+with this, you would get nowhere \
+fast.';
+
+// bad
+const errorMessage = 'This is a super long error that was thrown because ' +
+  'of Batman. When you stop to think about how Batman had anything to do ' +
+  'with this, you would get nowhere fast.';
+
+// good
+const errorMessage = 'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.';
+```
+
+**自定义优化：一行代码字符数不能超过80个字符，因为一行字符数过多不方便阅读**
+```javascript
+// best
+const errorMessage = `This is a super long error that was thrown
+    because of Batman. When you stop to think about how Batman had
+    anything to do with this, you would get nowhere fast.`
+```
+</code></pre>
+<p><a name="es6-template-literals"></a><a name="6.4"></a><br />
+  - <a href="#es6-template-literals">6.3</a> 当程序化组织字符串时，使用模板而不是串联。 eslint: <a href="http://eslint.org/docs/rules/prefer-template.html"><code>prefer-template</code></a> <a href="http://eslint.org/docs/rules/template-curly-spacing"><code>template-curly-spacing</code></a> jscs: <a href="http://jscs.info/rule/requireTemplateStrings"><code>requireTemplateStrings</code></a></p>
+<pre><code>&gt; Why? 模板字符串更具可读性、语法简洁、字符串插入参数。
+
+```javascript
+// bad
+function sayHi(name) {
+  return 'How are you, ' + name + '?';
+}
+
+// bad
+function sayHi(name) {
+  return ['How are you, ', name, '?'].join();
+}
+
+// bad
+function sayHi(name) {
+  return `How are you, ${ name }?`;
+}
+
+// good
+function sayHi(name) {
+  return `How are you, ${name}?`;
+}
+```
+</code></pre>
+<p><a name="strings--eval"></a><a name="6.5"></a><br />
+  - <a href="#strings--eval">6.4</a> 永远不要在字符串中用<code>eval()</code>，他就是潘多拉盒子</p>
+<p><a name="strings--escaping"></a><br />
+  - <a href="#strings--escaping">6.5</a> 不要使用不必要的转义字符。eslint: <a href="http://eslint.org/docs/rules/no-useless-escape"><code>no-useless-escape</code></a></p>
+<pre><code>&gt; Why? 反斜线可读性差，所以他们只在必须使用时才出现
+
+```javascript
+// bad
+const foo = '\'this\' \i\s \"quoted\"';
+
+// good
+const foo = '\'this\' is "quoted"';
+
+//best
+const foo = `my name is '${name}'`;
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="functions"><a name="user-content-functions" href="#functions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Functions</h2>
+<p><a name="functions--declarations"></a><a name="7.1"></a><br />
+  - <a href="#functions--declarations">7.1</a> 用命名函数表达式而不是函数声明。eslint: <a href="http://eslint.org/docs/rules/func-style"><code>func-style</code></a> jscs: <a href="http://jscs.info/rule/disallowFunctionDeclarations"><code>disallowFunctionDeclarations</code></a><br />
+    &gt;函数表达式： const func = function () {}<br />
+    &gt;函数声明： function func() {}</p>
+<pre><code>&gt; Why? 函数声明式作用域被提升了，这意味着在一个文件里函数很容易（太容易了）在其定义之前被引用。这样伤害了代码可读性和可维护性。如果你发现一个函数有大又复杂，这个函数妨碍这个文件其他部分的理解性，这可能就是时候把这个函数单独抽成一个模块了。别忘了给表达式命名——匿名函数会在错误调用栈里难以定位。 ([Discussion](https://github.com/airbnb/javascript/issues/794))
+
+```javascript
+// bad
+function foo() {
+  // ...
+}
+
+// bad
+const foo = function () {
+  // ...
+};
+
+// good， 函数表达式也需要命名
+const foo = function bar() {
+  // ...
+};
+```
+</code></pre>
+<p><a name="functions--iife"></a><a name="7.2"></a><br />
+  - <a href="#functions--iife">7.2</a> 把立即执行函数包裹在圆括号里。 eslint: <a href="http://eslint.org/docs/rules/wrap-iife.html"><code>wrap-iife</code></a> jscs: <a href="http://jscs.info/rule/requireParenthesesAroundIIFE"><code>requireParenthesesAroundIIFE</code></a><br />
+    &gt; immediately invoked function expression = IIFE<br />
+    &gt; Why?一个立即调用的函数表达式是一个单一的单元 - 把它和他的调用者（圆括号）包裹起来，在括号中，干净地表达这一点。[An immediately invoked function expression is a single unit - wrapping both it, and its invocation parens, in parens, cleanly expresses this. google翻译， 暂不知道想表达什么] 。<br />
+    &gt; 注意：在模块化引用里，不需要使用IIFE<br />
+    <pre><code class="javascript">// immediately-invoked function expression (IIFE)
+(function () {
+  console.log('Welcome to the Internet. Please follow me.');
+}());
+</code></pre></p>
+<p><a name="functions--in-blocks"></a><a name="7.3"></a><br />
+  - <a href="#functions--in-blocks">7.3</a> 不要在非函数块（if、while等等）内声明函数。把这个函数分配给一个变量。浏览器会允许你这样做，但浏览器解析方式不同，这是一个坏消息。【详见<code>no-loop-func</code>】 eslint: <a href="http://eslint.org/docs/rules/no-loop-func.html"><code>no-loop-func</code></a></p>
+<p><a name="functions--note-on-blocks"></a><a name="7.4"></a><br />
+  - <a href="#functions--note-on-blocks">7.4</a> <strong>Note:</strong> ECMA-262 定义一个<code>block</code>有一系列语句，函数声明不是语句。 [暂不理解： ECMA-262 defines a <code>block</code> as a list of statements. A function declaration is not a statement.]<a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97">Read ECMA-262&rsquo;s note on this issue</a>.</p>
+<pre><code>```javascript
+// bad
+if (currentUser) {
+  function test() {
+    console.log('Nope.');
+  }
+}
+
+// good
+let test;
+if (currentUser) {
+  test = () =&gt; {
+    console.log('Yup.');
+  };
+}
+```
+</code></pre>
+<p><a name="functions--arguments-shadow"></a><a name="7.5"></a><br />
+  - <a href="#functions--arguments-shadow">7.5</a> 不要用<code>arguments</code>命名参数。他的优先级高于每个函数作用域自带的<code>arguments</code>对象</p>
+<pre><code>```javascript
+// bad
+function foo(name, options, arguments) {
+  // ...
+}
+
+// good
+function foo(name, options, args) {
+  // ...
+}
+```
+</code></pre>
+<p><a name="es6-rest"></a><a name="7.6"></a><br />
+  - <a href="#es6-rest">7.6</a> 不要使用<code>arguments</code>，用rest语法<code>...</code>代替。 eslint: <a href="http://eslint.org/docs/rules/prefer-rest-params"><code>prefer-rest-params</code></a></p>
+<pre><code>&gt; Why?  `...`明确你想用那个参数。而且rest参数是真数组，而不是类似数组的`arguments`
+
+```javascript
+// bad
+function concatenateAll() {
+  const args = Array.prototype.slice.call(arguments);
+  return args.join('');
+}
+
+// good
+function concatenateAll(...args) {
+  return args.join('');
+}
+```
+</code></pre>
+<p><a name="es6-default-parameters"></a><a name="7.7"></a><br />
+  - <a href="#es6-default-parameters">7.7</a> 用默认参数而不是在函数里对参数重新赋值。</p>
+<pre><code>```javascript
+// really bad
+function handleThings(opts) {
+  // No! We shouldn't mutate function arguments.
+  // Double bad: if opts is falsy it'll be set to an object which may
+  // be what you want but it can introduce subtle bugs.
+  opts = opts || {};
+  // ...
+}
+
+// still bad
+function handleThings(opts) {
+  if (opts === void 0) {
+    opts = {};
+  }
+  // ...
+}
+
+// good
+function handleThings(opts = {}) {
+  // ...
+}
+```
+</code></pre>
+<p><a name="functions--default-side-effects"></a><a name="7.8"></a><br />
+  - <a href="#functions--default-side-effects">7.8</a> 默认参数避免副作用</p>
+<pre><code>&gt; Why? 他会导致参数混乱
+
+```javascript
+var b = 1;
+// bad
+function count(a = b++) {
+  console.log(a);
+}
+count();  // 1
+count();  // 2
+count(3); // 3
+count();  // 3
+```
+</code></pre>
+<p><a name="functions--defaults-last"></a><a name="7.9"></a><br />
+  - <a href="#functions--defaults-last">7.9</a> 把默认参数赋值放在最后</p>
+<pre><code>```javascript
+// bad
+function handleThings(opts = {}, name) {
+  // ...
+}
+
+// good
+function handleThings(name, opts = {}) {
+  // ...
+}
+```
+</code></pre>
+<p><a name="functions--constructor"></a><a name="7.10"></a><br />
+  - <a href="#functions--constructor">7.10</a> 不要用函数构造器创建函数。 eslint: <a href="http://eslint.org/docs/rules/no-new-func"><code>no-new-func</code></a></p>
+<pre><code>&gt; Why? 以这种方式创建函数将类似于eval（）来计算字符串，这会打开漏洞。
+
+```javascript
+// bad
+var add = new Function('a', 'b', 'return a + b');
+
+// still bad
+var subtract = Function('a', 'b', 'return a - b');
+```
+</code></pre>
+<p><a name="functions--signature-spacing"></a><a name="7.11"></a><br />
+  - <a href="#functions--signature-spacing">7.11</a> 函数签名部分要有空格。eslint: <a href="http://eslint.org/docs/rules/space-before-function-paren"><code>space-before-function-paren</code></a> <a href="http://eslint.org/docs/rules/space-before-blocks"><code>space-before-blocks</code></a></p>
+<pre><code>&gt; Why? 统一性好，而且在你添加/删除一个名字的时候不需要添加/删除空格
+
+```javascript
+// bad
+const f = function(){};
+const g = function (){};
+const h = function() {};
+
+// good
+const x = function () {};
+const y = function a() {};
+```
+</code></pre>
+<p><a name="functions--mutate-params"></a><a name="7.12"></a><br />
+  - <a href="#functions--mutate-params">7.12</a> 不要改参数的数据结构. eslint: <a href="http://eslint.org/docs/rules/no-param-reassign.html"><code>no-param-reassign</code></a></p>
+<pre><code>&gt; Why? 操作参数对象对原始调用者会导致意想不到的副作用。 就是不要改参数的数据结构，保留参数原始值和数据结构。
+
+```javascript
+// bad
+function f1(obj) {
+  obj.key = 1;
+};
+
+// good
+function f2(obj) {
+  const key = Object.prototype.hasOwnProperty.call(obj, 'key') ? obj.key : 1;
+};
+```
+</code></pre>
+<p><a name="functions--reassign-params"></a><a name="7.13"></a><br />
+  - <a href="#functions--reassign-params">7.13</a> 不要重新分配参数。 eslint: <a href="http://eslint.org/docs/rules/no-param-reassign.html"><code>no-param-reassign</code></a></p>
+<pre><code>&gt; Why? 重新分配参数会导致意外行为，尤其当参数是object的时候。这也会导致压缩问题，特别是在V8里
+
+```javascript
+// bad
+function f1(a) {
+  a = 1;
+  // ...
+}
+
+function f2(a) {
+  if (!a) { a = 1; }
+  // ...
+}
+
+// good
+function f3(a) {
+  const b = a || 1;
+  // ...
+}
+
+function f4(a = 1) {
+  // ...
+}
+```
+</code></pre>
+<p><a name="functions--spread-vs-apply"></a><a name="7.14"></a><br />
+  - <a href="#functions--spread-vs-apply">7.14</a> 用<code>spread</code>操作符<code>...</code>去调用多变的函数更好。 eslint: <a href="http://eslint.org/docs/rules/prefer-spread"><code>prefer-spread</code></a></p>
+<pre><code>&gt; Why? 这样更清晰，你不必提供上下文，而且你不能轻易地用`apply`来组成`new`
+
+```javascript
+// bad
+const x = [1, 2, 3, 4, 5];
+console.log.apply(console, x);
+
+// good
+const x = [1, 2, 3, 4, 5];
+console.log(...x);
+
+// bad
+new (Function.prototype.bind.apply(Date, [null, 2016, 8, 5]));
+
+// good
+new Date(...[2016, 8, 5]);
+```
+</code></pre>
+<p><a name="functions--signature-invocation-indentation"></a><br />
+  - <a href="#functions--signature-invocation-indentation">7.15</a> 包含多行多行签名的函数或调用应该缩进， 就像这里其他的每一个多行列表： 每行与上一行对齐并用逗号结尾</p>
+<pre><code>```javascript
+// bad
+function foo(bar,
+             baz,
+             quux) {
+  // ...
+}
+
+// good 缩进不要太过分
+function foo(
+  bar,
+  baz,
+  quux,
+) {
+  // ...
+}
+
+// bad
+console.log(foo,
+  bar,
+  baz);
+
+// good
+console.log(
+  foo,
+  bar,
+  baz,
+);
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="arrow-functions"><a name="user-content-arrow-functions" href="#arrow-functions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Arrow Functions</h2>
+<p><a name="arrows--use-them"></a><a name="8.1"></a><br />
+  - <a href="#arrows--use-them">8.1</a> 当你一定要用函数表达式（当传递匿名函数时）的时候就用箭头表达式吧。 eslint: <a href="http://eslint.org/docs/rules/prefer-arrow-callback.html"><code>prefer-arrow-callback</code></a>, <a href="http://eslint.org/docs/rules/arrow-spacing.html"><code>arrow-spacing</code></a> jscs: <a href="http://jscs.info/rule/requireArrowFunctions"><code>requireArrowFunctions</code></a></p>
+<pre><code>&gt; Why? 他创建了一个`this`的当前执行上下文的函数的版本，这通常就是你想要的；而且箭头函数是更简洁的语法
+
+&gt; Why not? 如果你有一个相当复杂的函数，你可能会把这个逻辑移出到他自己的函数声明里 【不甚理解】
+
+```javascript
+// bad
+[1, 2, 3].map(function (x) {
+  const y = x + 1;
+  return x * y;
+});
+
+// good
+[1, 2, 3].map((x) =&gt; {
+  const y = x + 1;
+  return x * y;
+});
+```
+</code></pre>
+<p><a name="arrows--implicit-return"></a><a name="8.2"></a><br />
+  - <a href="#arrows--implicit-return">8.2</a> 如果函数体有一个表达式组成，删除大括号和return。否则，继续用大括号和<code>return</code>语句。 eslint: <a href="http://eslint.org/docs/rules/arrow-parens.html"><code>arrow-parens</code></a>, <a href="http://eslint.org/docs/rules/arrow-body-style.html"><code>arrow-body-style</code></a> jscs:  <a href="http://jscs.info/rule/disallowParenthesesAroundArrowParam"><code>disallowParenthesesAroundArrowParam</code></a>, <a href="http://jscs.info/rule/requireShorthandArrowFunctions"><code>requireShorthandArrowFunctions</code></a></p>
+<pre><code>&gt; Why? 语法糖，当多个函数链在一起的时候好读
+
+```javascript
+// bad
+[1, 2, 3].map(number =&gt; {
+  const nextNumber = number + 1;
+  `A string containing the ${nextNumber}.`;
+});
+
+// good
+[1, 2, 3].map(number =&gt; `A string containing the ${number}.`);
+
+// good
+[1, 2, 3].map((number) =&gt; {
+  const nextNumber = number + 1;
+  return `A string containing the ${nextNumber}.`;
+});
+
+// good
+[1, 2, 3].map((number, index) =&gt; ({
+  [index]: number
+}));
+```
+</code></pre>
+<p><a name="arrows--paren-wrap"></a><a name="8.3"></a><br />
+  - <a href="#arrows--paren-wrap">8.3</a> 万一表达式涉及多行，把他包裹在圆括号里更可读。</p>
+<pre><code>&gt; Why? 这样清晰的显示函数的开始和结束
+
+```js
+// bad
+['get', 'post', 'put'].map(httpMethod =&gt; Object.prototype.hasOwnProperty.call(
+    httpMagicObjectWithAVeryLongName,
+    httpMethod
+  )
+);
+
+// good
+['get', 'post', 'put'].map(httpMethod =&gt; (
+  Object.prototype.hasOwnProperty.call(
+    httpMagicObjectWithAVeryLongName,
+    httpMethod
+  )
+));
+```
+</code></pre>
+<p><a name="arrows--one-arg-parens"></a><a name="8.4"></a><br />
+  - <a href="#arrows--one-arg-parens">8.4</a> 如果你的函数有一个参数并且没有大括号，就删除圆括号。否则，参数总是放在圆括号里。 eslint: <a href="http://eslint.org/docs/rules/arrow-parens.html"><code>arrow-parens</code></a> jscs:  <a href="http://jscs.info/rule/disallowParenthesesAroundArrowParam"><code>disallowParenthesesAroundArrowParam</code></a></p>
+<pre><code>&gt; Why? Less visual clutter.
+
+```js
+// bad
+[1, 2, 3].map((x) =&gt; x * x);
+
+// good
+[1, 2, 3].map(x =&gt; x * x);
+
+// good
+[1, 2, 3].map(number =&gt; (
+  `A long string with the ${number}. It’s so long that we don’t want it to take up space on the .map line!`
+));
+
+// bad
+[1, 2, 3].map(x =&gt; {
+  const y = x + 1;
+  return x * y;
+});
+
+// good
+[1, 2, 3].map((x) =&gt; {
+  const y = x + 1;
+  return x * y;
+});
+```
+</code></pre>
+<p><a name="arrows--confusing"></a><a name="8.5"></a><br />
+  - <a href="#arrows--confusing">8.5</a> 避免箭头函数(<code>=&gt;</code>)和比较操作符（<code>&lt;=, &gt;=</code>）混淆. eslint: <a href="http://eslint.org/docs/rules/no-confusing-arrow"><code>no-confusing-arrow</code></a></p>
+<pre><code>```js
+// bad
+const itemHeight = item =&gt; item.height &gt; 256 ? item.largeSize : item.smallSize;
+
+// bad
+const itemHeight = (item) =&gt; item.height &gt; 256 ? item.largeSize : item.smallSize;
+
+// good
+const itemHeight = item =&gt; (item.height &gt; 256 ? item.largeSize : item.smallSize);
+
+// good
+const itemHeight = (item) =&gt; {
+  const { height, largeSize, smallSize } = item;
+  return height &gt; 256 ? largeSize : smallSize;
+};
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="classes-constructors"><a name="user-content-classes-constructors" href="#classes-constructors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Classes &amp; Constructors</h2>
+<p><a name="constructors--use-class"></a><a name="9.1"></a><br />
+  - <a href="#constructors--use-class">9.1</a> 常用<code>class</code>，避免直接操作<code>prototype</code></p>
+<pre><code>&gt; Why? `class`语法更简洁更易理解
+
+```javascript
+// bad
+function Queue(contents = []) {
+  this.queue = [...contents];
+}
+Queue.prototype.pop = function () {
+  const value = this.queue[0];
+  this.queue.splice(0, 1);
+  return value;
+};
+
+
+// good
+class Queue {
+  constructor(contents = []) {
+    this.queue = [...contents];
+  }
+  pop() {
+    const value = this.queue[0];
+    this.queue.splice(0, 1);
+    return value;
+  }
+}
+```
+</code></pre>
+<p><a name="constructors--extends"></a><a name="9.2"></a><br />
+  - <a href="#constructors--extends">9.2</a> 用<code>extends</code>实现继承</p>
+<pre><code>&gt; Why? 它是一种内置的方法来继承原型功能而不打破`instanceof`
+
+```javascript
+// bad
+const inherits = require('inherits');
+function PeekableQueue(contents) {
+  Queue.apply(this, contents);
+}
+inherits(PeekableQueue, Queue);
+PeekableQueue.prototype.peek = function () {
+  return this._queue[0];
+}
+
+// good
+class PeekableQueue extends Queue {
+  peek() {
+    return this._queue[0];
+  }
+}
+```
+</code></pre>
+<p><a name="constructors--chaining"></a><a name="9.3"></a><br />
+  - <a href="#constructors--chaining">9.3</a> 方法可以返回<code>this</code>来实现方法链</p>
+<pre><code>```javascript
+// bad
+Jedi.prototype.jump = function () {
+  this.jumping = true;
+  return true;
+};
+
+Jedi.prototype.setHeight = function (height) {
+  this.height = height;
+};
+
+const luke = new Jedi();
+luke.jump(); // =&gt; true
+luke.setHeight(20); // =&gt; undefined
+
+// good
+class Jedi {
+  jump() {
+    this.jumping = true;
+    return this;
+  }
+
+  setHeight(height) {
+    this.height = height;
+    return this;
+  }
+}
+
+const luke = new Jedi();
+
+luke.jump()
+  .setHeight(20);
+```
+</code></pre>
+<p><a name="constructors--tostring"></a><a name="9.4"></a><br />
+  - <a href="#constructors--tostring">9.4</a> 写一个定制的toString()方法是可以的，只要保证它是可以正常工作且没有副作用的</p>
+<pre><code>```javascript
+class Jedi {
+  constructor(options = {}) {
+    this.name = options.name || 'no name';
+  }
+
+  getName() {
+    return this.name;
+  }
+
+  toString() {
+    return `Jedi - ${this.getName()}`;
+  }
+}
+```
+</code></pre>
+<p><a name="constructors--no-useless"></a><a name="9.5"></a><br />
+  - <a href="#constructors--no-useless">9.5</a> 如果没有具体说明，类有默认的构造方法。一个空的构造函数或只是继承父类的构造函数是不需要写的。 eslint: <a href="http://eslint.org/docs/rules/no-useless-constructor"><code>no-useless-constructor</code></a></p>
+<pre><code>```javascript
+// bad
+class Jedi {
+  constructor() {}
+
+  getName() {
+    return this.name;
+  }
+}
+
+// bad
+class Rey extends Jedi {
+  constructor(...args) {
+    super(...args);
+  }
+}
+
+// good
+class Rey extends Jedi {
+  constructor(...args) {
+    super(...args);
+    this.name = 'Rey';
+  }
+}
+```
+</code></pre>
+<p><a name="classes--no-duplicate-members"></a><br />
+  - <a href="#classes--no-duplicate-members">9.6</a> 避免重复类成员。 eslint: <a href="http://eslint.org/docs/rules/no-dupe-class-members"><code>no-dupe-class-members</code></a></p>
+<pre><code>&gt; Why? 重复类成员会默默的执行最后一个 —— 重复本身也是一个bug
+
+```javascript
+// bad
+class Foo {
+  bar() { return 1; }
+  bar() { return 2; }
+}
+
+// good
+class Foo {
+  bar() { return 1; }
+}
+
+// good
+class Foo {
+  bar() { return 2; }
+}
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="modules"><a name="user-content-modules" href="#modules" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Modules</h2>
+<p><a name="modules--use-them"></a><a name="10.1"></a><br />
+  - <a href="#modules--use-them">10.1</a> 用(<code>import</code>/<code>export</code>) 模块而不是无标准的模块系统。你可以随时转到你喜欢的模块系统。</p>
+<pre><code>&gt; Why? 模块化是未来，让我们现在就开启未来吧。
+
+```javascript
+// bad
+const AirbnbStyleGuide = require('./AirbnbStyleGuide');
+module.exports = AirbnbStyleGuide.es6;
+
+// ok
+import AirbnbStyleGuide from './AirbnbStyleGuide';
+export default AirbnbStyleGuide.es6;
+
+// best
+import { es6 } from './AirbnbStyleGuide';
+export default es6;
+```
+</code></pre>
+<p><a name="modules--no-wildcard"></a><a name="10.2"></a><br />
+  - <a href="#modules--no-wildcard">10.2</a> 不要用通配符import</p>
+<pre><code>&gt; Why? 这确保你有单个默认的导出
+
+```javascript
+// bad
+import * as AirbnbStyleGuide from './AirbnbStyleGuide';
+
+// good
+import AirbnbStyleGuide from './AirbnbStyleGuide';
+```
+</code></pre>
+<p><a name="modules--no-export-from-import"></a><a name="10.3"></a><br />
+  - <a href="#modules--no-export-from-import">10.3</a> 不要直接从import中直接export</p>
+<pre><code>&gt; Why? 虽然一行是简洁的，有一个明确的方式进口和一个明确的出口方式使事情一致。
+
+```javascript
+// bad
+// filename es6.js
+export { es6 as default } from './AirbnbStyleGuide';
+
+// good
+// filename es6.js
+import { es6 } from './AirbnbStyleGuide';
+export default es6;
+```
+</code></pre>
+<p><a name="modules--no-duplicate-imports"></a><br />
+  - <a href="#modules--no-duplicate-imports">10.4</a> Only import from a path in one place.<br />
+ eslint: <a href="http://eslint.org/docs/rules/no-duplicate-imports"><code>no-duplicate-imports</code></a><br />
+    &gt; Why? 从同一个路径下import多行会使代码难以维护</p>
+<pre><code>```javascript
+// bad
+import foo from 'foo';
+// … some other imports … //
+import { named1, named2 } from 'foo';
+
+// good
+import foo, { named1, named2 } from 'foo';
+
+// good
+import foo, {
+  named1,
+  named2,
+} from 'foo';
+```
+</code></pre>
+<p><a name="modules--no-mutable-exports"></a><br />
+  - <a href="#modules--no-mutable-exports">10.5</a> 不要到处可变的东西<br />
+ eslint: <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-mutable-exports.md"><code>import/no-mutable-exports</code></a><br />
+    &gt; Why? 总的来说变化都是需要避免的，特别是输出可变的绑定。虽然在某些场景下可能需要这种基础，但总的来说应该到处常量</p>
+<pre><code>```javascript
+// bad
+let foo = 3;
+export { foo }
+
+// good
+const foo = 3;
+export { foo }
+```
+</code></pre>
+<p><a name="modules--prefer-default-export"></a><br />
+  - <a href="#modules--prefer-default-export">10.6</a> 在一个单一导出模块里，用<code>export default</code>更好<br />
+ eslint: <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md"><code>import/prefer-default-export</code></a></p>
+<pre><code>```javascript
+// bad
+export function foo() {}
+
+// good
+export default function foo() {}
+```
+</code></pre>
+<p><a name="modules--imports-first"></a><br />
+  - <a href="#modules--imports-first">10.7</a> <code>import</code> 放在其他所有语句之前。<br />
+ eslint: <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/first.md"><code>import/first</code></a><br />
+    &gt; Why? Since <code>import</code>s are hoisted, keeping them all at the top prevents surprising behavior.</p>
+<pre><code>```javascript
+// bad
+import foo from 'foo';
+foo.init();
+
+import bar from 'bar';
+
+// good
+import foo from 'foo';
+import bar from 'bar';
+
+foo.init();
+```
+</code></pre>
+<p><a name="modules--multiline-imports-over-newlines"></a><br />
+  - <a href="#modules--multiline-imports-over-newlines">10.8</a> 多行import应该缩进，就像多行数组和对象字面量</p>
+<pre><code>&gt; Why?  花括号与样式指南中每个其他花括号块遵循相同的缩进规则，逗号也是。
+
+```javascript
+// bad
+import {longNameA, longNameB, longNameC, longNameD, longNameE} from 'path';
+
+// good
+import {
+  longNameA,
+  longNameB,
+  longNameC,
+  longNameD,
+  longNameE,
+} from 'path';
+```
+</code></pre>
+<p><a name="modules--no-webpack-loader-syntax"></a><br />
+  - <a href="#modules--no-webpack-loader-syntax">10.9</a> 在import语句里不允许Webpack loader语法<br />
+ eslint: <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md"><code>import/no-webpack-loader-syntax</code></a><br />
+    &gt; Why? 一旦用Webpack语法在import里会把代码耦合到模块绑定器。最好是在<code>webpack.config.js</code>里写webpack loader语法</p>
+<pre><code>```javascript
+// bad
+import fooSass from 'css!sass!foo.scss';
+import barCss from 'style!css!bar.css';
+
+// good
+import fooSass from 'foo.scss';
+import barCss from 'bar.css';
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="iterators-and-generators"><a name="user-content-iterators-and-generators" href="#iterators-and-generators" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Iterators and Generators</h2>
+<p><a name="iterators--nope"></a><a name="11.1"></a><br />
+  - <a href="#iterators--nope">11.1</a> 不要用遍历器。用JavaScript高级函数代替<code>for-in</code>、 <code>for-of</code>。 eslint: <a href="http://eslint.org/docs/rules/no-iterator.html"><code>no-iterator</code></a> <a href="http://eslint.org/docs/rules/no-restricted-syntax"><code>no-restricted-syntax</code></a></p>
+<pre><code>&gt; Why? 这加强我们的不可变规则。 处理返回值的纯函数比副作用更容易推理。
+
+&gt; Use `map()` / `every()` / `filter()` / `find()` / `findIndex()` / `reduce()` / `some()` / ... to iterate over arrays, and `Object.keys()` / `Object.values()` / `Object.entries()` to produce arrays so you can iterate over objects.
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+// bad
+let sum = 0;
+for (let num of numbers) {
+  sum += num;
+}
+sum === 15;
+
+// good
+let sum = 0;
+numbers.forEach(num =&gt; sum += num);
+sum === 15;
+
+// best (use the functional force)
+const sum = numbers.reduce((total, num) =&gt; total + num, 0);
+sum === 15;
+
+// bad
+const increasedByOne = [];
+for (let i = 0; i &lt; numbers.length; i++) {
+  increasedByOne.push(numbers[i] + 1);
+}
+
+// good
+const increasedByOne = [];
+numbers.forEach(num =&gt; increasedByOne.push(num + 1));
+// best (keeping it functional)
+const increasedByOne = numbers.map(num =&gt; num + 1);
+```
+</code></pre>
+<p><a name="generators--nope"></a><a name="11.2"></a><br />
+  - <a href="#generators--nope">11.2</a> Don&rsquo;t use generators for now.</p>
+<pre><code>&gt; Why? They don't transpile well to ES5.
+</code></pre>
+<p><a name="generators--spacing"></a><br />
+  - <a href="#generators--spacing">11.3</a> If you must use generators, or if you disregard <a href="#generators--nope">our advice</a>, make sure their function signature is spaced properly. eslint: <a href="http://eslint.org/docs/rules/generator-star-spacing"><code>generator-star-spacing</code></a></p>
+<pre><code>&gt; Why? `function` and `*` are part of the same conceptual keyword - `*` is not a modifier for `function`, `function*` is a unique construct, different from `function`.
+
+```js
+// bad
+function * foo() {
+  // ...
+}
+
+// bad
+const bar = function * () {
+  // ...
+}
+
+// bad
+const baz = function *() {
+  // ...
+}
+
+// bad
+const quux = function*() {
+  // ...
+}
+
+// bad
+function*foo() {
+  // ...
+}
+
+// bad
+function *foo() {
+  // ...
+}
+
+// very bad
+function
+*
+foo() {
+  // ...
+}
+
+// very bad
+const wat = function
+*
+() {
+  // ...
+}
+
+// good
+function* foo() {
+  // ...
+}
+
+// good
+const foo = function* () {
+  // ...
+}
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="properties"><a name="user-content-properties" href="#properties" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Properties</h2>
+<p><a name="properties--dot"></a><a name="12.1"></a><br />
+  - <a href="#properties--dot">12.1</a> Use dot notation when accessing properties. eslint: <a href="http://eslint.org/docs/rules/dot-notation.html"><code>dot-notation</code></a> jscs: <a href="http://jscs.info/rule/requireDotNotation"><code>requireDotNotation</code></a></p>
+<pre><code>```javascript
+const luke = {
+  jedi: true,
+  age: 28,
+};
+
+// bad
+const isJedi = luke['jedi'];
+
+// good
+const isJedi = luke.jedi;
+```
+</code></pre>
+<p><a name="properties--bracket"></a><a name="12.2"></a><br />
+  - <a href="#properties--bracket">12.2</a> Use bracket notation <code>[]</code> when accessing properties with a variable.</p>
+<pre><code>```javascript
+const luke = {
+  jedi: true,
+  age: 28,
+};
+
+function getProp(prop) {
+  return luke[prop];
+}
+
+const isJedi = getProp('jedi');
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="variables"><a name="user-content-variables" href="#variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Variables</h2>
+<p><a name="variables--const"></a><a name="13.1"></a><br />
+  - <a href="#variables--const">13.1</a> Always use <code>const</code> to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that. eslint: <a href="http://eslint.org/docs/rules/no-undef"><code>no-undef</code></a> <a href="http://eslint.org/docs/rules/prefer-const"><code>prefer-const</code></a></p>
+<pre><code>```javascript
+// bad
+superPower = new SuperPower();
+
+// good
+const superPower = new SuperPower();
+```
+</code></pre>
+<p><a name="variables--one-const"></a><a name="13.2"></a><br />
+  - <a href="#variables--one-const">13.2</a> Use one <code>const</code> declaration per variable. eslint: <a href="http://eslint.org/docs/rules/one-var.html"><code>one-var</code></a> jscs: <a href="http://jscs.info/rule/disallowMultipleVarDecl"><code>disallowMultipleVarDecl</code></a></p>
+<pre><code>&gt; Why? It's easier to add new variable declarations this way, and you never have to worry about swapping out a `;` for a `,` or introducing punctuation-only diffs. You can also step through each declaration with the debugger, instead of jumping through all of them at once.
+
+```javascript
+// bad
+const items = getItems(),
+    goSportsTeam = true,
+    dragonball = 'z';
+
+// bad
+// (compare to above, and try to spot the mistake)
+const items = getItems(),
+    goSportsTeam = true;
+    dragonball = 'z';
+
+// good
+const items = getItems();
+const goSportsTeam = true;
+const dragonball = 'z';
+```
+</code></pre>
+<p><a name="variables--const-let-group"></a><a name="13.3"></a><br />
+  - <a href="#variables--const-let-group">13.3</a> Group all your <code>const</code>s and then group all your <code>let</code>s.</p>
+<pre><code>&gt; Why? This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
+
+```javascript
+// bad
+let i, len, dragonball,
+    items = getItems(),
+    goSportsTeam = true;
+
+// bad
+let i;
+const items = getItems();
+let dragonball;
+const goSportsTeam = true;
+let len;
+
+// good
+const goSportsTeam = true;
+const items = getItems();
+let dragonball;
+let i;
+let length;
+```
+</code></pre>
+<p><a name="variables--define-where-used"></a><a name="13.4"></a><br />
+  - <a href="#variables--define-where-used">13.4</a> Assign variables where you need them, but place them in a reasonable place.</p>
+<pre><code>&gt; Why? `let` and `const` are block scoped and not function scoped.
+
+```javascript
+// bad - unnecessary function call
+function checkName(hasName) {
+  const name = getName();
+
+  if (hasName === 'test') {
+    return false;
+  }
+
+  if (name === 'test') {
+    this.setName('');
+    return false;
+  }
+
+  return name;
+}
+
+// good
+function checkName(hasName) {
+  if (hasName === 'test') {
+    return false;
+  }
+
+  const name = getName();
+
+  if (name === 'test') {
+    this.setName('');
+    return false;
+  }
+
+  return name;
+}
+```
+</code></pre>
+<p><a name="variables--no-chain-assignment"></a><a name="13.5"></a><br />
+  - <a href="#variables--no-chain-assignment">13.5</a> Don&rsquo;t chain variable assignments.</p>
+<pre><code>&gt; Why? Chaining variable assignments creates implicit global variables.
+
+```javascript
+// bad
+(function example() {
+  // JavaScript interprets this as
+  // let a = ( b = ( c = 1 ) );
+  // The let keyword only applies to variable a; variables b and c become
+  // global variables.
+  let a = b = c = 1;
+}());
+
+console.log(a); // undefined
+console.log(b); // 1
+console.log(c); // 1
+
+// good
+(function example() {
+  let a = 1;
+  let b = a;
+  let c = a;
+}());
+
+console.log(a); // undefined
+console.log(b); // undefined
+console.log(c); // undefined
+
+// the same applies for `const`
+```
+</code></pre>
+<p><a name="variables--unary-increment-decrement"></a><a name="13.6"></a><br />
+  - <a href="#variables--unary-increment-decrement">13.6</a> Avoid using unary increments and decrements (++, &ndash;). eslint <a href="http://eslint.org/docs/rules/no-plusplus"><code>no-plusplus</code></a></p>
+<pre><code>&gt; Why? Per the eslint documentation, unary increment and decrement statements are subject to automatic semicolon insertion and can cause silent errors with incrementing or decrementing values within an application. It is also more expressive to mutate your values with statements like `num += 1` instead of `num++` or `num ++`. Disallowing unary increment and decrement statements also prevents you from pre-incrementing/pre-decrementing values unintentionally which can also cause unexpected behavior in your programs.
+
+```javascript
+  // bad
+
+  let array = [1, 2, 3];
+  let num = 1;
+  num++;
+  --num;
+
+  let sum = 0;
+  let truthyCount = 0;
+  for(let i = 0; i &lt; array.length; i++){
+    let value = array[i];
+    sum += value;
+    if (value) {
+      truthyCount++;
+    }
+  }
+
+  // good
+
+  let array = [1, 2, 3];
+  let num = 1;
+  num += 1;
+  num -= 1;
+
+  const sum = array.reduce((a, b) =&gt; a + b, 0);
+  const truthyCount = array.filter(Boolean).length;
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="hoisting"><a name="user-content-hoisting" href="#hoisting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Hoisting</h2>
+<p><a name="hoisting--about"></a><a name="14.1"></a><br />
+  - <a href="#hoisting--about">14.1</a> <code>var</code> declarations get hoisted to the top of their scope, their assignment does not. <code>const</code> and <code>let</code> declarations are blessed with a new concept called <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone_and_errors_with_let">Temporal Dead Zones (TDZ)</a>. It&rsquo;s important to know why <a href="http://es-discourse.com/t/why-typeof-is-no-longer-safe/15">typeof is no longer safe</a>.</p>
+<pre><code>```javascript
+// we know this wouldn't work (assuming there
+// is no notDefined global variable)
+function example() {
+  console.log(notDefined); // =&gt; throws a ReferenceError
+}
+
+// creating a variable declaration after you
+// reference the variable will work due to
+// variable hoisting. Note: the assignment
+// value of `true` is not hoisted.
+function example() {
+  console.log(declaredButNotAssigned); // =&gt; undefined
+  var declaredButNotAssigned = true;
+}
+
+// the interpreter is hoisting the variable
+// declaration to the top of the scope,
+// which means our example could be rewritten as:
+function example() {
+  let declaredButNotAssigned;
+  console.log(declaredButNotAssigned); // =&gt; undefined
+  declaredButNotAssigned = true;
+}
+
+// using const and let
+function example() {
+  console.log(declaredButNotAssigned); // =&gt; throws a ReferenceError
+  console.log(typeof declaredButNotAssigned); // =&gt; throws a ReferenceError
+  const declaredButNotAssigned = true;
+}
+```
+</code></pre>
+<p><a name="hoisting--anon-expressions"></a><a name="14.2"></a><br />
+  - <a href="#hoisting--anon-expressions">14.2</a> Anonymous function expressions hoist their variable name, but not the function assignment.</p>
+<pre><code>```javascript
+function example() {
+  console.log(anonymous); // =&gt; undefined
+
+  anonymous(); // =&gt; TypeError anonymous is not a function
+
+  var anonymous = function () {
+    console.log('anonymous function expression');
+  };
+}
+```
+</code></pre>
+<p><a name="hoisting--named-expresions"></a><a name="14.3"></a><br />
+  - <a href="#hoisting--named-expresions">14.3</a> Named function expressions hoist the variable name, not the function name or the function body.</p>
+<pre><code>```javascript
+function example() {
+  console.log(named); // =&gt; undefined
+
+  named(); // =&gt; TypeError named is not a function
+
+  superPower(); // =&gt; ReferenceError superPower is not defined
+
+  var named = function superPower() {
+    console.log('Flying');
+  };
+}
+
+// the same is true when the function name
+// is the same as the variable name.
+function example() {
+  console.log(named); // =&gt; undefined
+
+  named(); // =&gt; TypeError named is not a function
+
+  var named = function named() {
+    console.log('named');
+  };
+}
+```
+</code></pre>
+<p><a name="hoisting--declarations"></a><a name="14.4"></a><br />
+  - <a href="#hoisting--declarations">14.4</a> Function declarations hoist their name and the function body.</p>
+<pre><code>```javascript
+function example() {
+  superPower(); // =&gt; Flying
+
+  function superPower() {
+    console.log('Flying');
+  }
+}
+```
+</code></pre>
+<ul>
+<li>For more information refer to <a href="http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting/">JavaScript Scoping &amp; Hoisting</a> by <a href="http://www.adequatelygood.com/">Ben Cherry</a>.</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="comparison-operators-equality"><a name="user-content-comparison-operators-equality" href="#comparison-operators-equality" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Comparison Operators &amp; Equality</h2>
+<p><a name="comparison--eqeqeq"></a><a name="15.1"></a><br />
+  - <a href="#comparison--eqeqeq">15.1</a> Use <code>===</code> and <code>!==</code> over <code>==</code> and <code>!=</code>. eslint: <a href="http://eslint.org/docs/rules/eqeqeq.html"><code>eqeqeq</code></a></p>
+<p><a name="comparison--if"></a><a name="15.2"></a><br />
+  - <a href="#comparison--if">15.2</a> Conditional statements such as the <code>if</code> statement evaluate their expression using coercion with the <code>ToBoolean</code> abstract method and always follow these simple rules:</p>
+<pre><code>+ **Objects** evaluate to **true**
++ **Undefined** evaluates to **false**
++ **Null** evaluates to **false**
++ **Booleans** evaluate to **the value of the boolean**
++ **Numbers** evaluate to **false** if **+0, -0, or NaN**, otherwise **true**
++ **Strings** evaluate to **false** if an empty string `''`, otherwise **true**
+
+```javascript
+if ([0] &amp;&amp; []) {
+  // true
+  // an array (even an empty one) is an object, objects will evaluate to true
+}
+```
+</code></pre>
+<p><a name="comparison--shortcuts"></a><a name="15.3"></a><br />
+  - <a href="#comparison--shortcuts">15.3</a> Use shortcuts for booleans, but explicit comparisons for strings and numbers.</p>
+<pre><code>```javascript
+// bad
+if (isValid === true) {
+  // ...
+}
+
+// good
+if (isValid) {
+  // ...
+}
+
+// bad
+if (name) {
+  // ...
+}
+
+// good
+if (name !== '') {
+  // ...
+}
+
+// bad
+if (collection.length) {
+  // ...
+}
+
+// good
+if (collection.length &gt; 0) {
+  // ...
+}
+```
+</code></pre>
+<p><a name="comparison--moreinfo"></a><a name="15.4"></a><br />
+  - <a href="#comparison--moreinfo">15.4</a> For more information see <a href="https://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108">Truth Equality and JavaScript</a> by Angus Croll.</p>
+<p><a name="comparison--switch-blocks"></a><a name="15.5"></a><br />
+  - <a href="#comparison--switch-blocks">15.5</a> Use braces to create blocks in <code>case</code> and <code>default</code> clauses that contain lexical declarations (e.g. <code>let</code>, <code>const</code>, <code>function</code>, and <code>class</code>).</p>
+<blockquote>
+<p>Why? Lexical declarations are visible in the entire <code>switch</code> block but only get initialized when assigned, which only happens when its <code>case</code> is reached. This causes problems when multiple <code>case</code> clauses attempt to define the same thing.</p>
+</blockquote>
+<p>eslint rules: <a href="http://eslint.org/docs/rules/no-case-declarations.html"><code>no-case-declarations</code></a>.</p>
+<pre><code>```javascript
+// bad
+switch (foo) {
+  case 1:
+    let x = 1;
+    break;
+  case 2:
+    const y = 2;
+    break;
+  case 3:
+    function f() {
+      // ...
+    }
+    break;
+  default:
+    class C {}
+}
+
+// good
+switch (foo) {
+  case 1: {
+    let x = 1;
+    break;
+  }
+  case 2: {
+    const y = 2;
+    break;
+  }
+  case 3: {
+    function f() {
+      // ...
+    }
+    break;
+  }
+  case 4:
+    bar();
+    break;
+  default: {
+    class C {}
+  }
+}
+```
+</code></pre>
+<p><a name="comparison--nested-ternaries"></a><a name="15.6"></a><br />
+  - <a href="#comparison--nested-ternaries">15.6</a> Ternaries should not be nested and generally be single line expressions.</p>
+<pre><code>eslint rules: [`no-nested-ternary`](http://eslint.org/docs/rules/no-nested-ternary.html).
+
+```javascript
+// bad
+const foo = maybe1 &gt; maybe2
+  ? "bar"
+  : value1 &gt; value2 ? "baz" : null;
+
+// better
+const maybeNull = value1 &gt; value2 ? 'baz' : null;
+
+const foo = maybe1 &gt; maybe2
+  ? 'bar'
+  : maybeNull;
+
+// best
+const maybeNull = value1 &gt; value2 ? 'baz' : null;
+
+const foo = maybe1 &gt; maybe2 ? 'bar' : maybeNull;
+```
+</code></pre>
+<p><a name="comparison--unneeded-ternary"></a><a name="15.7"></a><br />
+  - <a href="#comparison--unneeded-ternary">15.7</a> Avoid unneeded ternary statements.</p>
+<pre><code>eslint rules: [`no-unneeded-ternary`](http://eslint.org/docs/rules/no-unneeded-ternary.html).
+
+```javascript
+// bad
+const foo = a ? a : b;
+const bar = c ? true : false;
+const baz = c ? false : true;
+
+// good
+const foo = a || b;
+const bar = !!c;
+const baz = !c;
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="blocks"><a name="user-content-blocks" href="#blocks" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Blocks</h2>
+<p><a name="blocks--braces"></a><a name="16.1"></a><br />
+  - <a href="#blocks--braces">16.1</a> Use braces with all multi-line blocks.</p>
+<pre><code>```javascript
+// bad
+if (test)
+  return false;
+
+// good
+if (test) return false;
+
+// good
+if (test) {
+  return false;
+}
+
+// bad
+function foo() { return false; }
+
+// good
+function bar() {
+  return false;
+}
+```
+</code></pre>
+<p><a name="blocks--cuddled-elses"></a><a name="16.2"></a><br />
+  - <a href="#blocks--cuddled-elses">16.2</a> If you&rsquo;re using multi-line blocks with <code>if</code> and <code>else</code>, put <code>else</code> on the same line as your <code>if</code> block&rsquo;s closing brace. eslint: <a href="http://eslint.org/docs/rules/brace-style.html"><code>brace-style</code></a> jscs:  <a href="http://jscs.info/rule/disallowNewlineBeforeBlockStatements"><code>disallowNewlineBeforeBlockStatements</code></a></p>
+<pre><code>```javascript
+// bad
+if (test) {
+  thing1();
+  thing2();
+}
+else {
+  thing3();
+}
+
+// good
+if (test) {
+  thing1();
+  thing2();
+} else {
+  thing3();
+}
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="comments"><a name="user-content-comments" href="#comments" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Comments</h2>
+<p><a name="comments--multiline"></a><a name="17.1"></a><br />
+  - <a href="#comments--multiline">17.1</a> Use <code>/** ... */</code> for multi-line comments.</p>
+<pre><code>```javascript
+// bad
+// make() returns a new element
+// based on the passed in tag name
+//
+// @param {String} tag
+// @return {Element} element
+function make(tag) {
+
+  // ...
+
+  return element;
+}
+
+// good
+/**
+ * make() returns a new element
+ * based on the passed-in tag name
+ */
+function make(tag) {
+
+  // ...
+
+  return element;
+}
+```
+</code></pre>
+<p><a name="comments--singleline"></a><a name="17.2"></a><br />
+  - <a href="#comments--singleline">17.2</a> Use <code>//</code> for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment unless it&rsquo;s on the first line of a block.</p>
+<pre><code>```javascript
+// bad
+const active = true;  // is current tab
+
+// good
+// is current tab
+const active = true;
+
+// bad
+function getType() {
+  console.log('fetching type...');
+  // set the default type to 'no type'
+  const type = this._type || 'no type';
+
+  return type;
+}
+
+// good
+function getType() {
+  console.log('fetching type...');
+
+  // set the default type to 'no type'
+  const type = this._type || 'no type';
+
+  return type;
+}
+
+// also good
+function getType() {
+  // set the default type to 'no type'
+  const type = this._type || 'no type';
+
+  return type;
+}
+```
+</code></pre>
+<ul>
+<li>
+<p><a href="#comments--spaces">17.3</a> Start all comments with a space to make it easier to read. eslint: <a href="http://eslint.org/docs/rules/spaced-comment"><code>spaced-comment</code></a></p>
+<pre><code class="javascript">// bad
+//is current tab
+const active = true;
+
+// good
+// is current tab
+const active = true;
+
+// bad
+/**
+ *make() returns a new element
+ *based on the passed-in tag name
+ */
+function make(tag) {
+
+  // ...
+
+  return element;
+}
+
+// good
+/**
+ * make() returns a new element
+ * based on the passed-in tag name
+ */
+function make(tag) {
+
+  // ...
+
+  return element;
+}
+</code></pre>
+
+</li>
+</ul>
+<p><a name="comments--actionitems"></a><a name="17.3"></a><br />
+  - <a href="#comments--actionitems">17.4</a> Prefixing your comments with <code>FIXME</code> or <code>TODO</code> helps other developers quickly understand if you&rsquo;re pointing out a problem that needs to be revisited, or if you&rsquo;re suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are <code>FIXME: -- need to figure this out</code> or <code>TODO: -- need to implement</code>.</p>
+<p><a name="comments--fixme"></a><a name="17.4"></a><br />
+  - <a href="#comments--fixme">17.5</a> Use <code>// FIXME:</code> to annotate problems.</p>
+<pre><code>```javascript
+class Calculator extends Abacus {
+  constructor() {
+    super();
+
+    // FIXME: shouldn't use a global here
+    total = 0;
+  }
+}
+```
+</code></pre>
+<p><a name="comments--todo"></a><a name="17.5"></a><br />
+  - <a href="#comments--todo">17.6</a> Use <code>// TODO:</code> to annotate solutions to problems.</p>
+<pre><code>```javascript
+class Calculator extends Abacus {
+  constructor() {
+    super();
+
+    // TODO: total should be configurable by an options param
+    this.total = 0;
+  }
+}
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="whitespace"><a name="user-content-whitespace" href="#whitespace" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Whitespace</h2>
+<p><a name="whitespace--spaces"></a><a name="18.1"></a><br />
+  - <a href="#whitespace--spaces">18.1</a> Use soft tabs set to 2 spaces. eslint: <a href="http://eslint.org/docs/rules/indent.html"><code>indent</code></a> jscs: <a href="http://jscs.info/rule/validateIndentation"><code>validateIndentation</code></a></p>
+<pre><code>```javascript
+// bad
+function foo() {
+∙∙∙∙const name;
+}
+
+// bad
+function bar() {
+∙const name;
+}
+
+// good
+function baz() {
+∙∙const name;
+}
+```
+</code></pre>
+<p><a name="whitespace--before-blocks"></a><a name="18.2"></a><br />
+  - <a href="#whitespace--before-blocks">18.2</a> Place 1 space before the leading brace. eslint: <a href="http://eslint.org/docs/rules/space-before-blocks.html"><code>space-before-blocks</code></a> jscs: <a href="http://jscs.info/rule/requireSpaceBeforeBlockStatements"><code>requireSpaceBeforeBlockStatements</code></a></p>
+<pre><code>```javascript
+// bad
+function test(){
+  console.log('test');
+}
+
+// good
+function test() {
+  console.log('test');
+}
+
+// bad
+dog.set('attr',{
+  age: '1 year',
+  breed: 'Bernese Mountain Dog',
+});
+
+// good
+dog.set('attr', {
+  age: '1 year',
+  breed: 'Bernese Mountain Dog',
+});
+```
+</code></pre>
+<p><a name="whitespace--around-keywords"></a><a name="18.3"></a><br />
+  - <a href="#whitespace--around-keywords">18.3</a> Place 1 space before the opening parenthesis in control statements (<code>if</code>, <code>while</code> etc.). Place no space between the argument list and the function name in function calls and declarations. eslint: <a href="http://eslint.org/docs/rules/keyword-spacing.html"><code>keyword-spacing</code></a> jscs: <a href="http://jscs.info/rule/requireSpaceAfterKeywords"><code>requireSpaceAfterKeywords</code></a></p>
+<pre><code>```javascript
+// bad
+if(isJedi) {
+  fight ();
+}
+
+// good
+if (isJedi) {
+  fight();
+}
+
+// bad
+function fight () {
+  console.log ('Swooosh!');
+}
+
+// good
+function fight() {
+  console.log('Swooosh!');
+}
+```
+</code></pre>
+<p><a name="whitespace--infix-ops"></a><a name="18.4"></a><br />
+  - <a href="#whitespace--infix-ops">18.4</a> Set off operators with spaces. eslint: <a href="http://eslint.org/docs/rules/space-infix-ops.html"><code>space-infix-ops</code></a> jscs: <a href="http://jscs.info/rule/requireSpaceBeforeBinaryOperators"><code>requireSpaceBeforeBinaryOperators</code></a>, <a href="http://jscs.info/rule/requireSpaceAfterBinaryOperators"><code>requireSpaceAfterBinaryOperators</code></a></p>
+<pre><code>```javascript
+// bad
+const x=y+5;
+
+// good
+const x = y + 5;
+```
+</code></pre>
+<p><a name="whitespace--newline-at-end"></a><a name="18.5"></a><br />
+  - <a href="#whitespace--newline-at-end">18.5</a> End files with a single newline character. eslint: <a href="https://github.com/eslint/eslint/blob/master/docs/rules/eol-last.md"><code>eol-last</code></a></p>
+<pre><code>```javascript
+// bad
+import { es6 } from './AirbnbStyleGuide';
+  // ...
+export default es6;
+```
+
+```javascript
+// bad
+import { es6 } from './AirbnbStyleGuide';
+  // ...
+export default es6;↵
+↵
+```
+
+```javascript
+// good
+import { es6 } from './AirbnbStyleGuide';
+  // ...
+export default es6;↵
+```
+</code></pre>
+<p><a name="whitespace--chains"></a><a name="18.6"></a><br />
+  - <a href="#whitespace--chains">18.6</a> Use indentation when making long method chains (more than 2 method chains). Use a leading dot, which<br />
+    emphasizes that the line is a method call, not a new statement. eslint: <a href="http://eslint.org/docs/rules/newline-per-chained-call"><code>newline-per-chained-call</code></a> <a href="http://eslint.org/docs/rules/no-whitespace-before-property"><code>no-whitespace-before-property</code></a></p>
+<pre><code>```javascript
+// bad
+$('#items').find('.selected').highlight().end().find('.open').updateCount();
+
+// bad
+$('#items').
+  find('.selected').
+    highlight().
+    end().
+  find('.open').
+    updateCount();
+
+// good
+$('#items')
+  .find('.selected')
+    .highlight()
+    .end()
+  .find('.open')
+    .updateCount();
+
+// bad
+const leds = stage.selectAll('.led').data(data).enter().append('svg:svg').classed('led', true)
+    .attr('width', (radius + margin) * 2).append('svg:g')
+    .attr('transform', `translate(${radius + margin},${radius + margin})`)
+    .call(tron.led);
+
+// good
+const leds = stage.selectAll('.led')
+    .data(data)
+  .enter().append('svg:svg')
+    .classed('led', true)
+    .attr('width', (radius + margin) * 2)
+  .append('svg:g')
+    .attr('transform', `translate(${radius + margin},${radius + margin})`)
+    .call(tron.led);
+
+// good
+const leds = stage.selectAll('.led').data(data);
+```
+</code></pre>
+<p><a name="whitespace--after-blocks"></a><a name="18.7"></a><br />
+  - <a href="#whitespace--after-blocks">18.7</a> Leave a blank line after blocks and before the next statement. jscs: <a href="http://jscs.info/rule/requirePaddingNewLinesAfterBlocks"><code>requirePaddingNewLinesAfterBlocks</code></a></p>
+<pre><code>```javascript
+// bad
+if (foo) {
+  return bar;
+}
+return baz;
+
+// good
+if (foo) {
+  return bar;
+}
+
+return baz;
+
+// bad
+const obj = {
+  foo() {
+  },
+  bar() {
+  },
+};
+return obj;
+
+// good
+const obj = {
+  foo() {
+  },
+
+  bar() {
+  },
+};
+
+return obj;
+
+// bad
+const arr = [
+  function foo() {
+  },
+  function bar() {
+  },
+];
+return arr;
+
+// good
+const arr = [
+  function foo() {
+  },
+
+  function bar() {
+  },
+];
+
+return arr;
+```
+</code></pre>
+<p><a name="whitespace--padded-blocks"></a><a name="18.8"></a><br />
+  - <a href="#whitespace--padded-blocks">18.8</a> Do not pad your blocks with blank lines. eslint: <a href="http://eslint.org/docs/rules/padded-blocks.html"><code>padded-blocks</code></a> jscs:  <a href="http://jscs.info/rule/disallowPaddingNewlinesInBlocks"><code>disallowPaddingNewlinesInBlocks</code></a></p>
+<pre><code>```javascript
+// bad
+function bar() {
+
+  console.log(foo);
+
+}
+
+// also bad
+if (baz) {
+
+  console.log(qux);
+} else {
+  console.log(foo);
+
+}
+
+// good
+function bar() {
+  console.log(foo);
+}
+
+// good
+if (baz) {
+  console.log(qux);
+} else {
+  console.log(foo);
+}
+```
+</code></pre>
+<p><a name="whitespace--in-parens"></a><a name="18.9"></a><br />
+  - <a href="#whitespace--in-parens">18.9</a> Do not add spaces inside parentheses. eslint: <a href="http://eslint.org/docs/rules/space-in-parens.html"><code>space-in-parens</code></a> jscs: <a href="http://jscs.info/rule/disallowSpacesInsideParentheses"><code>disallowSpacesInsideParentheses</code></a></p>
+<pre><code>```javascript
+// bad
+function bar( foo ) {
+  return foo;
+}
+
+// good
+function bar(foo) {
+  return foo;
+}
+
+// bad
+if ( foo ) {
+  console.log(foo);
+}
+
+// good
+if (foo) {
+  console.log(foo);
+}
+```
+</code></pre>
+<p><a name="whitespace--in-brackets"></a><a name="18.10"></a><br />
+  - <a href="#whitespace--in-brackets">18.10</a> Do not add spaces inside brackets. eslint: <a href="http://eslint.org/docs/rules/array-bracket-spacing.html"><code>array-bracket-spacing</code></a> jscs: <a href="http://jscs.info/rule/disallowSpacesInsideArrayBrackets"><code>disallowSpacesInsideArrayBrackets</code></a></p>
+<pre><code>```javascript
+// bad
+const foo = [ 1, 2, 3 ];
+console.log(foo[ 0 ]);
+
+// good
+const foo = [1, 2, 3];
+console.log(foo[0]);
+```
+</code></pre>
+<p><a name="whitespace--in-braces"></a><a name="18.11"></a><br />
+  - <a href="#whitespace--in-braces">18.11</a> Add spaces inside curly braces. eslint: <a href="http://eslint.org/docs/rules/object-curly-spacing.html"><code>object-curly-spacing</code></a> jscs: <a href="http://jscs.info/rule/requireSpacesInsideObjectBrackets"><code>requireSpacesInsideObjectBrackets</code></a></p>
+<pre><code>```javascript
+// bad
+const foo = {clark: 'kent'};
+
+// good
+const foo = { clark: 'kent' };
+```
+</code></pre>
+<p><a name="whitespace--max-len"></a><a name="18.12"></a><br />
+  - <a href="#whitespace--max-len">18.12</a> Avoid having lines of code that are longer than 100 characters (including whitespace). Note: per <a href="#strings--line-length">above</a>, long strings are exempt from this rule, and should not be broken up. eslint: <a href="http://eslint.org/docs/rules/max-len.html"><code>max-len</code></a> jscs: <a href="http://jscs.info/rule/maximumLineLength"><code>maximumLineLength</code></a></p>
+<pre><code>&gt; Why? This ensures readability and maintainability.
+
+```javascript
+// bad
+const foo = jsonData &amp;&amp; jsonData.foo &amp;&amp; jsonData.foo.bar &amp;&amp; jsonData.foo.bar.baz &amp;&amp; jsonData.foo.bar.baz.quux &amp;&amp; jsonData.foo.bar.baz.quux.xyzzy;
+
+// bad
+$.ajax({ method: 'POST', url: 'https://airbnb.com/', data: { name: 'John' } }).done(() =&gt; console.log('Congratulations!')).fail(() =&gt; console.log('You have failed this city.'));
+
+// good
+const foo = jsonData
+  &amp;&amp; jsonData.foo
+  &amp;&amp; jsonData.foo.bar
+  &amp;&amp; jsonData.foo.bar.baz
+  &amp;&amp; jsonData.foo.bar.baz.quux
+  &amp;&amp; jsonData.foo.bar.baz.quux.xyzzy;
+
+// good
+$.ajax({
+  method: 'POST',
+  url: 'https://airbnb.com/',
+  data: { name: 'John' },
+})
+  .done(() =&gt; console.log('Congratulations!'))
+  .fail(() =&gt; console.log('You have failed this city.'));
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="commas"><a name="user-content-commas" href="#commas" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Commas</h2>
+<p><a name="commas--leading-trailing"></a><a name="19.1"></a><br />
+  - <a href="#commas--leading-trailing">19.1</a> Leading commas: <strong>Nope.</strong> eslint: <a href="http://eslint.org/docs/rules/comma-style.html"><code>comma-style</code></a> jscs: <a href="http://jscs.info/rule/requireCommaBeforeLineBreak"><code>requireCommaBeforeLineBreak</code></a></p>
+<pre><code>```javascript
+// bad
+const story = [
+    once
+  , upon
+  , aTime
+];
+
+// good
+const story = [
+  once,
+  upon,
+  aTime,
+];
+
+// bad
+const hero = {
+    firstName: 'Ada'
+  , lastName: 'Lovelace'
+  , birthYear: 1815
+  , superPower: 'computers'
+};
+
+// good
+const hero = {
+  firstName: 'Ada',
+  lastName: 'Lovelace',
+  birthYear: 1815,
+  superPower: 'computers',
+};
+```
+</code></pre>
+<p><a name="commas--dangling"></a><a name="19.2"></a><br />
+  - <a href="#commas--dangling">19.2</a> Additional trailing comma: <strong>Yup.</strong> eslint: <a href="http://eslint.org/docs/rules/comma-dangle.html"><code>comma-dangle</code></a> jscs: <a href="http://jscs.info/rule/requireTrailingComma"><code>requireTrailingComma</code></a></p>
+<pre><code>&gt; Why? This leads to cleaner git diffs. Also, transpilers like Babel will remove the additional trailing comma in the transpiled code which means you don't have to worry about the [trailing comma problem](https://github.com/airbnb/javascript/blob/es5-deprecated/es5/README.md#commas) in legacy browsers.
+
+```diff
+// bad - git diff without trailing comma
+const hero = {
+     firstName: 'Florence',
+-    lastName: 'Nightingale'
++    lastName: 'Nightingale',
++    inventorOf: ['coxcomb chart', 'modern nursing']
+};
+
+// good - git diff with trailing comma
+const hero = {
+     firstName: 'Florence',
+     lastName: 'Nightingale',
++    inventorOf: ['coxcomb chart', 'modern nursing'],
+};
+```
+
+```javascript
+// bad
+const hero = {
+  firstName: 'Dana',
+  lastName: 'Scully'
+};
+
+const heroes = [
+  'Batman',
+  'Superman'
+];
+
+// good
+const hero = {
+  firstName: 'Dana',
+  lastName: 'Scully',
+};
+
+const heroes = [
+  'Batman',
+  'Superman',
+];
+
+// bad
+function createHero(
+  firstName,
+  lastName,
+  inventorOf
+) {
+  // does nothing
+}
+
+// good
+function createHero(
+  firstName,
+  lastName,
+  inventorOf,
+) {
+  // does nothing
+}
+
+// good (note that a comma must not appear after a "rest" element)
+function createHero(
+  firstName,
+  lastName,
+  inventorOf,
+  ...heroArgs
+) {
+  // does nothing
+}
+
+// bad
+createHero(
+  firstName,
+  lastName,
+  inventorOf
+);
+
+// good
+createHero(
+  firstName,
+  lastName,
+  inventorOf,
+);
+
+// good (note that a comma must not appear after a "rest" element)
+createHero(
+  firstName,
+  lastName,
+  inventorOf,
+  ...heroArgs
+)
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="semicolons"><a name="user-content-semicolons" href="#semicolons" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Semicolons</h2>
+<p><a name="semicolons--required"></a><a name="20.1"></a><br />
+  - <a href="#20.1">20.1</a> <strong>Yup.</strong> eslint: <a href="http://eslint.org/docs/rules/semi.html"><code>semi</code></a> jscs: <a href="http://jscs.info/rule/requireSemicolons"><code>requireSemicolons</code></a></p>
+<pre><code>```javascript
+// bad
+(function () {
+  const name = 'Skywalker'
+  return name
+})()
+
+// good
+(function () {
+  const name = 'Skywalker';
+  return name;
+}());
+
+// good, but legacy (guards against the function becoming an argument when two files with IIFEs are concatenated)
+;(() =&gt; {
+  const name = 'Skywalker';
+  return name;
+}());
+```
+
+[Read more](https://stackoverflow.com/questions/7365172/semicolon-before-self-invoking-function/7365214%237365214).
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="type-casting-coercion"><a name="user-content-type-casting-coercion" href="#type-casting-coercion" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Type Casting &amp; Coercion</h2>
+<p><a name="coercion--explicit"></a><a name="21.1"></a><br />
+  - <a href="#coercion--explicit">21.1</a> Perform type coercion at the beginning of the statement.</p>
+<p><a name="coercion--strings"></a><a name="21.2"></a><br />
+  - <a href="#coercion--strings">21.2</a>  Strings:</p>
+<pre><code>```javascript
+// =&gt; this.reviewScore = 9;
+
+// bad
+const totalScore = this.reviewScore + ''; // invokes this.reviewScore.valueOf()
+
+// bad
+const totalScore = this.reviewScore.toString(); // isn't guaranteed to return a string
+
+// good
+const totalScore = String(this.reviewScore);
+```
+</code></pre>
+<p><a name="coercion--numbers"></a><a name="21.3"></a><br />
+  - <a href="#coercion--numbers">21.3</a> Numbers: Use <code>Number</code> for type casting and <code>parseInt</code> always with a radix for parsing strings. eslint: <a href="http://eslint.org/docs/rules/radix"><code>radix</code></a></p>
+<pre><code>```javascript
+const inputValue = '4';
+
+// bad
+const val = new Number(inputValue);
+
+// bad
+const val = +inputValue;
+
+// bad
+const val = inputValue &gt;&gt; 0;
+
+// bad
+const val = parseInt(inputValue);
+
+// good
+const val = Number(inputValue);
+
+// good
+const val = parseInt(inputValue, 10);
+```
+</code></pre>
+<p><a name="coercion--comment-deviations"></a><a name="21.4"></a><br />
+  - <a href="#coercion--comment-deviations">21.4</a> If for whatever reason you are doing something wild and <code>parseInt</code> is your bottleneck and need to use Bitshift for <a href="https://jsperf.com/coercion-vs-casting/3">performance reasons</a>, leave a comment explaining why and what you&rsquo;re doing.</p>
+<pre><code>```javascript
+// good
+/**
+ * parseInt was the reason my code was slow.
+ * Bitshifting the String to coerce it to a
+ * Number made it a lot faster.
+ */
+const val = inputValue &gt;&gt; 0;
+```
+</code></pre>
+<p><a name="coercion--bitwise"></a><a name="21.5"></a><br />
+  - <a href="#coercion--bitwise">21.5</a> <strong>Note:</strong> Be careful when using bitshift operations. Numbers are represented as <a href="https://es5.github.io/#x4.3.19">64-bit values</a>, but bitshift operations always return a 32-bit integer (<a href="https://es5.github.io/#x11.7">source</a>). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. <a href="https://github.com/airbnb/javascript/issues/109">Discussion</a>. Largest signed 32-bit Int is 2,147,483,647:</p>
+<pre><code>```javascript
+2147483647 &gt;&gt; 0 //=&gt; 2147483647
+2147483648 &gt;&gt; 0 //=&gt; -2147483648
+2147483649 &gt;&gt; 0 //=&gt; -2147483647
+```
+</code></pre>
+<p><a name="coercion--booleans"></a><a name="21.6"></a><br />
+  - <a href="#coercion--booleans">21.6</a> Booleans:</p>
+<pre><code>```javascript
+const age = 0;
+
+// bad
+const hasAge = new Boolean(age);
+
+// good
+const hasAge = Boolean(age);
+
+// best
+const hasAge = !!age;
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="naming-conventions"><a name="user-content-naming-conventions" href="#naming-conventions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Naming Conventions</h2>
+<p><a name="naming--descriptive"></a><a name="22.1"></a><br />
+  - <a href="#naming--descriptive">22.1</a> Avoid single letter names. Be descriptive with your naming. eslint: <a href="http://eslint.org/docs/rules/id-length"><code>id-length</code></a></p>
+<pre><code>```javascript
+// bad
+function q() {
+  // ...
+}
+
+// good
+function query() {
+  // ...
+}
+```
+</code></pre>
+<p><a name="naming--camelCase"></a><a name="22.2"></a><br />
+  - <a href="#naming--camelCase">22.2</a> Use camelCase when naming objects, functions, and instances. eslint: <a href="http://eslint.org/docs/rules/camelcase.html"><code>camelcase</code></a> jscs: <a href="http://jscs.info/rule/requireCamelCaseOrUpperCaseIdentifiers"><code>requireCamelCaseOrUpperCaseIdentifiers</code></a></p>
+<pre><code>```javascript
+// bad
+const OBJEcttsssss = {};
+const this_is_my_object = {};
+function c() {}
+
+// good
+const thisIsMyObject = {};
+function thisIsMyFunction() {}
+```
+</code></pre>
+<p><a name="naming--PascalCase"></a><a name="22.3"></a><br />
+  - <a href="#naming--PascalCase">22.3</a> Use PascalCase only when naming constructors or classes. eslint: <a href="http://eslint.org/docs/rules/new-cap.html"><code>new-cap</code></a> jscs: <a href="http://jscs.info/rule/requireCapitalizedConstructors"><code>requireCapitalizedConstructors</code></a></p>
+<pre><code>```javascript
+// bad
+function user(options) {
+  this.name = options.name;
+}
+
+const bad = new user({
+  name: 'nope',
+});
+
+// good
+class User {
+  constructor(options) {
+    this.name = options.name;
+  }
+}
+
+const good = new User({
+  name: 'yup',
+});
+```
+</code></pre>
+<p><a name="naming--leading-underscore"></a><a name="22.4"></a><br />
+  - <a href="#naming--leading-underscore">22.4</a> Do not use trailing or leading underscores. eslint: <a href="http://eslint.org/docs/rules/no-underscore-dangle.html"><code>no-underscore-dangle</code></a> jscs: <a href="http://jscs.info/rule/disallowDanglingUnderscores"><code>disallowDanglingUnderscores</code></a></p>
+<pre><code>&gt; Why? JavaScript does not have the concept of privacy in terms of properties or methods. Although a leading underscore is a common convention to mean “private”, in fact, these properties are fully public, and as such, are part of your public API contract. This convention might lead developers to wrongly think that a change won't count as breaking, or that tests aren't needed. tl;dr: if you want something to be “private”, it must not be observably present.
+
+```javascript
+// bad
+this.__firstName__ = 'Panda';
+this.firstName_ = 'Panda';
+this._firstName = 'Panda';
+
+// good
+this.firstName = 'Panda';
+```
+</code></pre>
+<p><a name="naming--self-this"></a><a name="22.5"></a><br />
+  - <a href="#naming--self-this">22.5</a> Don&rsquo;t save references to <code>this</code>. Use arrow functions or <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">Function#bind</a>. jscs: <a href="http://jscs.info/rule/disallowNodeTypes"><code>disallowNodeTypes</code></a></p>
+<pre><code>```javascript
+// bad
+function foo() {
+  const self = this;
+  return function () {
+    console.log(self);
+  };
+}
+
+// bad
+function foo() {
+  const that = this;
+  return function () {
+    console.log(that);
+  };
+}
+
+// good
+function foo() {
+  return () =&gt; {
+    console.log(this);
+  };
+}
+```
+</code></pre>
+<p><a name="naming--filename-matches-export"></a><a name="22.6"></a><br />
+  - <a href="#naming--filename-matches-export">22.6</a> A base filename should exactly match the name of its default export.</p>
+<pre><code>```javascript
+// file 1 contents
+class CheckBox {
+  // ...
+}
+export default CheckBox;
+
+// file 2 contents
+export default function fortyTwo() { return 42; }
+
+// file 3 contents
+export default function insideDirectory() {}
+
+// in some other file
+// bad
+import CheckBox from './checkBox'; // PascalCase import/export, camelCase filename
+import FortyTwo from './FortyTwo'; // PascalCase import/filename, camelCase export
+import InsideDirectory from './InsideDirectory'; // PascalCase import/filename, camelCase export
+
+// bad
+import CheckBox from './check_box'; // PascalCase import/export, snake_case filename
+import forty_two from './forty_two'; // snake_case import/filename, camelCase export
+import inside_directory from './inside_directory'; // snake_case import, camelCase export
+import index from './inside_directory/index'; // requiring the index file explicitly
+import insideDirectory from './insideDirectory/index'; // requiring the index file explicitly
+
+// good
+import CheckBox from './CheckBox'; // PascalCase export/import/filename
+import fortyTwo from './fortyTwo'; // camelCase export/import/filename
+import insideDirectory from './insideDirectory'; // camelCase export/import/directory name/implicit "index"
+// ^ supports both insideDirectory.js and insideDirectory/index.js
+```
+</code></pre>
+<p><a name="naming--camelCase-default-export"></a><a name="22.7"></a><br />
+  - <a href="#naming--camelCase-default-export">22.7</a> Use camelCase when you export-default a function. Your filename should be identical to your function&rsquo;s name.</p>
+<pre><code>```javascript
+function makeStyleGuide() {
+  // ...
+}
+
+export default makeStyleGuide;
+```
+</code></pre>
+<p><a name="naming--PascalCase-singleton"></a><a name="22.8"></a><br />
+  - <a href="#naming--PascalCase-singleton">22.8</a> Use PascalCase when you export a constructor / class / singleton / function library / bare object.</p>
+<pre><code>```javascript
+const AirbnbStyleGuide = {
+  es6: {
+  }
+};
+
+export default AirbnbStyleGuide;
+```
+</code></pre>
+<p><a name="naming--Acronyms-and-Initialisms"></a><br />
+  - <a href="#naming--Acronyms-and-Initialisms">22.9</a> Acronyms and initialisms should always be all capitalized, or all lowercased.</p>
+<pre><code>&gt; Why? Names are for readability, not to appease a computer algorithm.
+
+```javascript
+// bad
+import SmsContainer from './containers/SmsContainer';
+
+// bad
+const HttpRequests = [
+  // ...
+];
+
+// good
+import SMSContainer from './containers/SMSContainer';
+
+// good
+const HTTPRequests = [
+  // ...
+];
+
+// best
+import TextMessageContainer from './containers/TextMessageContainer';
+
+// best
+const Requests = [
+  // ...
+];
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="accessors"><a name="user-content-accessors" href="#accessors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Accessors</h2>
+<p><a name="accessors--not-required"></a><a name="23.1"></a><br />
+  - <a href="#accessors--not-required">23.1</a> Accessor functions for properties are not required.</p>
+<p><a name="accessors--no-getters-setters"></a><a name="23.2"></a><br />
+  - <a href="#accessors--no-getters-setters">23.2</a> Do not use JavaScript getters/setters as they cause unexpected side effects and are harder to test, maintain, and reason about. Instead, if you do make accessor functions, use getVal() and setVal(&lsquo;hello&rsquo;).</p>
+<pre><code>```javascript
+// bad
+class Dragon {
+  get age() {
+    // ...
+  }
+
+  set age(value) {
+    // ...
+  }
+}
+
+// good
+class Dragon {
+  getAge() {
+    // ...
+  }
+
+  setAge(value) {
+    // ...
+  }
+}
+```
+</code></pre>
+<p><a name="accessors--boolean-prefix"></a><a name="23.3"></a><br />
+  - <a href="#accessors--boolean-prefix">23.3</a> If the property/method is a <code>boolean</code>, use <code>isVal()</code> or <code>hasVal()</code>.</p>
+<pre><code>```javascript
+// bad
+if (!dragon.age()) {
+  return false;
+}
+
+// good
+if (!dragon.hasAge()) {
+  return false;
+}
+```
+</code></pre>
+<p><a name="accessors--consistent"></a><a name="23.4"></a><br />
+  - <a href="#accessors--consistent">23.4</a> It&rsquo;s okay to create get() and set() functions, but be consistent.</p>
+<pre><code>```javascript
+class Jedi {
+  constructor(options = {}) {
+    const lightsaber = options.lightsaber || 'blue';
+    this.set('lightsaber', lightsaber);
+  }
+
+  set(key, val) {
+    this[key] = val;
+  }
+
+  get(key) {
+    return this[key];
+  }
+}
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="events"><a name="user-content-events" href="#events" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Events</h2>
+<p><a name="events--hash"></a><a name="24.1"></a><br />
+  - <a href="#events--hash">24.1</a> When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:</p>
+<pre><code>```javascript
+// bad
+$(this).trigger('listingUpdated', listing.id);
+
+...
+
+$(this).on('listingUpdated', (e, listingId) =&gt; {
+  // do something with listingId
+});
+```
+
+prefer:
+
+```javascript
+// good
+$(this).trigger('listingUpdated', { listingId: listing.id });
+
+...
+
+$(this).on('listingUpdated', (e, data) =&gt; {
+  // do something with data.listingId
+});
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="jquery"><a name="user-content-jquery" href="#jquery" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>jQuery</h2>
+<p><a name="jquery--dollar-prefix"></a><a name="25.1"></a><br />
+  - <a href="#jquery--dollar-prefix">25.1</a> Prefix jQuery object variables with a <code>$</code>. jscs: <a href="http://jscs.info/rule/requireDollarBeforejQueryAssignment"><code>requireDollarBeforejQueryAssignment</code></a></p>
+<pre><code>```javascript
+// bad
+const sidebar = $('.sidebar');
+
+// good
+const $sidebar = $('.sidebar');
+
+// good
+const $sidebarBtn = $('.sidebar-btn');
+```
+</code></pre>
+<p><a name="jquery--cache"></a><a name="25.2"></a><br />
+  - <a href="#jquery--cache">25.2</a> Cache jQuery lookups.</p>
+<pre><code>```javascript
+// bad
+function setSidebar() {
+  $('.sidebar').hide();
+
+  // ...
+
+  $('.sidebar').css({
+    'background-color': 'pink'
+  });
+}
+
+// good
+function setSidebar() {
+  const $sidebar = $('.sidebar');
+  $sidebar.hide();
+
+  // ...
+
+  $sidebar.css({
+    'background-color': 'pink'
+  });
+}
+```
+</code></pre>
+<p><a name="jquery--queries"></a><a name="25.3"></a><br />
+  - <a href="#jquery--queries">25.3</a> For DOM queries use Cascading <code>$('.sidebar ul')</code> or parent &gt; child <code>$('.sidebar &gt; ul')</code>. <a href="http://jsperf.com/jquery-find-vs-context-sel/16">jsPerf</a></p>
+<p><a name="jquery--find"></a><a name="25.4"></a><br />
+  - <a href="#jquery--find">25.4</a> Use <code>find</code> with scoped jQuery object queries.</p>
+<pre><code>```javascript
+// bad
+$('ul', '.sidebar').hide();
+
+// bad
+$('.sidebar').find('ul').hide();
+
+// good
+$('.sidebar ul').hide();
+
+// good
+$('.sidebar &gt; ul').hide();
+
+// good
+$sidebar.find('ul').hide();
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="ecmascript-5-compatibility"><a name="user-content-ecmascript-5-compatibility" href="#ecmascript-5-compatibility" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ECMAScript 5 Compatibility</h2>
+<p><a name="es5-compat--kangax"></a><a name="26.1"></a><br />
+  - <a href="#es5-compat--kangax">26.1</a> Refer to <a href="https://twitter.com/kangax/">Kangax</a>&lsquo;s ES5 <a href="https://kangax.github.io/es5-compat-table/">compatibility table</a>.</p>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<p><a name="ecmascript-6-styles"></a></p>
+<h2 id="ecmascript-6-es-2015-styles"><a name="user-content-ecmascript-6-es-2015-styles" href="#ecmascript-6-es-2015-styles" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ECMAScript 6+ (ES 2015+) Styles</h2>
+<p><a name="es6-styles"></a><a name="27.1"></a><br />
+  - <a href="#es6-styles">27.1</a> This is a collection of links to the various ES6 features.</p>
+<ol>
+<li><a href="#arrow-functions">Arrow Functions</a></li>
+<li><a href="#classes--constructors">Classes</a></li>
+<li><a href="#es6-object-shorthand">Object Shorthand</a></li>
+<li><a href="#es6-object-concise">Object Concise</a></li>
+<li><a href="#es6-computed-properties">Object Computed Properties</a></li>
+<li><a href="#es6-template-literals">Template Strings</a></li>
+<li><a href="#destructuring">Destructuring</a></li>
+<li><a href="#es6-default-parameters">Default Parameters</a></li>
+<li><a href="#es6-rest">Rest</a></li>
+<li><a href="#es6-array-spreads">Array Spreads</a></li>
+<li><a href="#references">Let and Const</a></li>
+<li><a href="#iterators-and-generators">Iterators and Generators</a></li>
+<li><a href="#modules">Modules</a></li>
+</ol>
+<p><a name="tc39-proposals"></a><br />
+  - <a href="#tc39-proposals">27.2</a> Do not use <a href="https://github.com/tc39/proposals">TC39 proposals</a> that have not reached stage 3.</p>
+<pre><code>&gt; Why? [They are not finalized](https://tc39.github.io/process-document/), and they are subject to change or to be withdrawn entirely. We want to use JavaScript, and proposals are not JavaScript yet.
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="testing"><a name="user-content-testing" href="#testing" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Testing</h2>
+<p><a name="testing--yup"></a><a name="28.1"></a><br />
+  - <a href="#testing--yup">28.1</a> <strong>Yup.</strong></p>
+<pre><code>```javascript
+function foo() {
+  return true;
+}
+```
+</code></pre>
+<p><a name="testing--for-real"></a><a name="28.2"></a><br />
+  - <a href="#testing--for-real">28.2</a> <strong>No, but seriously</strong>:<br />
+   - Whichever testing framework you use, you should be writing tests!<br />
+   - Strive to write many small pure functions, and minimize where mutations occur.<br />
+   - Be cautious about stubs and mocks - they can make your tests more brittle.<br />
+   - We primarily use <a href="https://www.npmjs.com/package/mocha"><code>mocha</code></a> at Airbnb. <a href="https://www.npmjs.com/package/tape"><code>tape</code></a> is also used occasionally for small, separate modules.<br />
+   - 100% test coverage is a good goal to strive for, even if it&rsquo;s not always practical to reach it.<br />
+   - Whenever you fix a bug, <em>write a regression test</em>. A bug fixed without a regression test is almost certainly going to break again in the future.</p>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="performance"><a name="user-content-performance" href="#performance" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Performance</h2>
+<ul>
+<li><a href="https://www.kellegous.com/j/2013/01/26/layout-performance/">On Layout &amp; Web Performance</a></li>
+<li><a href="https://jsperf.com/string-vs-array-concat/2">String vs Array Concat</a></li>
+<li><a href="https://jsperf.com/try-catch-in-loop-cost">Try/Catch Cost In a Loop</a></li>
+<li><a href="https://jsperf.com/bang-function">Bang Function</a></li>
+<li><a href="https://jsperf.com/jquery-find-vs-context-sel/13">jQuery Find vs Context, Selector</a></li>
+<li><a href="https://jsperf.com/innerhtml-vs-textcontent-for-script-text">innerHTML vs textContent for script text</a></li>
+<li><a href="https://jsperf.com/ya-string-concat">Long String Concatenation</a></li>
+<li><a href="https://www.quora.com/JavaScript-programming-language-Are-Javascript-functions-like-map-reduce-and-filter-already-optimized-for-traversing-array/answer/Quildreen-Motta">Are Javascript functions like <code>map()</code>, <code>reduce()</code>, and <code>filter()</code> optimized for traversing arrays?</a></li>
+<li>Loading&hellip;</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="resources"><a name="user-content-resources" href="#resources" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Resources</h2>
+<p><strong>Learning ES6</strong></p>
+<ul>
+<li><a href="https://people.mozilla.org/~jorendorff/es6-draft.html">Draft ECMA 2015 (ES6) Spec</a></li>
+<li><a href="http://exploringjs.com/">ExploringJS</a></li>
+<li><a href="https://kangax.github.io/compat-table/es6/">ES6 Compatibility Table</a></li>
+<li><a href="http://es6-features.org/">Comprehensive Overview of ES6 Features</a></li>
+</ul>
+<p><strong>Read This</strong></p>
+<ul>
+<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html">Standard ECMA-262</a></li>
+</ul>
+<p><strong>Tools</strong></p>
+<ul>
+<li>Code Style Linters<ul>
+<li><a href="http://eslint.org/">ESlint</a> - <a href="https://github.com/airbnb/javascript/blob/master/linters/.eslintrc">Airbnb Style .eslintrc</a></li>
+<li><a href="http://jshint.com/">JSHint</a> - <a href="https://github.com/airbnb/javascript/blob/master/linters/.jshintrc">Airbnb Style .jshintrc</a></li>
+<li><a href="https://github.com/jscs-dev/node-jscs">JSCS</a> - <a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/airbnb.json">Airbnb Style Preset</a></li>
+</ul>
+</li>
+</ul>
+<p><strong>Other Style Guides</strong></p>
+<ul>
+<li><a href="https://google.github.io/styleguide/javascriptguide.xml">Google JavaScript Style Guide</a></li>
+<li><a href="https://contribute.jquery.org/style-guide/js/">jQuery Core Style Guidelines</a></li>
+<li><a href="https://github.com/rwaldron/idiomatic.js">Principles of Writing Consistent, Idiomatic JavaScript</a></li>
+</ul>
+<p><strong>Other Styles</strong></p>
+<ul>
+<li><a href="https://gist.github.com/cjohansen/4135065">Naming this in nested functions</a> - Christian Johansen</li>
+<li><a href="https://github.com/airbnb/javascript/issues/52">Conditional Callbacks</a> - Ross Allen</li>
+<li><a href="http://sideeffect.kr/popularconvention/#javascript">Popular JavaScript Coding Conventions on GitHub</a> - JeongHoon Byun</li>
+<li><a href="http://benalman.com/news/2012/05/multiple-var-statements-javascript/">Multiple var statements in JavaScript, not superfluous</a> - Ben Alman</li>
+</ul>
+<p><strong>Further Reading</strong></p>
+<ul>
+<li><a href="https://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/">Understanding JavaScript Closures</a> - Angus Croll</li>
+<li><a href="http://www.2ality.com/2013/06/basic-javascript.html">Basic JavaScript for the impatient programmer</a> - Dr. Axel Rauschmayer</li>
+<li><a href="http://youmightnotneedjquery.com/">You Might Not Need jQuery</a> - Zack Bloom &amp; Adam Schwartz</li>
+<li><a href="https://github.com/lukehoban/es6features">ES6 Features</a> - Luke Hoban</li>
+<li><a href="https://github.com/bendc/frontend-guidelines">Frontend Guidelines</a> - Benjamin De Cock</li>
+</ul>
+<p><strong>Books</strong></p>
+<ul>
+<li><a href="https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742">JavaScript: The Good Parts</a> - Douglas Crockford</li>
+<li><a href="https://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752">JavaScript Patterns</a> - Stoyan Stefanov</li>
+<li><a href="https://www.amazon.com/JavaScript-Design-Patterns-Recipes-Problem-Solution/dp/159059908X">Pro JavaScript Design Patterns</a>  - Ross Harmes and Dustin Diaz</li>
+<li><a href="https://www.amazon.com/High-Performance-Web-Sites-Essential/dp/0596529309">High Performance Web Sites: Essential Knowledge for Front-End Engineers</a> - Steve Souders</li>
+<li><a href="https://www.amazon.com/Maintainable-JavaScript-Nicholas-C-Zakas/dp/1449327680">Maintainable JavaScript</a> - Nicholas C. Zakas</li>
+<li><a href="https://www.amazon.com/JavaScript-Web-Applications-Alex-MacCaw/dp/144930351X">JavaScript Web Applications</a> - Alex MacCaw</li>
+<li><a href="https://www.amazon.com/Pro-JavaScript-Techniques-John-Resig/dp/1590597273">Pro JavaScript Techniques</a> - John Resig</li>
+<li><a href="https://www.amazon.com/Smashing-Node-js-JavaScript-Everywhere-Magazine/dp/1119962595">Smashing Node.js: JavaScript Everywhere</a> - Guillermo Rauch</li>
+<li><a href="https://www.amazon.com/Secrets-JavaScript-Ninja-John-Resig/dp/193398869X">Secrets of the JavaScript Ninja</a> - John Resig and Bear Bibeault</li>
+<li><a href="http://humanjavascript.com/">Human JavaScript</a> - Henrik Joreteg</li>
+<li><a href="http://superherojs.com/">Superhero.js</a> - Kim Joar Bekkelund, Mads Mobæk, &amp; Olav Bjorkoy</li>
+<li><a href="http://jsbooks.revolunet.com/">JSBooks</a> - Julien Bouquillon</li>
+<li><a href="https://www.manning.com/books/third-party-javascript">Third Party JavaScript</a> - Ben Vinegar and Anton Kovalyov</li>
+<li><a href="http://amzn.com/0321812182">Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript</a> - David Herman</li>
+<li><a href="http://eloquentjavascript.net/">Eloquent JavaScript</a> - Marijn Haverbeke</li>
+<li><a href="http://shop.oreilly.com/product/0636920033769.do">You Don&rsquo;t Know JS: ES6 &amp; Beyond</a> - Kyle Simpson</li>
+</ul>
+<p><strong>Blogs</strong></p>
+<ul>
+<li><a href="http://javascriptweekly.com/">JavaScript Weekly</a></li>
+<li><a href="https://javascriptweblog.wordpress.com/">JavaScript, JavaScript&hellip;</a></li>
+<li><a href="https://bocoup.com/weblog">Bocoup Weblog</a></li>
+<li><a href="http://www.adequatelygood.com/">Adequately Good</a></li>
+<li><a href="https://www.nczonline.net/">NCZOnline</a></li>
+<li><a href="http://perfectionkills.com/">Perfection Kills</a></li>
+<li><a href="http://benalman.com/">Ben Alman</a></li>
+<li><a href="http://dmitry.baranovskiy.com/">Dmitry Baranovskiy</a></li>
+<li><a href="http://dustindiaz.com/">Dustin Diaz</a></li>
+<li><a href="http://code.tutsplus.com/?s=javascript">nettuts</a></li>
+</ul>
+<p><strong>Podcasts</strong></p>
+<ul>
+<li><a href="https://javascriptair.com/">JavaScript Air</a></li>
+<li><a href="https://devchat.tv/js-jabber/">JavaScript Jabber</a></li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="in-the-wild"><a name="user-content-in-the-wild" href="#in-the-wild" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>In the Wild</h2>
+<p>This is a list of organizations that are using this style guide. Send us a pull request and we&rsquo;ll add you to the list.</p>
+<ul>
+<li><strong>3blades</strong>: <a href="https://github.com/3blades/javascript">3Blades/javascript</a></li>
+<li><strong>4Catalyzer</strong>: <a href="https://github.com/4Catalyzer/javascript">4Catalyzer/javascript</a></li>
+<li><strong>Aan Zee</strong>: <a href="https://github.com/AanZee/javascript">AanZee/javascript</a></li>
+<li><strong>Adult Swim</strong>: <a href="https://github.com/adult-swim/javascript">adult-swim/javascript</a></li>
+<li><strong>Airbnb</strong>: <a href="https://github.com/airbnb/javascript">airbnb/javascript</a></li>
+<li><strong>Apartmint</strong>: <a href="https://github.com/apartmint/javascript">apartmint/javascript</a></li>
+<li><strong>Ascribe</strong>: <a href="https://github.com/ascribe/javascript">ascribe/javascript</a></li>
+<li><strong>Avalara</strong>: <a href="https://github.com/avalara/javascript">avalara/javascript</a></li>
+<li><strong>Avant</strong>: <a href="https://github.com/avantcredit/javascript">avantcredit/javascript</a></li>
+<li><strong>BashPros</strong>: <a href="https://github.com/BashPros/javascript">BashPros/javascript</a></li>
+<li><strong>Billabong</strong>: <a href="https://github.com/billabong/javascript">billabong/javascript</a></li>
+<li><strong>Bisk</strong>: <a href="https://github.com/Bisk/javascript/">bisk/javascript</a></li>
+<li><strong>Blendle</strong>: <a href="https://github.com/blendle/javascript">blendle/javascript</a></li>
+<li><strong>Bonhomme</strong>: <a href="https://github.com/bonhommeparis/javascript">bonhommeparis/javascript</a></li>
+<li><strong>Brainshark</strong>: <a href="https://github.com/brainshark/javascript">brainshark/javascript</a></li>
+<li><strong>Chartboost</strong>: <a href="https://github.com/ChartBoost/javascript-style-guide">ChartBoost/javascript-style-guide</a></li>
+<li><strong>ComparaOnline</strong>: <a href="https://github.com/comparaonline/javascript-style-guide">comparaonline/javascript</a></li>
+<li><strong>Compass Learning</strong>: <a href="https://github.com/compasslearning/javascript-style-guide">compasslearning/javascript-style-guide</a></li>
+<li><strong>DailyMotion</strong>: <a href="https://github.com/dailymotion/javascript">dailymotion/javascript</a></li>
+<li><strong>DoSomething</strong>: <a href="https://github.com/DoSomething/eslint-config">DoSomething/eslint-config</a></li>
+<li><strong>Digitpaint</strong> <a href="https://github.com/digitpaint/javascript">digitpaint/javascript</a></li>
+<li><strong>Ecosia</strong>: <a href="https://github.com/ecosia/javascript">ecosia/javascript</a></li>
+<li><strong>Evernote</strong>: <a href="https://github.com/evernote/javascript-style-guide">evernote/javascript-style-guide</a></li>
+<li><strong>Evolution Gaming</strong>: <a href="https://github.com/evolution-gaming/javascript">evolution-gaming/javascript</a></li>
+<li><strong>EvozonJs</strong>: <a href="https://github.com/evozonjs/javascript">evozonjs/javascript</a></li>
+<li><strong>ExactTarget</strong>: <a href="https://github.com/ExactTarget/javascript">ExactTarget/javascript</a></li>
+<li><strong>Expensify</strong> <a href="https://github.com/Expensify/Style-Guide/blob/master/javascript.md">Expensify/Style-Guide</a></li>
+<li><strong>Flexberry</strong>: <a href="https://github.com/Flexberry/javascript-style-guide">Flexberry/javascript-style-guide</a></li>
+<li><strong>Gawker Media</strong>: <a href="https://github.com/gawkermedia/javascript">gawkermedia/javascript</a></li>
+<li><strong>General Electric</strong>: <a href="https://github.com/GeneralElectric/javascript">GeneralElectric/javascript</a></li>
+<li><strong>GoodData</strong>: <a href="https://github.com/gooddata/gdc-js-style">gooddata/gdc-js-style</a></li>
+<li><strong>Grooveshark</strong>: <a href="https://github.com/grooveshark/javascript">grooveshark/javascript</a></li>
+<li><strong>How About We</strong>: <a href="https://github.com/howaboutwe/javascript-style-guide">howaboutwe/javascript</a></li>
+<li><strong>Huballin</strong>: <a href="https://github.com/huballin/javascript">huballin/javascript</a></li>
+<li><strong>HubSpot</strong>: <a href="https://github.com/HubSpot/javascript">HubSpot/javascript</a></li>
+<li><strong>Hyper</strong>: <a href="https://github.com/hyperoslo/javascript-playbook/blob/master/style.md">hyperoslo/javascript-playbook</a></li>
+<li><strong>InfoJobs</strong>: <a href="https://github.com/InfoJobs/JavaScript-Style-Guide">InfoJobs/JavaScript-Style-Guide</a></li>
+<li><strong>Intent Media</strong>: <a href="https://github.com/intentmedia/javascript">intentmedia/javascript</a></li>
+<li><strong>Jam3</strong>: <a href="https://github.com/Jam3/Javascript-Code-Conventions">Jam3/Javascript-Code-Conventions</a></li>
+<li><strong>JeopardyBot</strong>: <a href="https://github.com/kesne/jeopardy-bot/blob/master/STYLEGUIDE.md">kesne/jeopardy-bot</a></li>
+<li><strong>JSSolutions</strong>: <a href="https://github.com/JSSolutions/javascript">JSSolutions/javascript</a></li>
+<li><strong>KickorStick</strong>: <a href="https://github.com/kickorstick/javascript">kickorstick/javascript</a></li>
+<li><strong>Kinetica Solutions</strong>: <a href="https://github.com/kinetica/Javascript-style-guide">kinetica/javascript</a></li>
+<li><strong>Lonely Planet</strong>: <a href="https://github.com/lonelyplanet/javascript">lonelyplanet/javascript</a></li>
+<li><strong>M2GEN</strong>: <a href="https://github.com/M2GEN/javascript">M2GEN/javascript</a></li>
+<li><strong>Mighty Spring</strong>: <a href="https://github.com/mightyspring/javascript">mightyspring/javascript</a></li>
+<li><strong>MinnPost</strong>: <a href="https://github.com/MinnPost/javascript">MinnPost/javascript</a></li>
+<li><strong>MitocGroup</strong>: <a href="https://github.com/MitocGroup/javascript">MitocGroup/javascript</a></li>
+<li><strong>ModCloth</strong>: <a href="https://github.com/modcloth/javascript">modcloth/javascript</a></li>
+<li><strong>Money Advice Service</strong>: <a href="https://github.com/moneyadviceservice/javascript">moneyadviceservice/javascript</a></li>
+<li><strong>Muber</strong>: <a href="https://github.com/muber/javascript">muber/javascript</a></li>
+<li><strong>National Geographic</strong>: <a href="https://github.com/natgeo/javascript">natgeo/javascript</a></li>
+<li><strong>National Park Service</strong>: <a href="https://github.com/nationalparkservice/javascript">nationalparkservice/javascript</a></li>
+<li><strong>Nimbl3</strong>: <a href="https://github.com/nimbl3/javascript">nimbl3/javascript</a></li>
+<li><strong>Nulogy</strong>: <a href="https://github.com/nulogy/javascript">nulogy/javascript</a></li>
+<li><strong>Orion Health</strong>: <a href="https://github.com/orionhealth/javascript">orionhealth/javascript</a></li>
+<li><strong>OutBoxSoft</strong>: <a href="https://github.com/OutBoxSoft/javascript">OutBoxSoft/javascript</a></li>
+<li><strong>Peerby</strong>: <a href="https://github.com/Peerby/javascript">Peerby/javascript</a></li>
+<li><strong>Razorfish</strong>: <a href="https://github.com/razorfish/javascript-style-guide">razorfish/javascript-style-guide</a></li>
+<li><strong>reddit</strong>: <a href="https://github.com/reddit/styleguide/tree/master/javascript">reddit/styleguide/javascript</a></li>
+<li><strong>React</strong>: <a href="https://github.com/facebook/react/blob/master/CONTRIBUTING.md#style-guide">/facebook/react/blob/master/CONTRIBUTING.md#style-guide</a></li>
+<li><strong>REI</strong>: <a href="https://github.com/rei/code-style-guides/blob/master/docs/javascript.md">reidev/js-style-guide</a></li>
+<li><strong>Ripple</strong>: <a href="https://github.com/ripple/javascript-style-guide">ripple/javascript-style-guide</a></li>
+<li><strong>SeekingAlpha</strong>: <a href="https://github.com/seekingalpha/javascript-style-guide">seekingalpha/javascript-style-guide</a></li>
+<li><strong>Shutterfly</strong>: <a href="https://github.com/shutterfly/javascript">shutterfly/javascript</a></li>
+<li><strong>Springload</strong>: <a href="https://github.com/springload/javascript">springload/javascript</a></li>
+<li><strong>StratoDem Analytics</strong>: <a href="https://github.com/stratodem/javascript">stratodem/javascript</a></li>
+<li><strong>SteelKiwi Development</strong>: <a href="https://github.com/steelkiwi/javascript">steelkiwi/javascript</a></li>
+<li><strong>StudentSphere</strong>: <a href="https://github.com/studentsphere/guide-javascript">studentsphere/javascript</a></li>
+<li><strong>SysGarage</strong>: <a href="https://github.com/sysgarage/javascript-style-guide">sysgarage/javascript-style-guide</a></li>
+<li><strong>Syzygy Warsaw</strong>: <a href="https://github.com/syzygypl/javascript">syzygypl/javascript</a></li>
+<li><strong>Target</strong>: <a href="https://github.com/target/javascript">target/javascript</a></li>
+<li><strong>TheLadders</strong>: <a href="https://github.com/TheLadders/javascript">TheLadders/javascript</a></li>
+<li><strong>The Nerdery</strong>: <a href="https://github.com/thenerdery/javascript-standards">thenerdery/javascript-standards</a></li>
+<li><strong>T4R Technology</strong>: <a href="https://github.com/T4R-Technology/javascript">T4R-Technology/javascript</a></li>
+<li><strong>VoxFeed</strong>: <a href="https://github.com/VoxFeed/javascript-style-guide">VoxFeed/javascript-style-guide</a></li>
+<li><strong>WeBox Studio</strong>: <a href="https://github.com/weboxstudio/javascript">weboxstudio/javascript</a></li>
+<li><strong>Weggo</strong>: <a href="https://github.com/Weggo/javascript">Weggo/javascript</a></li>
+<li><strong>Zillow</strong>: <a href="https://github.com/zillow/javascript">zillow/javascript</a></li>
+<li><strong>ZocDoc</strong>: <a href="https://github.com/ZocDoc/javascript">ZocDoc/javascript</a></li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="translation"><a name="user-content-translation" href="#translation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Translation</h2>
+<p>This style guide is also available in other languages:</p>
+<ul>
+<li><img alt="br" src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png" /> <strong>Brazilian Portuguese</strong>: <a href="https://github.com/armoucar/javascript-style-guide">armoucar/javascript-style-guide</a></li>
+<li><img alt="bg" src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Bulgaria.png" /> <strong>Bulgarian</strong>: <a href="https://github.com/borislavvv/javascript">borislavvv/javascript</a></li>
+<li><img alt="ca" src="https://raw.githubusercontent.com/fpmweb/javascript-style-guide/master/img/catala.png" /> <strong>Catalan</strong>: <a href="https://github.com/fpmweb/javascript-style-guide">fpmweb/javascript-style-guide</a></li>
+<li><img alt="cn" src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png" /> <strong>Chinese (Simplified)</strong>: <a href="https://github.com/sivan/javascript-style-guide">sivan/javascript-style-guide</a></li>
+<li><img alt="tw" src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Taiwan.png" /> <strong>Chinese (Traditional)</strong>: <a href="https://github.com/jigsawye/javascript">jigsawye/javascript</a></li>
+<li><img alt="fr" src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/France.png" /> <strong>French</strong>: <a href="https://github.com/nmussy/javascript-style-guide">nmussy/javascript-style-guide</a></li>
+<li><img alt="de" src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Germany.png" /> <strong>German</strong>: <a href="https://github.com/timofurrer/javascript-style-guide">timofurrer/javascript-style-guide</a></li>
+<li><img alt="it" src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Italy.png" /> <strong>Italian</strong>: <a href="https://github.com/sinkswim/javascript-style-guide">sinkswim/javascript-style-guide</a></li>
+<li><img alt="jp" src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Japan.png" /> <strong>Japanese</strong>: <a href="https://github.com/mitsuruog/javascript-style-guide">mitsuruog/javascript-style-guide</a></li>
+<li><img alt="kr" src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/South-Korea.png" /> <strong>Korean</strong>: <a href="https://github.com/tipjs/javascript-style-guide">tipjs/javascript-style-guide</a></li>
+<li><img alt="pl" src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Poland.png" /> <strong>Polish</strong>: <a href="https://github.com/mjurczyk/javascript">mjurczyk/javascript</a></li>
+<li><img alt="ru" src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png" /> <strong>Russian</strong>: <a href="https://github.com/uprock/javascript">uprock/javascript</a></li>
+<li><img alt="es" src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Spain.png" /> <strong>Spanish</strong>: <a href="https://github.com/paolocarrasco/javascript-style-guide">paolocarrasco/javascript-style-guide</a></li>
+<li><img alt="th" src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Thailand.png" /> <strong>Thai</strong>: <a href="https://github.com/lvarayut/javascript-style-guide">lvarayut/javascript-style-guide</a></li>
+<li><img alt="vn" src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png" /> <strong>Vietnam</strong>: <a href="https://github.com/hngiang/javascript-style-guide">hngiang/javascript-style-guide</a></li>
+</ul>
+<h2 id="the-javascript-style-guide-guide"><a name="user-content-the-javascript-style-guide-guide" href="#the-javascript-style-guide-guide" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The JavaScript Style Guide Guide</h2>
+<ul>
+<li><a href="https://github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide">Reference</a></li>
+</ul>
+<h2 id="chat-with-us-about-javascript"><a name="user-content-chat-with-us-about-javascript" href="#chat-with-us-about-javascript" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chat With Us About JavaScript</h2>
+<ul>
+<li>Find us on <a href="https://gitter.im/airbnb/javascript">gitter</a>.</li>
+</ul>
+<h2 id="contributors"><a name="user-content-contributors" href="#contributors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Contributors</h2>
+<ul>
+<li><a href="https://github.com/airbnb/javascript/graphs/contributors">View Contributors</a></li>
+</ul>
+<h2 id="license"><a name="user-content-license" href="#license" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>License</h2>
+<p>(The MIT License)</p>
+<p>Copyright (c) 2014-2017 Airbnb</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining<br />
+a copy of this software and associated documentation files (the<br />
+&lsquo;Software&rsquo;), to deal in the Software without restriction, including<br />
+without limitation the rights to use, copy, modify, merge, publish,<br />
+distribute, sublicense, and/or sell copies of the Software, and to<br />
+permit persons to whom the Software is furnished to do so, subject to<br />
+the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be<br />
+included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &lsquo;AS IS&rsquo;, WITHOUT WARRANTY OF ANY KIND,<br />
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF<br />
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.<br />
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY<br />
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,<br />
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE<br />
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="amendments"><a name="user-content-amendments" href="#amendments" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Amendments</h2>
+<p>We encourage you to fork this guide and change the rules to fit your team&rsquo;s style guide. Below, you may list some amendments to the style guide. This allows you to periodically update your style guide without having to deal with merge conflicts.</p>
+<h1 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>};</h1></article></body></html>
