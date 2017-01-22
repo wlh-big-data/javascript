@@ -590,7 +590,7 @@ Other Style Guides
     }
 
     // good
-    const foo = function bar() {
+    const foo = function foo() {
       // ...
     };
     ```
