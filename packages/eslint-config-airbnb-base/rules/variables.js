@@ -1,3 +1,5 @@
+const restrictedGlobals = require('eslint-restricted-globals');
+
 module.exports = {
   rules: {
     // enforce or disallow variable initializations at definition
@@ -10,11 +12,11 @@ module.exports = {
     'no-delete-var': 'error',
 
     // disallow labels that share a name with a variable
-    // http://eslint.org/docs/rules/no-label-var
+    // https://eslint.org/docs/rules/no-label-var
     'no-label-var': 'error',
 
     // disallow specific globals
-    'no-restricted-globals': 'off',
+    'no-restricted-globals': ['error', 'isFinite', 'isNaN'].concat(restrictedGlobals),
 
     // disallow declaration of variables already declared in the outer scope
     'no-shadow': 'error',
@@ -29,14 +31,14 @@ module.exports = {
     'no-undef-init': 'error',
 
     // disallow use of undefined variable
-    // http://eslint.org/docs/rules/no-undefined
+    // https://eslint.org/docs/rules/no-undefined
     // TODO: enable?
     'no-undefined': 'off',
 
     // disallow declaration of variables that are not used in the code
-    'no-unused-vars': ['error', { vars: 'local', args: 'after-used' }],
+    'no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }],
 
     // disallow use of variables before they are defined
-    'no-use-before-define': 'error'
+    'no-use-before-define': ['error', { functions: true, classes: true, variables: true }],
   }
 };
