@@ -1267,9 +1267,7 @@ Other Style Guides
     }
     ```
 
-
 **[⬆ back to top](#目录)**
-
 
 ## Modules
 
@@ -1293,7 +1291,7 @@ Other Style Guides
     ```
 
   <a name="modules--no-wildcard"></a><a name="10.2"></a>
-  - [10.2](#modules--no-wildcard) 不要用通配符import
+  - [10.2](#modules--no-wildcard) 不要用import通配符， 就是 `*` 这种方式
 
     > Why? 这确保你有单个默认的导出
 
@@ -1308,7 +1306,7 @@ Other Style Guides
   <a name="modules--no-export-from-import"></a><a name="10.3"></a>
   - [10.3](#modules--no-export-from-import) 不要直接从import中直接export
 
-    > Why? 虽然一行是简洁的，有一个明确的方式进口和一个明确的出口方式使事情一致。
+    > Why? 虽然一行是简洁的，有一个明确的方式进口和一个明确的出口方式来保证一致性。
 
     ```javascript
     // bad
@@ -1322,7 +1320,7 @@ Other Style Guides
     ```
 
   <a name="modules--no-duplicate-imports"></a>
-  - [10.4](#modules--no-duplicate-imports) Only import from a path in one place.
+  - [10.4](#modules--no-duplicate-imports) 一个路径只 import 一次。
  eslint: [`no-duplicate-imports`](http://eslint.org/docs/rules/no-duplicate-imports)
     > Why? 从同一个路径下import多行会使代码难以维护
 
@@ -1345,7 +1343,7 @@ Other Style Guides
   <a name="modules--no-mutable-exports"></a>
   - [10.5](#modules--no-mutable-exports) 不要到处可变的东西
  eslint: [`import/no-mutable-exports`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-mutable-exports.md)
-    > Why? 总的来说变化都是需要避免的，特别是输出可变的绑定。虽然在某些场景下可能需要这种基础，但总的来说应该到处常量
+    > Why? 变化通常都是需要避免，特别是当你要输出可变的绑定。虽然在某些场景下可能需要这种技术，但总的来说应该导出常量。
 
     ```javascript
     // bad
@@ -1358,8 +1356,10 @@ Other Style Guides
     ```
 
   <a name="modules--prefer-default-export"></a>
-  - [10.6](#modules--prefer-default-export) 在一个单一导出模块里，用`export default`更好
+  - [10.6](#modules--prefer-default-export) 在一个单一导出模块里，用 `export default` 更好。
  eslint: [`import/prefer-default-export`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md)
+
+    > Why? 鼓励使用更多文件，每个文件只做一件事情并导出，这样可读性和可维护性更好。
 
     ```javascript
     // bad
@@ -1429,9 +1429,9 @@ Other Style Guides
   <a name="iterators--nope"></a><a name="11.1"></a>
   - [11.1](#iterators--nope) 不要用遍历器。用JavaScript高级函数代替`for-in`、 `for-of`。 eslint: [`no-iterator`](http://eslint.org/docs/rules/no-iterator.html) [`no-restricted-syntax`](http://eslint.org/docs/rules/no-restricted-syntax)
 
-    > Why? 这加强我们的不可变规则。 处理返回值的纯函数比副作用更容易推理。
+    > Why? 这强调了我们不可变的规则。 处理返回值的纯函数比副作用更容易。
 
-    > Why? Use `map()` / `every()` / `filter()` / `find()` / `findIndex()` / `reduce()` / `some()` / ... to iterate over arrays, and `Object.keys()` / `Object.values()` / `Object.entries()` to produce arrays so you can iterate over objects.
+    > Why? 用数组的这些迭代方法： `map()` / `every()` / `filter()` / `find()` / `findIndex()` / `reduce()` / `some()` / ... , 用对象的这些方法 `Object.keys()` / `Object.values()` / `Object.entries()`  去产生一个数组， 这样你就能去遍历对象了。
 
     ```javascript
     const numbers = [1, 2, 3, 4, 5];
@@ -1569,6 +1569,17 @@ Other Style Guides
     const isJedi = getProp('jedi');
     ```
 
+  <a name="es2016-properties--exponentiation-operator"></a>
+  - [12.3](#es2016-properties--exponentiation-operator) 做幂运算时用幂操作符 `**` 。 eslint: [`no-restricted-properties`](https://eslint.org/docs/rules/no-restricted-properties).
+
+    ```javascript
+    // bad
+    const binary = Math.pow(2, 10);
+
+    // good
+    const binary = 2 ** 10;
+    ```
+
 **[⬆ back to top](#目录)**
 
 
@@ -1586,7 +1597,7 @@ Other Style Guides
     ```
 
   <a name="variables--one-const"></a><a name="13.2"></a>
-  - [13.2](#variables--one-const) 声明一个变量用一个`const`。 eslint: [`one-var`](http://eslint.org/docs/rules/one-var.html)
+  - [13.2](#variables--one-const) 每个变量都用一个 `const` 或 `let `。 eslint: [`one-var`](http://eslint.org/docs/rules/one-var.html)
 
     > Why? 这种方式很容易去声明新的变量，你不用去考虑把`;`调换成`,`，或者引入一个只有标点的不同的变化。这种做法也可以是你在调试的时候单步每个声明语句，而不是一下跳过所有声明。
 
@@ -1612,6 +1623,7 @@ Other Style Guides
   - [13.3](#variables--const-let-group) `const`放一起，`let`放一起
 
     > Why? 在你需要分配一个新的变量， 而这个变量依赖之前分配过的变量的时候，这种做法是有帮助的
+
     ```javascript
     // bad
     let i, len, dragonball,
@@ -1673,17 +1685,16 @@ Other Style Guides
     }
     ```
   <a name="variables--no-chain-assignment"></a><a name="13.5"></a>
-  - [13.5](#variables--no-chain-assignment) 不要使用链接变量分配
+  - [13.5](#variables--no-chain-assignment) 不要使用链接变量分配。 eslint: [`no-multi-assign`](https://eslint.org/docs/rules/no-multi-assign)
 
     > Why? 链接变量分配创建隐式全局变量。
 
     ```javascript
     // bad
     (function example() {
-      // JavaScript interprets this as
+      // JavaScript 将这一段解释为
       // let a = ( b = ( c = 1 ) );
-      // The let keyword only applies to variable a; variables b and c become
-      // global variables.
+      // let 只对变量 a 起作用; 变量 b 和 c 都变成了全局变量
       let a = b = c = 1;
     }());
 
@@ -1702,11 +1713,11 @@ Other Style Guides
     console.log(b); // undefined
     console.log(c); // undefined
 
-    // the same applies for `const`
+    // `const` 也是如此
     ```
 
   <a name="variables--unary-increment-decrement"></a><a name="13.6"></a>
-  - [13.6](#variables--unary-increment-decrement) 不要使用一元自增自减运算符（++， --）. eslint [`no-plusplus`](http://eslint.org/docs/rules/no-plusplus)
+  - [13.6](#variables--unary-increment-decrement) 不要使用一元自增自减运算符（`++`， `--`）. eslint [`no-plusplus`](http://eslint.org/docs/rules/no-plusplus)
 
     > Why? 根据eslint文档，一元增量和减量语句受到自动分号插入的影响，并且可能会导致应用程序中的值递增或递减的无声错误。 使用`num + = 1`而不是`num ++`或`num ++`语句来表达你的值也是更有表现力的。 禁止一元增量和减量语句还会阻止您无意地预增/预减值，这也会导致程序出现意外行为。
 
@@ -1739,8 +1750,69 @@ Other Style Guides
       const truthyCount = array.filter(Boolean).length;
     ```
 
-**[⬆ back to top](#目录)**
+<a name="variables--linebreak"></a>
+  - [13.7](#variables--linebreak) 在赋值的时候避免在 `=` 前/后换行。 如果你的赋值语句超出 [`max-len`](https://eslint.org/docs/rules/max-len.html)， 那就用小括号把这个值包起来再换行。 eslint [`operator-linebreak`](https://eslint.org/docs/rules/operator-linebreak.html).
 
+    > Why? 在 `=` 附近换行容易混淆这个赋值语句。
+
+    ```javascript
+    // bad
+    const foo =
+      superLongLongLongLongLongLongLongLongFunctionName();
+
+    // bad
+    const foo
+      = 'superLongLongLongLongLongLongLongLongString';
+
+    // good
+    const foo = (
+      superLongLongLongLongLongLongLongLongFunctionName()
+    );
+
+    // good
+    const foo = 'superLongLongLongLongLongLongLongLongString';
+    ```
+
+<a name="variables--no-unused-vars"></a>
+  - [13.8](#variables--no-unused-vars) 不允许有未使用的变量。 eslint: [`no-unused-vars`](https://eslint.org/docs/rules/no-unused-vars)
+
+    > Why? 一个声明了但未使用的变量更像是由于重构未完成产生的错误。这种在代码中出现的变量会使阅读者迷惑。
+
+    ```javascript
+    // bad
+
+    var some_unused_var = 42;
+
+    // 写了没用
+    var y = 10;
+    y = 5;
+
+    // 变量改了自己的值，也没有用这个变量
+    var z = 0;
+    z = z + 1;
+
+    // 参数定义了但未使用
+    function getX(x, y) {
+        return x;
+    }
+
+    // good
+    function getXPlusY(x, y) {
+      return x + y;
+    }
+
+    var x = 1;
+    var y = a + 2;
+
+    alert(getXPlusY(x, y));
+
+    // 'type' 即使没有使用也可以可以被忽略， 因为这个有一个 rest 取值的属性。
+    // 这是从对象中抽取一个忽略特殊字段的对象的一种形式
+    var { type, ...coords } = data;
+    // 'coords' 现在就是一个没有 'type' 属性的 'data' 对象
+    ```
+
+**[⬆ back to top](#目录)**
 
 ## Hoisting
 
@@ -1902,11 +1974,9 @@ Other Style Guides
   - [15.4](#comparison--moreinfo) 更多信息请见Angus Croll的[真理、平等和JavaScript —— Truth Equality and JavaScript](https://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108)
 
   <a name="comparison--switch-blocks"></a><a name="15.5"></a>
-  - [15.5](#comparison--switch-blocks) 在`case`和`default`分句里用大括号创建一块包含语法声明的区域(e.g. `let`, `const`, `function`, and `class`).
+  - [15.5](#comparison--switch-blocks) 在`case`和`default`分句里用大括号创建一块包含语法声明的区域(e.g. `let`, `const`, `function`, and `class`). eslint rules: [`no-case-declarations`](http://eslint.org/docs/rules/no-case-declarations.html).
 
-  > Why? 语法声明在整个`switch`的代码块里都可见，但是只有当其被分配后才会初始化，他的初始化时当这个`case`被执行时才产生。 当多个`case`分句试图定义同一个事情时就出问题了
-
-  eslint rules: [`no-case-declarations`](http://eslint.org/docs/rules/no-case-declarations.html).
+    > Why? 语法声明在整个`switch`的代码块里都可见，但是只有当其被分配后才会初始化，他的初始化时当这个`case`被执行时才产生。 当多个`case`分句试图定义同一个事情时就出问题了
 
     ```javascript
     // bad
@@ -1992,13 +2062,46 @@ Other Style Guides
     const baz = !c;
     ```
 
+  <a name="comparison--no-mixed-operators"></a>
+  - [15.8](#comparison--no-mixed-operators) 用圆括号来混合这些操作符。 只有当标准的算术运算符(`+`, `-`, `*`, & `/`)， 并且它们的优先级显而易见时，可以不用圆括号括起来。 eslint: [`no-mixed-operators`](https://eslint.org/docs/rules/no-mixed-operators.html)
+
+    > Why? 这提高了可读性，并且明确了开发者的意图
+
+    ```javascript
+    // bad
+    const foo = a && b < 0 || c > 0 || d + 1 === 0;
+
+    // bad
+    const bar = a ** b - 5 % d;
+
+    // bad
+    // 别人会陷入(a || b) && c 的迷惑中
+    if (a || b && c) {
+      return d;
+    }
+
+    // good
+    const foo = (a && b < 0) || c > 0 || (d + 1 === 0);
+
+    // good
+    const bar = (a ** b) - (5 % d);
+
+    // good
+    if (a || (b && c)) {
+      return d;
+    }
+
+    // good
+    const bar = a + b / c * d;
+    ```
+
 **[⬆ back to top](#目录)**
 
 
 ## Blocks
 
   <a name="blocks--braces"></a><a name="16.1"></a>
-  - [16.1](#blocks--braces) 用大括号包裹多行代码块
+  - [16.1](#blocks--braces) 用大括号包裹多行代码块。  eslint: [`nonblock-statement-body-position`](https://eslint.org/docs/rules/nonblock-statement-body-position)
 
     ```javascript
     // bad
@@ -2044,9 +2147,72 @@ Other Style Guides
     }
     ```
 
+  <a name="blocks--no-else-return"></a><a name="16.3"></a>
+  - [16.3](#blocks--no-else-return) 如果 `if` 语句中总是需要用 `return` 返回， 那后续的 `else` 就不需要写了。 `if` 块中包含 `return`， 它后面的 `else if` 块中也包含了 `return`， 这个时候就可以把 `return` 分到多个 `if` 语句块中。 eslint: [`no-else-return`](https://eslint.org/docs/rules/no-else-return)
+
+    ```javascript
+    // bad
+    function foo() {
+      if (x) {
+        return x;
+      } else {
+        return y;
+      }
+    }
+
+    // bad
+    function cats() {
+      if (x) {
+        return x;
+      } else if (y) {
+        return y;
+      }
+    }
+
+    // bad
+    function dogs() {
+      if (x) {
+        return x;
+      } else {
+        if (y) {
+          return y;
+        }
+      }
+    }
+
+    // good
+    function foo() {
+      if (x) {
+        return x;
+      }
+
+      return y;
+    }
+
+    // good
+    function cats() {
+      if (x) {
+        return x;
+      }
+
+      if (y) {
+        return y;
+      }
+    }
+
+    // good
+    function dogs(x) {
+      if (x) {
+        if (z) {
+          return y;
+        }
+      } else {
+        return z;
+      }
+    }
+    ```
 
 **[⬆ back to top](#目录)**
-
 
 ## Comments
 
