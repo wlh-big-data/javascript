@@ -2214,10 +2214,81 @@ Other Style Guides
 
 **[⬆ back to top](#目录)**
 
+## Control Statements
+
+  <a name="control-statements"></a><a name="17.1"></a>
+  - [17.1](#control-statements) 当你的控制语句(`if`, `while` 等)太长或者超过最大长度限制的时候， 把每一个(组)判断条件放在单独一行里。 逻辑操作符放在行首。
+
+    > Why? 把逻辑操作符放在行首是让操作符的对齐方式和链式函数保持一致。这提高了可读性，也让复杂逻辑更容易看清楚。
+
+    ```javascript
+    // bad
+    if ((foo === 123 || bar === 'abc') && doesItLookGoodWhenItBecomesThatLong() && isThisReallyHappening()) {
+      thing1();
+    }
+
+    // bad
+    if (foo === 123 &&
+      bar === 'abc') {
+      thing1();
+    }
+
+    // bad
+    if (foo === 123
+      && bar === 'abc') {
+      thing1();
+    }
+
+    // bad
+    if (
+      foo === 123 &&
+      bar === 'abc'
+    ) {
+      thing1();
+    }
+
+    // good
+    if (
+      foo === 123
+      && bar === 'abc'
+    ) {
+      thing1();
+    }
+
+    // good
+    if (
+      (foo === 123 || bar === 'abc')
+      && doesItLookGoodWhenItBecomesThatLong()
+      && isThisReallyHappening()
+    ) {
+      thing1();
+    }
+
+    // good
+    if (foo === 123 && bar === 'abc') {
+      thing1();
+    }
+    ```
+
+  <a name="control-statement--value-selection"></a><a name="17.2"></a>
+  - [17.2](#control-statements--value-selection) 不要用选择操作符代替控制语句。
+
+    ```javascript
+    // bad
+    !isRunning && startRunning();
+
+    // good
+    if (!isRunning) {
+      startRunning();
+    }
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
 ## Comments
 
-  <a name="comments--multiline"></a><a name="17.1"></a>
-  - [17.1](#comments--multiline) 多行注释用 `/** ... */`
+  <a name="comments--multiline"></a><a name="18.1"></a>
+  - [18.1](#comments--multiline) 多行注释用 `/** ... */`
 
     ```javascript
     // bad
@@ -2246,8 +2317,8 @@ Other Style Guides
     }
     ```
 
-  <a name="comments--singleline"></a><a name="17.2"></a>
-  - [17.2](#comments--singleline) 单行注释用`//`，将单行注释放在被注释区域上面。如果注释不是在第一行，那么注释前面就空一行
+  <a name="comments--singleline"></a><a name="18.2"></a>
+  - [18.2](#comments--singleline) 单行注释用`//`，将单行注释放在被注释区域上面。如果注释不是在第一行，那么注释前面就空一行
 
     ```javascript
     // bad
@@ -2285,7 +2356,8 @@ Other Style Guides
     }
     ```
 
-  - [17.3](#comments--spaces) 所有注释开头空一个，方便阅读。 eslint: [`spaced-comment`](http://eslint.org/docs/rules/spaced-comment)
+  <a name="comments--spaces"></a><a name="18.3"></a>
+  - [18.3](#comments--spaces) 所有注释开头空一个，方便阅读。 eslint: [`spaced-comment`](http://eslint.org/docs/rules/spaced-comment)
 
     ```javascript
     // bad
@@ -2321,11 +2393,11 @@ Other Style Guides
     }
     ```
 
-  <a name="comments--actionitems"></a><a name="17.3"></a>
-  - [17.4](#comments--actionitems) 在你的注释前使用`FIXME'或`TODO'前缀， 这有助于其他开发人员快速理解你指出的需要重新访问的问题， 或者您建议需要实现的问题的解决方案。 这些不同于常规注释，因为它们是可操作的。 动作是`FIXME： - 需要计算出来`或`TODO： - 需要实现`。
+  <a name="comments--actionitems"></a><a name="18.4"></a>
+  - [18.4](#comments--actionitems) 在你的注释前使用`FIXME'或`TODO'前缀， 这有助于其他开发人员快速理解你指出的需要重新访问的问题， 或者您建议需要实现的问题的解决方案。 这些不同于常规注释，因为它们是可操作的。 动作是`FIXME： - 需要计算出来`或`TODO： - 需要实现`。
 
-  <a name="comments--fixme"></a><a name="17.4"></a>
-  - [17.5](#comments--fixme) 用`// FIXME:`给问题做注释
+  <a name="comments--fixme"></a><a name="18.5"></a>
+  - [18.5](#comments--fixme) 用`// FIXME:`给问题做注释
 
     ```javascript
     class Calculator extends Abacus {
@@ -2338,8 +2410,8 @@ Other Style Guides
     }
     ```
 
-  <a name="comments--todo"></a><a name="17.5"></a>
-  - [17.6](#comments--todo) 用`// TODO:`去注释问题的解决方案
+  <a name="comments--todo"></a><a name="18.6"></a>
+  - [18.6](#comments--todo) 用`// TODO:`去注释问题的解决方案
 
     ```javascript
     class Calculator extends Abacus {
@@ -2357,8 +2429,8 @@ Other Style Guides
 
 ## Whitespace
 
-  <a name="whitespace--spaces"></a><a name="18.1"></a>
-  - [18.1](#whitespace--spaces) tab空两格. eslint: [`indent`](http://eslint.org/docs/rules/indent.html)
+  <a name="whitespace--spaces"></a><a name="19.1"></a>
+  - [19.1](#whitespace--spaces) tab用两个空格. eslint: [`indent`](http://eslint.org/docs/rules/indent.html)
 
     ```javascript
     // bad
@@ -2377,8 +2449,8 @@ Other Style Guides
     }
     ```
 
-  <a name="whitespace--before-blocks"></a><a name="18.2"></a>
-  - [18.2](#whitespace--before-blocks) 在大括号前空一格。 eslint: [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks.html)
+  <a name="whitespace--before-blocks"></a><a name="19.2"></a>
+  - [19.2](#whitespace--before-blocks) 在大括号前空一格。 eslint: [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks.html)
 
     ```javascript
     // bad
@@ -2404,8 +2476,8 @@ Other Style Guides
     });
     ```
 
-  <a name="whitespace--around-keywords"></a><a name="18.3"></a>
-  - [18.3](#whitespace--around-keywords) 在控制语句(`if`, `while` etc.)的圆括号前空一格。在函数调用和定义时，参数列表和函数名之间不空格。 eslint: [`keyword-spacing`](http://eslint.org/docs/rules/keyword-spacing.html)
+  <a name="whitespace--around-keywords"></a><a name="19.3"></a>
+  - [19.3](#whitespace--around-keywords) 在控制语句(`if`, `while` 等)的圆括号前空一格。在函数调用和定义时，参数列表和函数名之间不空格。 eslint: [`keyword-spacing`](http://eslint.org/docs/rules/keyword-spacing.html)
 
     ```javascript
     // bad
@@ -2429,8 +2501,8 @@ Other Style Guides
     }
     ```
 
-  <a name="whitespace--infix-ops"></a><a name="18.4"></a>
-  - [18.4](#whitespace--infix-ops) 用空格来隔开运算符。 eslint: [`space-infix-ops`](http://eslint.org/docs/rules/space-infix-ops.html)
+  <a name="whitespace--infix-ops"></a><a name="19.4"></a>
+  - [19.4](#whitespace--infix-ops) 用空格来隔开运算符。 eslint: [`space-infix-ops`](http://eslint.org/docs/rules/space-infix-ops.html)
 
     ```javascript
     // bad
@@ -2440,8 +2512,8 @@ Other Style Guides
     const x = y + 5;
     ```
 
-  <a name="whitespace--newline-at-end"></a><a name="18.5"></a>
-  - [18.5](#whitespace--newline-at-end) 文件结尾空一行. eslint: [`eol-last`](https://github.com/eslint/eslint/blob/master/docs/rules/eol-last.md)
+  <a name="whitespace--newline-at-end"></a><a name="19.5"></a>
+  - [19.5](#whitespace--newline-at-end) 文件结尾空一行. eslint: [`eol-last`](https://github.com/eslint/eslint/blob/master/docs/rules/eol-last.md)
 
     ```javascript
     // bad
@@ -2465,9 +2537,8 @@ Other Style Guides
     export default es6;↵
     ```
 
-  <a name="whitespace--chains"></a><a name="18.6"></a>
-  - [18.6](#whitespace--chains) 当出现长的方法链（>2个）时用缩进。使用前导点
-     强调该行是一个方法调用，而不是一个新的语句。eslint: [`newline-per-chained-call`](http://eslint.org/docs/rules/newline-per-chained-call) [`no-whitespace-before-property`](http://eslint.org/docs/rules/no-whitespace-before-property)
+  <a name="whitespace--chains"></a><a name="19.6"></a>
+  - [19.6](#whitespace--chains) 当出现长的方法链（>2个）时用缩进。用点开头强调该行是一个方法调用，而不是一个新的语句。eslint: [`newline-per-chained-call`](http://eslint.org/docs/rules/newline-per-chained-call) [`no-whitespace-before-property`](http://eslint.org/docs/rules/no-whitespace-before-property)
 
     ```javascript
     // bad
@@ -2509,8 +2580,8 @@ Other Style Guides
     const leds = stage.selectAll('.led').data(data);
     ```
 
-  <a name="whitespace--after-blocks"></a><a name="18.7"></a>
-  - [18.7](#whitespace--after-blocks) 在一个代码块后下一条语句前空一行。
+  <a name="whitespace--after-blocks"></a><a name="19.7"></a>
+  - [19.7](#whitespace--after-blocks) 在一个代码块后下一条语句前空一行。
 
     ```javascript
     // bad
@@ -2567,8 +2638,8 @@ Other Style Guides
     return arr;
     ```
 
-  <a name="whitespace--padded-blocks"></a><a name="18.8"></a>
-  - [18.8](#whitespace--padded-blocks) 不要用空白行填充块。 eslint: [`padded-blocks`](http://eslint.org/docs/rules/padded-blocks.html)
+  <a name="whitespace--padded-blocks"></a><a name="19.8"></a>
+  - [19.8](#whitespace--padded-blocks) 不要用空白行填充块。 eslint: [`padded-blocks`](http://eslint.org/docs/rules/padded-blocks.html)
 
     ```javascript
     // bad
@@ -2600,8 +2671,8 @@ Other Style Guides
     }
     ```
 
-  <a name="whitespace--in-parens"></a><a name="18.9"></a>
-  - [18.9](#whitespace--in-parens) 圆括号里不要加空格。 eslint: [`space-in-parens`](http://eslint.org/docs/rules/space-in-parens.html)
+  <a name="whitespace--in-parens"></a><a name="19.9"></a>
+  - [19.9](#whitespace--in-parens) 圆括号里不要加空格。 eslint: [`space-in-parens`](http://eslint.org/docs/rules/space-in-parens.html)
 
     ```javascript
     // bad
@@ -2625,8 +2696,8 @@ Other Style Guides
     }
     ```
 
-  <a name="whitespace--in-brackets"></a><a name="18.10"></a>
-  - [18.10](#whitespace--in-brackets) 方括号里不要加空格。 eslint: [`array-bracket-spacing`](http://eslint.org/docs/rules/array-bracket-spacing.html)
+  <a name="whitespace--in-brackets"></a><a name="19.10"></a>
+  - [19.10](#whitespace--in-brackets) 方括号里不要加空格。看示例。 eslint: [`array-bracket-spacing`](http://eslint.org/docs/rules/array-bracket-spacing.html)
 
     ```javascript
     // bad
@@ -2638,8 +2709,8 @@ Other Style Guides
     console.log(foo[0]);
     ```
 
-  <a name="whitespace--in-braces"></a><a name="18.11"></a>
-  - [18.11](#whitespace--in-braces) 花括号里加空格。 eslint: [`object-curly-spacing`](http://eslint.org/docs/rules/object-curly-spacing.html)
+  <a name="whitespace--in-braces"></a><a name="19.11"></a>
+  - [19.11](#whitespace--in-braces) 花括号里加空格。 eslint: [`object-curly-spacing`](http://eslint.org/docs/rules/object-curly-spacing.html)
 
     ```javascript
     // bad
@@ -2649,8 +2720,8 @@ Other Style Guides
     const foo = { clark: 'kent' };
     ```
 
-  <a name="whitespace--max-len"></a><a name="18.12"></a>
-  - [18.12](#whitespace--max-len) 避免一行代码超过100个字符（包含空格）。
+  <a name="whitespace--max-len"></a><a name="19.12"></a>
+  - [19.12](#whitespace--max-len) 避免一行代码超过100个字符（包含空格）。
   - 注意： 对于[上面——strings--line-length](#strings--line-length)，长字符串不受此规则限制，不应分解。 eslint: [`max-len`](http://eslint.org/docs/rules/max-len.html)
 
     > Why? 这样确保可读性和可维护性
@@ -2680,12 +2751,103 @@ Other Style Guides
       .fail(() => console.log('You have failed this city.'));
     ```
 
+  <a name="whitespace--block-spacing"></a><a name="19.13"></a>
+  - [19.13](#whitespace--block-spacing) 作为语句的花括号内也要加空格 —— `{` 后和 `}` 前都需要空格。 eslint: [`block-spacing`](https://eslint.org/docs/rules/block-spacing)
+
+    ```javascript
+    // bad
+    function foo() {return true;}
+    if (foo) { bar = 0;}
+
+    // good
+    function foo() { return true; }
+    if (foo) { bar = 0; }
+    ```
+
+  <a name="whitespace--comma-spacing"></a><a name="19.14"></a>
+  - [19.14](#whitespace--comma-spacing) `,` 前不要空格， `,` 后需要空格。 eslint: [`comma-spacing`](https://eslint.org/docs/rules/comma-spacing)
+
+    ```javascript
+    // bad
+    var foo = 1,bar = 2;
+    var arr = [1 , 2];
+
+    // good
+    var foo = 1, bar = 2;
+    var arr = [1, 2];
+    ```
+
+  <a name="whitespace--computed-property-spacing"></a><a name="19.15"></a>
+  - [19.15](#whitespace--computed-property-spacing) 计算属性内要空格。参考上述花括号和中括号的规则。  eslint: [`computed-property-spacing`](https://eslint.org/docs/rules/computed-property-spacing)
+
+    ```javascript
+    // bad
+    obj[foo ]
+    obj[ 'foo']
+    var x = {[ b ]: a}
+    obj[foo[ bar ]]
+
+    // good
+    obj[foo]
+    obj['foo']
+    var x = { [b]: a }
+    obj[foo[bar]]
+    ```
+
+  <a name="whitespace--func-call-spacing"></a><a name="19.16"></a>
+  - [19.16](#whitespace--func-call-spacing) 调用函数时，函数名和小括号之间不要空格。 eslint: [`func-call-spacing`](https://eslint.org/docs/rules/func-call-spacing)
+
+    ```javascript
+    // bad
+    func ();
+
+    func
+    ();
+
+    // good
+    func();
+    ```
+
+  <a name="whitespace--key-spacing"></a><a name="19.17"></a>
+  - [19.17](#whitespace--key-spacing) 在对象的字面量属性中， `key` `value` 之间要有空格。 eslint: [`key-spacing`](https://eslint.org/docs/rules/key-spacing)
+
+    ```javascript
+    // bad
+    var obj = { "foo" : 42 };
+    var obj2 = { "foo":42 };
+
+    // good
+    var obj = { "foo": 42 };
+    ```
+
+  <a name="whitespace--no-trailing-spaces"></a><a name="19.18"></a>
+  - [19.18](#whitespace--no-trailing-spaces) 行末不要空格。 eslint: [`no-trailing-spaces`](https://eslint.org/docs/rules/no-trailing-spaces)
+
+  <a name="whitespace--no-multiple-empty-lines"></a><a name="19.19"></a>
+  - [19.19](#whitespace--no-multiple-empty-lines) 避免出现多个空行。 在文件末尾只允许空一行。 eslint: [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
+
+    <!-- markdownlint-disable MD012 -->
+    ```javascript
+    // bad
+    var x = 1;
+
+
+
+    var y = 2;
+
+    // good
+    var x = 1;
+
+    var y = 2;
+    ```
+    <!-- markdownlint-enable MD012 -->
+
 **[⬆ back to top](#目录)**
 
 ## Commas
 
-<a name="commas--leading-trailing"></a><a name="19.1"></a>
-  - [19.1](#commas--leading-trailing) 前置逗号: **不** eslint: [`comma-style`](http://eslint.org/docs/rules/comma-style.html)
+<a name="commas--leading-trailing"></a><a name="20.1"></a>
+  - [20.1](#commas--leading-trailing) 不要前置逗号。 eslint: [`comma-style`](http://eslint.org/docs/rules/comma-style.html)
 
     ```javascript
     // bad
@@ -2719,15 +2881,13 @@ Other Style Guides
     };
     ```
 
-  <a name="commas--dangling"></a><a name="19.2"></a>
-  - [19.2](#commas--dangling) 额外结尾逗号: **要** eslint: [`comma-dangle`](http://eslint.org/docs/rules/comma-dangle.html)
+  <a name="commas--dangling"></a><a name="20.2"></a>
+  - [20.2](#commas--dangling) 额外结尾逗号: **要** eslint: [`comma-dangle`](http://eslint.org/docs/rules/comma-dangle.html)
 
-    > Why? 这导致git diffs更清洁。 此外，像Babel这样的转换器会删除转换代码中的额外的逗号，这意味着你不必担心旧版浏览器中的结尾逗号问题。
-
-      This leads to cleaner git diffs. Also, transpilers like Babel will remove the additional trailing comma in the transpiled code which means you don't have to worry about the [trailing comma problem](https://github.com/airbnb/javascript/blob/es5-deprecated/es5/README.md#commas) in legacy browsers.
+    > Why? 这导致git diffs更清洁。 此外，像Babel这样的转换器会删除转换代码中的额外的逗号，这意味着你不必担心旧版浏览器中的[结尾逗号问题](https://github.com/airbnb/javascript/blob/es5-deprecated/es5/README.md#commas)。
 
     ```diff
-    // bad - git diff without trailing comma
+    // bad - 没有结尾逗号的 git diff
     const hero = {
          firstName: 'Florence',
     -    lastName: 'Nightingale'
@@ -2735,7 +2895,7 @@ Other Style Guides
     +    inventorOf: ['coxcomb chart', 'modern nursing']
     };
 
-    // good - git diff with trailing comma
+    // good - 有结尾逗号的 git diff
     const hero = {
          firstName: 'Florence',
          lastName: 'Nightingale',
@@ -2823,7 +2983,9 @@ Other Style Guides
 ## Semicolons
 
   <a name="semicolons--required"></a><a name="20.1"></a>
-  - [20.1](#20.1) **Yup.** eslint: [`semi`](http://eslint.org/docs/rules/semi.html)
+  - [21.1](#21.1) **Yup.** eslint: [`semi`](http://eslint.org/docs/rules/semi.html)
+
+    > Why? 当 JavaScript 遇到没有分号结尾的一行，它会执行[自动插入分号 `Automatic Semicolon Insertion`](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion)这一规则来决定行末是否加分号。如果JavaScript在你的断行里错误的插入了分号，就会出现一些古怪的行为。当新的功能加到JavaScript里后， 这些规则会变得更复杂难懂。显示的结束语句，并通过配置代码检查去捕获没有带分号的地方可以帮助你防止这种错误。
 
     ```javascript
     // bad
@@ -2838,7 +3000,7 @@ Other Style Guides
       return name;
     }());
 
-    // good, but legacy (guards against the function becoming an argument when two files with IIFEs are concatenated)
+    // good, 行首加分号，避免文件被连接到一起时立即执行函数被当做变量来执行。
     ;(() => {
       const name = 'Skywalker';
       return name;
@@ -2852,27 +3014,30 @@ Other Style Guides
 
 ## Type Casting & Coercion
 
-  <a name="coercion--explicit"></a><a name="21.1"></a>
-  - [21.1](#coercion--explicit) 在语句开始执行强制类型转换。
+  <a name="coercion--explicit"></a><a name="22.1"></a>
+  - [22.1](#coercion--explicit) 在语句开始执行强制类型转换。
 
-  <a name="coercion--strings"></a><a name="21.2"></a>
-  - [21.2](#coercion--strings)  Strings:
+  <a name="coercion--strings"></a><a name="22.2"></a>
+  - [22.2](#coercion--strings)  Strings: eslint: [`no-new-wrappers`](https://eslint.org/docs/rules/no-new-wrappers)
 
     ```javascript
     // => this.reviewScore = 9;
 
     // bad
+    const totalScore = new String(this.reviewScore); // typeof totalScore is "object" not "string"
+
+    // bad
     const totalScore = this.reviewScore + ''; // invokes this.reviewScore.valueOf()
 
     // bad
-    const totalScore = this.reviewScore.toString(); // 不能保证返回string类型
+    const totalScore = this.reviewScore.toString(); // 不保证返回string
 
     // good
     const totalScore = String(this.reviewScore);
     ```
 
-  <a name="coercion--numbers"></a><a name="21.3"></a>
-  - [21.3](#coercion--numbers) Numbers: 用 `Number` 做类型转换，`parseInt`转换string常需要带上基数。 eslint: [`radix`](http://eslint.org/docs/rules/radix)
+  <a name="coercion--numbers"></a><a name="22.3"></a>
+  - [22.3](#coercion--numbers) Numbers: 用 `Number` 做类型转换，`parseInt`转换string常需要带上基数。 eslint: [`radix`](http://eslint.org/docs/rules/radix)
 
     ```javascript
     const inputValue = '4';
@@ -2896,8 +3061,8 @@ Other Style Guides
     const val = parseInt(inputValue, 10);
     ```
 
-  <a name="coercion--comment-deviations"></a><a name="21.4"></a>
-  - [21.4](#coercion--comment-deviations) 如果一定要用移位[Bitshifting]运算[性能原因](https://jsperf.com/coercion-vs-casting/3), 请在注释中解释为什么和你在做什么
+  <a name="coercion--comment-deviations"></a><a name="22.4"></a>
+  - [22.4](#coercion--comment-deviations) 请在注释中解释为什么要用移位运算和你在做什么。无论你做什么狂野的事，比如由于 `parseInt` 是你的性能瓶颈导致你一定要用移位运算。 请说明这个是因为[性能原因](https://jsperf.com/coercion-vs-casting/3),
 
     ```javascript
     // good
@@ -2908,8 +3073,8 @@ Other Style Guides
     const val = inputValue >> 0;
     ```
 
-  <a name="coercion--bitwise"></a><a name="21.5"></a>
-  - [21.5](#coercion--bitwise) **注意:** 用移位运算要小心. 数字使用[64-位](https://es5.github.io/#x4.3.19)表示的，但移位运算常常返回的是32为整形[source](https://es5.github.io/#x11.7))。移位运算对大于32位的整数会导致意外行为。[Discussion](https://github.com/airbnb/javascript/issues/109). 最大的32位整数是 2,147,483,647:
+  <a name="coercion--bitwise"></a><a name="22.5"></a>
+  - [22.5](#coercion--bitwise) **注意:** 用移位运算要小心. 数字使用[64-位](https://es5.github.io/#x4.3.19)表示的，但移位运算常常返回的是32为整形[source](https://es5.github.io/#x11.7))。移位运算对大于32位的整数会导致意外行为。[Discussion](https://github.com/airbnb/javascript/issues/109). 最大的32位整数是 2,147,483,647:
 
     ```javascript
     2147483647 >> 0 //=> 2147483647
@@ -2917,8 +3082,8 @@ Other Style Guides
     2147483649 >> 0 //=> -2147483647
     ```
 
-  <a name="coercion--booleans"></a><a name="21.6"></a>
-  - [21.6](#coercion--booleans) 布尔:
+  <a name="coercion--booleans"></a><a name="22.6"></a>
+  - [22.6](#coercion--booleans) 布尔:
 
     ```javascript
     const age = 0;
@@ -2938,8 +3103,8 @@ Other Style Guides
 
 ## Naming Conventions
 
-  <a name="naming--descriptive"></a><a name="22.1"></a>
-  - [22.1](#naming--descriptive) 避免用一个字母命名，让你的命名可描述。 eslint: [`id-length`](http://eslint.org/docs/rules/id-length)
+  <a name="naming--descriptive"></a><a name="23.1"></a>
+  - [23.1](#naming--descriptive) 避免用一个字母命名，让你的命名可描述。 eslint: [`id-length`](http://eslint.org/docs/rules/id-length)
 
     ```javascript
     // bad
@@ -2953,8 +3118,8 @@ Other Style Guides
     }
     ```
 
-  <a name="naming--camelCase"></a><a name="22.2"></a>
-  - [22.2](#naming--camelCase) 用小驼峰式命名你的对象、函数、实例。 eslint: [`camelcase`](http://eslint.org/docs/rules/camelcase.html)
+  <a name="naming--camelCase"></a><a name="23.2"></a>
+  - [23.2](#naming--camelCase) 用小驼峰式命名你的对象、函数、实例。 eslint: [`camelcase`](http://eslint.org/docs/rules/camelcase.html)
 
     ```javascript
     // bad
@@ -2967,8 +3132,8 @@ Other Style Guides
     function thisIsMyFunction() {}
     ```
 
-  <a name="naming--PascalCase"></a><a name="22.3"></a>
-  - [22.3](#naming--PascalCase) 用大驼峰式命名类。 eslint: [`new-cap`](http://eslint.org/docs/rules/new-cap.html)
+  <a name="naming--PascalCase"></a><a name="23.3"></a>
+  - [23.3](#naming--PascalCase) 用大驼峰式命名类。 eslint: [`new-cap`](http://eslint.org/docs/rules/new-cap.html)
 
     ```javascript
     // bad
@@ -2992,10 +3157,10 @@ Other Style Guides
     });
     ```
 
-  <a name="naming--leading-underscore"></a><a name="22.4"></a>
-  - [22.4](#naming--leading-underscore) 不要用前置或后置下划线。 eslint: [`no-underscore-dangle`](http://eslint.org/docs/rules/no-underscore-dangle.html)
+  <a name="naming--leading-underscore"></a><a name="23.4"></a>
+  - [23.4](#naming--leading-underscore) 不要用前置或后置下划线。 eslint: [`no-underscore-dangle`](http://eslint.org/docs/rules/no-underscore-dangle.html)
 
-    > Why? JavaScript 没有私有属性或私有方法的概念。尽管前置下划线通常的概念上意味着“private”，事实上，这些属性是完全公有的，因此这部分也是你的API的内容。这一概念可能会导致开发者误以为更改这个不会导致崩溃或者不需要测试。 如果你想要什么东西变成“private”，那他一定不会再这里出现。
+    > Why? JavaScript 没有私有属性或私有方法的概念。尽管前置下划线通常的概念上意味着“private”，事实上，这些属性是完全公有的，因此这部分也是你的API的内容。这一概念可能会导致开发者误以为更改这个不会导致崩溃或者不需要测试。 如果你想要什么东西变成“private”，那就不要让它在这里出现。
 
     ```javascript
     // bad
@@ -3007,8 +3172,8 @@ Other Style Guides
     this.firstName = 'Panda';
     ```
 
-  <a name="naming--self-this"></a><a name="22.5"></a>
-  - [22.5](#naming--self-this) 不要保存引用`this`， 用箭头函数或[函数绑定——Function#bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind).
+  <a name="naming--self-this"></a><a name="23.5"></a>
+  - [23.5](#naming--self-this) 不要保存引用`this`， 用箭头函数或[函数绑定——Function#bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind).
 
     ```javascript
     // bad
@@ -3035,8 +3200,8 @@ Other Style Guides
     }
     ```
 
-  <a name="naming--filename-matches-export"></a><a name="22.6"></a>
-  - [22.6](#naming--filename-matches-export) export default导出模块A，则这个文件名也叫A.*， import 时候的参数也叫A。 大小写完全一致。
+  <a name="naming--filename-matches-export"></a><a name="23.6"></a>
+  - [23.6](#naming--filename-matches-export) export default导出模块A，则这个文件名也叫A.*， import 时候的参数也叫A。 大小写完全一致。
 
     ```javascript
     // file 1 contents
@@ -3071,8 +3236,8 @@ Other Style Guides
     // ^ supports both insideDirectory.js and insideDirectory/index.js
     ```
 
-  <a name="naming--camelCase-default-export"></a><a name="22.7"></a>
-  - [22.7](#naming--camelCase-default-export) 当你export-default一个函数时，函数名用小驼峰，文件名需要和函数名一致。
+  <a name="naming--camelCase-default-export"></a><a name="23.7"></a>
+  - [23.7](#naming--camelCase-default-export) 当你export-default一个函数时，函数名用小驼峰，文件名需要和函数名一致。
 
     ```javascript
     function makeStyleGuide() {
@@ -3082,8 +3247,8 @@ Other Style Guides
     export default makeStyleGuide;
     ```
 
-  <a name="naming--PascalCase-singleton"></a><a name="22.8"></a>
-  - [22.8](#naming--PascalCase-singleton) 当你export一个结构体 用大驼峰 Use PascalCase when you export a constructor / class / singleton / function library / bare object.
+  <a name="naming--PascalCase-singleton"></a><a name="23.8"></a>
+  - [23.8](#naming--PascalCase-singleton) 当你export一个结构体/类/单例/函数库/对象 时用大驼峰。
 
     ```javascript
     const AirbnbStyleGuide = {
@@ -3094,10 +3259,10 @@ Other Style Guides
     export default AirbnbStyleGuide;
     ```
 
-  <a name="naming--Acronyms-and-Initialisms"></a>
-  - [22.9](#naming--Acronyms-and-Initialisms) Acronyms and initialisms should always be all capitalized, or all lowercased.
+  <a name="naming--Acronyms-and-Initialisms"></a><a name="23.9"></a>
+  - [22.9](#naming--Acronyms-and-Initialisms) 简称和缩写应该全部大写或全部小写。
 
-    > Why? Names are for readability, not to appease a computer algorithm.
+    > Why? 名字都是给人读的，不是为了适应电脑的算法的。
 
     ```javascript
     // bad
@@ -3125,16 +3290,57 @@ Other Style Guides
     ];
     ```
 
+  <a name="naming--uppercase"></a><a name="23.10"></a>
+  - [23.10](#naming--uppercase) 你可以用全大写字母设置静态变量，他需要满足三个条件。
+    1. 导出变量
+    1. 是 `const` 定义的， 保证不能被改变
+    1. 这个变量是可信的，他的子属性都是不能被改变的
+
+    > Why? 这是一个附加工具，帮助开发者去辨识一个变量是不是不可变的。
+    - 对于所有的 `const` 变量呢？ —— 这个是不必要的。大写变量不应该在同一个文件里定义并使用， 它只能用来作为导出变量。 赞同！
+    - 那导出的对象呢？ —— 大写变量处在export的最高级(e.g. `EXPORTED_OBJECT.key`) 并且他包含的所有子属性都是不可变的。
+
+    ```javascript
+    // bad
+    const PRIVATE_VARIABLE = 'should not be unnecessarily uppercased within a file';
+
+    // bad
+    export const THING_TO_BE_CHANGED = 'should obviously not be uppercased';
+
+    // bad
+    export let REASSIGNABLE_VARIABLE = 'do not use let with uppercase variables';
+
+    // ---
+
+    // allowed but does not supply semantic value
+    export const apiKey = 'SOMEKEY';
+
+    // better in most cases
+    export const API_KEY = 'SOMEKEY';
+
+    // ---
+
+    // bad - unnecessarily uppercases key while adding no semantic value
+    export const MAPPING = {
+      KEY: 'value'
+    };
+
+    // good
+    export const MAPPING = {
+      key: 'value'
+    };
+    ```
+
 **[⬆ back to top](#目录)**
 
 
 ## Accessors
 
-  <a name="accessors--not-required"></a><a name="23.1"></a>
-  - [23.1](#accessors--not-required) Accessor functions 属性不允许使用
+  <a name="accessors--not-required"></a><a name="24.1"></a>
+  - [24.1](#accessors--not-required) 不需要使用属性的访问器函数。
 
-  <a name="accessors--no-getters-setters"></a><a name="23.2"></a>
-  - [23.2](#accessors--no-getters-setters) 不要使用JavaScript的getters/setters，因为他们会产生副作用，并且难以测试、维护和理解。相反的，你可以用 getVal()和setVal('hello')去创造你自己的accessor函数
+  <a name="accessors--no-getters-setters"></a><a name="24.2"></a>
+  - [24.2](#accessors--no-getters-setters) 不要使用JavaScript的getters/setters，因为他们会产生副作用，并且难以测试、维护和理解。相反的，你可以用 getVal()和setVal('hello')去创造你自己的accessor函数
 
     ```javascript
     // bad
@@ -3160,8 +3366,8 @@ Other Style Guides
     }
     ```
 
-  <a name="accessors--boolean-prefix"></a><a name="23.3"></a>
-  - [23.3](#accessors--boolean-prefix) 如果属性/方法是`boolean`， 用 `isVal()` 或 `hasVal()`
+  <a name="accessors--boolean-prefix"></a><a name="24.3"></a>
+  - [24.3](#accessors--boolean-prefix) 如果属性/方法是`boolean`， 用 `isVal()` 或 `hasVal()`
 
     ```javascript
     // bad
@@ -3175,8 +3381,8 @@ Other Style Guides
     }
     ```
 
-  <a name="accessors--consistent"></a><a name="23.4"></a>
-  - [23.4](#accessors--consistent) 用get()和set()函数是可以的，但是要一起用
+  <a name="accessors--consistent"></a><a name="24.4"></a>
+  - [24.4](#accessors--consistent) 用get()和set()函数是可以的，但是要一起用
 
     ```javascript
     class Jedi {
@@ -3200,8 +3406,8 @@ Other Style Guides
 
 ## Events
 
-  <a name="events--hash"></a><a name="24.1"></a>
-  - [24.1](#events--hash) 通过哈希而不是原始值向事件装载数据时(不论是DOM事件还是像Backbone事件的很多属性)。 这使得后续的贡献者（程序员）想这个事件装载更多的数据时不用去找或者更新每个处理器。例如：
+  <a name="events--hash"></a><a name="25.1"></a>
+  - [25.1](#events--hash) 通过哈希而不是原始值向事件装载数据时(不论是DOM事件还是像Backbone事件的很多属性)。 这使得后续的贡献者（程序员）想这个事件装载更多的数据时不用去找或者更新每个处理器。例如：
 
     ```javascript
     // bad
@@ -3232,8 +3438,8 @@ Other Style Guides
 
 ## jQuery
 
-  <a name="jquery--dollar-prefix"></a><a name="25.1"></a>
-  - [25.1](#jquery--dollar-prefix) jQuery对象用`$`变量表示。
+  <a name="jquery--dollar-prefix"></a><a name="26.1"></a>
+  - [26.1](#jquery--dollar-prefix) jQuery对象用`$`变量表示。
 
     ```javascript
     // bad
@@ -3246,8 +3452,8 @@ Other Style Guides
     const $sidebarBtn = $('.sidebar-btn');
     ```
 
-  <a name="jquery--cache"></a><a name="25.2"></a>
-  - [25.2](#jquery--cache) 暂存jQuery查找
+  <a name="jquery--cache"></a><a name="26.2"></a>
+  - [26.2](#jquery--cache) 暂存jQuery查找
 
     ```javascript
     // bad
@@ -3274,11 +3480,11 @@ Other Style Guides
     }
     ```
 
-  <a name="jquery--queries"></a><a name="25.3"></a>
-  - [25.3](#jquery--queries) DOM查找用层叠式`$('.sidebar ul')` 或 父节点 > 子节点 `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
+  <a name="jquery--queries"></a><a name="26.3"></a>
+  - [26.3](#jquery--queries) DOM查找用层叠式`$('.sidebar ul')` 或 父节点 > 子节点 `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
 
-  <a name="jquery--find"></a><a name="25.4"></a>
-  - [25.4](#jquery--find) 用jQuery对象查询作用域的`find`方法查询
+  <a name="jquery--find"></a><a name="26.4"></a>
+  - [26.4](#jquery--find) 用jQuery对象查询作用域的`find`方法查询
 
     ```javascript
     // bad
@@ -3300,10 +3506,10 @@ Other Style Guides
 **[⬆ back to top](#目录)**
 
 
-## ECMAScript 5 Compatibility
+## ES5 兼容性
 
   <a name="es5-compat--kangax"></a><a name="26.1"></a>
-  - [26.1](#es5-compat--kangax) Refer to [Kangax](https://twitter.com/kangax/)'s ES5 [compatibility table](https://kangax.github.io/es5-compat-table/).
+  - [27.1](#es5-compat--kangax) 参考[Kangax](https://twitter.com/kangax/)的ES5[兼容性列表](https://kangax.github.io/es5-compat-table/).
 
 **[⬆ back to top](#目录)**
 
@@ -3311,7 +3517,7 @@ Other Style Guides
 ## ECMAScript 6+ (ES 2015+) Styles
 
   <a name="es6-styles"></a><a name="27.1"></a>
-  - [27.1](#es6-styles) 这是收集到的各种ES6特性的链接
+  - [28.1](#es6-styles) 这是收集到的各种ES6特性的链接
 
 1. [箭头函数——Arrow Functions](#arrow-functions)
 1. [类——Classes](#classes--constructors)
@@ -3324,20 +3530,57 @@ Other Style Guides
 1. [Rest](#es6-rest)
 1. [Array Spreads](#es6-array-spreads)
 1. [Let and Const](#references)
+1. [幂操作符——Exponentiation Operator](#es2016-properties--exponentiation-operator)
 1. [迭代器和生成器——Iterators and Generators](#iterators-and-generators)
 1. [模块——Modules](#modules)
 
   <a name="tc39-proposals"></a>
-  - [27.2](#tc39-proposals) Do not use [TC39 proposals](https://github.com/tc39/proposals) that have not reached stage 3.
+  - [28.2](#tc39-proposals) 不要用[TC39 proposals](https://github.com/tc39/proposals)， TC39还没有到 stage 3。
 
-    > Why? [They are not finalized](https://tc39.github.io/process-document/), and they are subject to change or to be withdrawn entirely. We want to use JavaScript, and proposals are not JavaScript yet.
+    > Why? [它还不是最终版](https://tc39.github.io/process-document/), 他可能还有很多变化，或者被撤销。 我们想要用的是 JavaScript， 提议还不是JavaScript。
 
 **[⬆ back to top](#目录)**
 
+## Standard Library
+
+  [标准库](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects)中包含一些功能受损但是由于历史原因遗留的工具类
+
+  <a name="standard-library--isnan"></a>
+  - [29.1](#standard-library--isnan) 用 `Number.isNaN` 代替全局的 `isNaN`.
+    eslint: [`no-restricted-globals`](https://eslint.org/docs/rules/no-restricted-globals)
+
+    > Why? 全局 `isNaN` 强制把非数字转成数字， 然后对于任何强转后为 `NaN` 的变量都返回 `true`
+    > 如果你想用这个功能，就显式的用它。
+
+    ```javascript
+    // bad
+    isNaN('1.2'); // false
+    isNaN('1.2.3'); // true
+
+    // good
+    Number.isNaN('1.2.3'); // false
+    Number.isNaN(Number('1.2.3')); // true
+    ```
+
+  <a name="standard-library--isfinite"></a>
+  - [29.2](#standard-library--isfinite) 用 `Number.isFinite` 代替 `isFinite`.
+    eslint: [`no-restricted-globals`](https://eslint.org/docs/rules/no-restricted-globals)
+
+    > Why? 理由同上，会把一个非数字变量强转成数字，然后做判断。
+
+    ```javascript
+    // bad
+    isFinite('2e3'); // true
+
+    // good
+    Number.isFinite('2e3'); // false
+    Number.isFinite(parseInt('2e3', 10)); // true
+    ```
+
 ## Testing
 
-  <a name="testing--yup"></a><a name="28.1"></a>
-  - [28.1](#testing--yup) **Yup.**
+  <a name="testing--yup"></a><a name="30.1"></a>
+  - [30.1](#testing--yup) **Yup.**
 
     ```javascript
     function foo() {
@@ -3345,14 +3588,14 @@ Other Style Guides
     }
     ```
 
-  <a name="testing--for-real"></a><a name="28.2"></a>
-  - [28.2](#testing--for-real) **No, but seriously**:
-   - Whichever testing framework you use, you should be writing tests!
-   - Strive to write many small pure functions, and minimize where mutations occur.
-   - Be cautious about stubs and mocks - they can make your tests more brittle.
-   - We primarily use [`mocha`](https://www.npmjs.com/package/mocha) at Airbnb. [`tape`](https://www.npmjs.com/package/tape) is also used occasionally for small, separate modules.
-   - 100% test coverage is a good goal to strive for, even if it's not always practical to reach it.
-   - Whenever you fix a bug, _write a regression test_. A bug fixed without a regression test is almost certainly going to break again in the future.
+  <a name="testing--for-real"></a><a name="30.2"></a>
+  - [30.2](#testing--for-real) **No, but seriously**:
+   - 无论用那个测试框架，你都需要写测试。
+   - 尽量去写很多小而美的纯函数，减少突变的发生
+   - 小心 stub 和 mock —— 这会让你的测试变得脆弱。
+   - 在 Airbnb 首选 [`mocha`](https://www.npmjs.com/package/mocha)。 [`tape`](https://www.npmjs.com/package/tape) 偶尔被用来测试一些小的，独立的模块。
+   - 100%测试覆盖率是我们努力的目标，即便实际上很少达到。
+   - 每当你修了一个bug， 都要写一个回归测试。 一个bug修复了，没有回归测试，很可能以后会再次出问题。
 
 **[⬆ back to top](#目录)**
 
@@ -3453,31 +3696,37 @@ Other Style Guides
 
 **[⬆ back to top](#目录)**
 
+
 ## In the Wild
 
   This is a list of organizations that are using this style guide. Send us a pull request and we'll add you to the list.
 
-  - **3blades**: [3Blades/javascript](https://github.com/3blades/javascript)
+  - **123erfasst**: [123erfasst/javascript](https://github.com/123erfasst/javascript)
+  - **3blades**: [3Blades](https://github.com/3blades)
   - **4Catalyzer**: [4Catalyzer/javascript](https://github.com/4Catalyzer/javascript)
   - **Aan Zee**: [AanZee/javascript](https://github.com/AanZee/javascript)
   - **Adult Swim**: [adult-swim/javascript](https://github.com/adult-swim/javascript)
   - **Airbnb**: [airbnb/javascript](https://github.com/airbnb/javascript)
+  - **AltSchool**: [AltSchool/javascript](https://github.com/AltSchool/javascript)
   - **Apartmint**: [apartmint/javascript](https://github.com/apartmint/javascript)
   - **Ascribe**: [ascribe/javascript](https://github.com/ascribe/javascript)
   - **Avalara**: [avalara/javascript](https://github.com/avalara/javascript)
   - **Avant**: [avantcredit/javascript](https://github.com/avantcredit/javascript)
+  - **Axept**: [axept/javascript](https://github.com/axept/javascript)
   - **BashPros**: [BashPros/javascript](https://github.com/BashPros/javascript)
   - **Billabong**: [billabong/javascript](https://github.com/billabong/javascript)
-  - **Bisk**: [bisk/javascript](https://github.com/Bisk/javascript/)
-  - **Blendle**: [blendle/javascript](https://github.com/blendle/javascript)
+  - **Bisk**: [bisk](https://github.com/Bisk/)
   - **Bonhomme**: [bonhommeparis/javascript](https://github.com/bonhommeparis/javascript)
   - **Brainshark**: [brainshark/javascript](https://github.com/brainshark/javascript)
+  - **CaseNine**: [CaseNine/javascript](https://github.com/CaseNine/javascript)
+  - **Cerner**: [Cerner](https://github.com/cerner/)
   - **Chartboost**: [ChartBoost/javascript-style-guide](https://github.com/ChartBoost/javascript-style-guide)
   - **ComparaOnline**: [comparaonline/javascript](https://github.com/comparaonline/javascript-style-guide)
   - **Compass Learning**: [compasslearning/javascript-style-guide](https://github.com/compasslearning/javascript-style-guide)
   - **DailyMotion**: [dailymotion/javascript](https://github.com/dailymotion/javascript)
   - **DoSomething**: [DoSomething/eslint-config](https://github.com/DoSomething/eslint-config)
   - **Digitpaint** [digitpaint/javascript](https://github.com/digitpaint/javascript)
+  - **Drupal**: [www.drupal.org](https://www.drupal.org/project/drupal)
   - **Ecosia**: [ecosia/javascript](https://github.com/ecosia/javascript)
   - **Evernote**: [evernote/javascript-style-guide](https://github.com/evernote/javascript-style-guide)
   - **Evolution Gaming**: [evolution-gaming/javascript](https://github.com/evolution-gaming/javascript)
@@ -3485,21 +3734,26 @@ Other Style Guides
   - **ExactTarget**: [ExactTarget/javascript](https://github.com/ExactTarget/javascript)
   - **Expensify** [Expensify/Style-Guide](https://github.com/Expensify/Style-Guide/blob/master/javascript.md)
   - **Flexberry**: [Flexberry/javascript-style-guide](https://github.com/Flexberry/javascript-style-guide)
-  - **Gawker Media**: [gawkermedia/javascript](https://github.com/gawkermedia/javascript)
+  - **Gawker Media**: [gawkermedia](https://github.com/gawkermedia/)
   - **General Electric**: [GeneralElectric/javascript](https://github.com/GeneralElectric/javascript)
+  - **Generation Tux**: [GenerationTux/javascript](https://github.com/generationtux/styleguide)
   - **GoodData**: [gooddata/gdc-js-style](https://github.com/gooddata/gdc-js-style)
+  - **GreenChef**: [greenchef/javascript](https://github.com/greenchef/javascript)
   - **Grooveshark**: [grooveshark/javascript](https://github.com/grooveshark/javascript)
+  - **Grupo-Abraxas**: [Grupo-Abraxas/javascript](https://github.com/Grupo-Abraxas/javascript)
+  - **Honey**: [honeyscience/javascript](https://github.com/honeyscience/javascript)
   - **How About We**: [howaboutwe/javascript](https://github.com/howaboutwe/javascript-style-guide)
-  - **Huballin**: [huballin/javascript](https://github.com/huballin/javascript)
+  - **Huballin**: [huballin](https://github.com/huballin/)
   - **HubSpot**: [HubSpot/javascript](https://github.com/HubSpot/javascript)
   - **Hyper**: [hyperoslo/javascript-playbook](https://github.com/hyperoslo/javascript-playbook/blob/master/style.md)
-  - **InfoJobs**: [InfoJobs/JavaScript-Style-Guide](https://github.com/InfoJobs/JavaScript-Style-Guide)
-  - **Intent Media**: [intentmedia/javascript](https://github.com/intentmedia/javascript)
+  - **InterCity Group**: [intercitygroup/javascript-style-guide](https://github.com/intercitygroup/javascript-style-guide)
   - **Jam3**: [Jam3/Javascript-Code-Conventions](https://github.com/Jam3/Javascript-Code-Conventions)
   - **JeopardyBot**: [kesne/jeopardy-bot](https://github.com/kesne/jeopardy-bot/blob/master/STYLEGUIDE.md)
   - **JSSolutions**: [JSSolutions/javascript](https://github.com/JSSolutions/javascript)
-  - **KickorStick**: [kickorstick/javascript](https://github.com/kickorstick/javascript)
+  - **Kaplan Komputing**: [kaplankomputing/javascript](https://github.com/kaplankomputing/javascript)
+  - **KickorStick**: [kickorstick](https://github.com/kickorstick/)
   - **Kinetica Solutions**: [kinetica/javascript](https://github.com/kinetica/Javascript-style-guide)
+  - **LEINWAND**: [LEINWAND/javascript](https://github.com/LEINWAND/javascript)
   - **Lonely Planet**: [lonelyplanet/javascript](https://github.com/lonelyplanet/javascript)
   - **M2GEN**: [M2GEN/javascript](https://github.com/M2GEN/javascript)
   - **Mighty Spring**: [mightyspring/javascript](https://github.com/mightyspring/javascript)
@@ -3507,25 +3761,30 @@ Other Style Guides
   - **MitocGroup**: [MitocGroup/javascript](https://github.com/MitocGroup/javascript)
   - **ModCloth**: [modcloth/javascript](https://github.com/modcloth/javascript)
   - **Money Advice Service**: [moneyadviceservice/javascript](https://github.com/moneyadviceservice/javascript)
-  - **Muber**: [muber/javascript](https://github.com/muber/javascript)
-  - **National Geographic**: [natgeo/javascript](https://github.com/natgeo/javascript)
-  - **National Park Service**: [nationalparkservice/javascript](https://github.com/nationalparkservice/javascript)
+  - **Muber**: [muber](https://github.com/muber/)
+  - **National Geographic**: [natgeo](https://github.com/natgeo/)
   - **Nimbl3**: [nimbl3/javascript](https://github.com/nimbl3/javascript)
   - **Nulogy**: [nulogy/javascript](https://github.com/nulogy/javascript)
+  - **Orange Hill Development**: [orangehill/javascript](https://github.com/orangehill/javascript)
   - **Orion Health**: [orionhealth/javascript](https://github.com/orionhealth/javascript)
   - **OutBoxSoft**: [OutBoxSoft/javascript](https://github.com/OutBoxSoft/javascript)
   - **Peerby**: [Peerby/javascript](https://github.com/Peerby/javascript)
+  - **Pier 1**: [Pier1/javascript](https://github.com/pier1/javascript)
+  - **Qotto**: [Qotto/javascript-style-guide](https://github.com/Qotto/javascript-style-guide)
   - **Razorfish**: [razorfish/javascript-style-guide](https://github.com/razorfish/javascript-style-guide)
   - **reddit**: [reddit/styleguide/javascript](https://github.com/reddit/styleguide/tree/master/javascript)
-  - **React**: [/facebook/react/blob/master/CONTRIBUTING.md#style-guide](https://github.com/facebook/react/blob/master/CONTRIBUTING.md#style-guide)
-  - **REI**: [reidev/js-style-guide](https://github.com/rei/code-style-guides/blob/master/docs/javascript.md)
+  - **React**: [facebook.github.io/react/contributing/how-to-contribute.html#style-guide](https://facebook.github.io/react/contributing/how-to-contribute.html#style-guide)
+  - **REI**: [reidev/js-style-guide](https://github.com/rei/code-style-guides/)
   - **Ripple**: [ripple/javascript-style-guide](https://github.com/ripple/javascript-style-guide)
+  - **Sainsbury’s Supermarkets**: [jsainsburyplc](https://github.com/jsainsburyplc)
   - **SeekingAlpha**: [seekingalpha/javascript-style-guide](https://github.com/seekingalpha/javascript-style-guide)
   - **Shutterfly**: [shutterfly/javascript](https://github.com/shutterfly/javascript)
-  - **Springload**: [springload/javascript](https://github.com/springload/javascript)
+  - **Sourcetoad**: [sourcetoad/javascript](https://github.com/sourcetoad/javascript)
+  - **Springload**: [springload](https://github.com/springload/)
   - **StratoDem Analytics**: [stratodem/javascript](https://github.com/stratodem/javascript)
   - **SteelKiwi Development**: [steelkiwi/javascript](https://github.com/steelkiwi/javascript)
   - **StudentSphere**: [studentsphere/javascript](https://github.com/studentsphere/guide-javascript)
+  - **SwoopApp**: [swoopapp/javascript](https://github.com/swoopapp/javascript)
   - **SysGarage**: [sysgarage/javascript-style-guide](https://github.com/sysgarage/javascript-style-guide)
   - **Syzygy Warsaw**: [syzygypl/javascript](https://github.com/syzygypl/javascript)
   - **Target**: [target/javascript](https://github.com/target/javascript)
@@ -3538,7 +3797,7 @@ Other Style Guides
   - **Zillow**: [zillow/javascript](https://github.com/zillow/javascript)
   - **ZocDoc**: [ZocDoc/javascript](https://github.com/ZocDoc/javascript)
 
-**[⬆ back to top](#目录)**
+**[⬆ back to top](#table-of-contents)**
 
 ## Translation
 
@@ -3553,11 +3812,12 @@ Other Style Guides
   - ![de](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Germany.png) **German**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
   - ![it](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Italy.png) **Italian**: [sinkswim/javascript-style-guide](https://github.com/sinkswim/javascript-style-guide)
   - ![jp](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Japan.png) **Japanese**: [mitsuruog/javascript-style-guide](https://github.com/mitsuruog/javascript-style-guide)
-  - ![kr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/South-Korea.png) **Korean**: [tipjs/javascript-style-guide](https://github.com/tipjs/javascript-style-guide)
-  - ![pl](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Poland.png) **Polish**: [mjurczyk/javascript](https://github.com/mjurczyk/javascript)
-  - ![ru](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png) **Russian**: [uprock/javascript](https://github.com/uprock/javascript)
+  - ![kr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/South-Korea.png) **Korean**: [ParkSB/javascript-style-guide](https://github.com/ParkSB/javascript-style-guide)
+  - ![ru](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png) **Russian**: [leonidlebedev/javascript-airbnb](https://github.com/leonidlebedev/javascript-airbnb)
   - ![es](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Spain.png) **Spanish**: [paolocarrasco/javascript-style-guide](https://github.com/paolocarrasco/javascript-style-guide)
   - ![th](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Thailand.png) **Thai**: [lvarayut/javascript-style-guide](https://github.com/lvarayut/javascript-style-guide)
+  - ![tr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Turkey.png) **Turkish**: [eraycetinay/javascript](https://github.com/eraycetinay/javascript)
+  - ![ua](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Ukraine.png) **Ukrainian**: [ivanzusko/javascript](https://github.com/ivanzusko/javascript)
   - ![vn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) **Vietnam**: [hngiang/javascript-style-guide](https://github.com/hngiang/javascript-style-guide)
 
 ## The JavaScript Style Guide Guide
@@ -3572,12 +3832,11 @@ Other Style Guides
 
   - [View Contributors](https://github.com/airbnb/javascript/graphs/contributors)
 
-
 ## License
 
 (The MIT License)
 
-Copyright (c) 2014-2017 Airbnb
+Copyright (c) 2012 Airbnb
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -3598,10 +3857,10 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-**[⬆ back to top](#目录)**
+**[⬆ back to top](#table-of-contents)**
 
 ## Amendments
 
-We encourage you to fork this guide and change the rules to fit your team's style guide. Below, you may list some amendments to the style guide. This allows you to periodically update your style guide without having to deal with merge conflicts.
+We encourage you to fork this guide and change the rules to fit your team’s style guide. Below, you may list some amendments to the style guide. This allows you to periodically update your style guide without having to deal with merge conflicts.
 
 # };
