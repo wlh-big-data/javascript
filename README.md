@@ -155,7 +155,7 @@ Other Style Guides
 
   <a name="3.1"></a>
   <a name="objects--no-new"></a>
-  - [3.1](#objects--no-new) - 使用字面值创建对象. eslint: [`no-new-object`](http://eslint.org/docs/rules/no-new-object.html)
+  - [3.1](#objects--no-new) 使用字面值创建对象. eslint: [`no-new-object`](http://eslint.org/docs/rules/no-new-object.html)
 
     ```javascript
     // bad
@@ -386,7 +386,6 @@ Other Style Guides
   <a name="4.4"></a>
   <a name="arrays--from-iterable"></a>
   - [4.4](#arrays--from-iterable) 用 `...` 运算符而不是[`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from)来将一个可迭代的对象转换成数组。
-    > why ?
 
     ```javascript
     const foo = document.querySelectorAll('.foo');
