@@ -1,10 +1,10 @@
-# Airbnb React/JSX Style Guide
+# Airbnb React/JSX 风格指南
 
-*A mostly reasonable approach to React and JSX*
+*React 和 JSX 的最佳实践*
 
-This style guide is mostly based on the standards that are currently prevalent in JavaScript, although some conventions (i.e async/await or static class fields) may still be included or prohibited on a case-by-case basis. Currently, anything prior to stage 3 is not included nor recommended in this guide.
+这个指南大部分基于现在在JavaScript中流行的标准，尽管有些约定(如： async/await 或 class 的 static 字段)根据具体情况也会被包括或者被禁止。当前这个指南不包括也不推荐任何 ECMAScript 第三阶段提案之前的内容。
 
-## Table of Contents
+## 目录
 
   1. [Basic Rules](#basic-rules)
   1. [Class vs `React.createClass` vs stateless](#class-vs-reactcreateclass-vs-stateless)
@@ -24,14 +24,14 @@ This style guide is mostly based on the standards that are currently prevalent i
 
 ## Basic Rules
 
-  - Only include one React component per file.
-    - However, multiple [Stateless, or Pure, Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) are allowed per file. eslint: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
-  - Always use JSX syntax.
-  - Do not use `React.createElement` unless you’re initializing the app from a file that is not JSX.
+  - 每个文件只包含一个 React 组件
+    - 然而，在一个文件里包含多个[没有 state 或纯组件](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions)是允许的。 eslint: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
+  - 经常用 JSX 语法。
+  - 不要用 `React.createElement`， 除非你从一个非 JSX 文件中初始化 app。
 
 ## Class vs `React.createClass` vs stateless
 
-  - If you have internal state and/or refs, prefer `class extends React.Component` over `React.createClass`. eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md) [`react/prefer-stateless-function`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md)
+  - 如果你要用 state refs， 最好用 `class extends React.Component` 而不是 `React.createClass`. eslint: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md) [`react/prefer-stateless-function`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md)
 
     ```jsx
     // bad
@@ -51,7 +51,7 @@ This style guide is mostly based on the standards that are currently prevalent i
     }
     ```
 
-    And if you don’t have state or refs, prefer normal functions (not arrow functions) over classes:
+    如果你没有使用 state、 refs ，最好用正常函数(不是箭头函数)而不是 class：
 
     ```jsx
     // bad
@@ -61,7 +61,7 @@ This style guide is mostly based on the standards that are currently prevalent i
       }
     }
 
-    // bad (relying on function name inference is discouraged)
+    // bad (不鼓励依赖函数名推断————relying on function name inference is discouraged)
     const Listing = ({ hello }) => (
       <div>{hello}</div>
     );
@@ -74,15 +74,15 @@ This style guide is mostly based on the standards that are currently prevalent i
 
 ## Mixins
 
-  - [Do not use mixins](https://facebook.github.io/react/blog/2016/07/13/mixins-considered-harmful.html).
+  - [不要用 mixins](https://facebook.github.io/react/blog/2016/07/13/mixins-considered-harmful.html).
 
-  > Why? Mixins introduce implicit dependencies, cause name clashes, and cause snowballing complexity. Most use cases for mixins can be accomplished in better ways via components, higher-order components, or utility modules.
+  > Why? mixins 会引入一些隐含依赖，导致命名冲突，会导致滚雪球式的复杂度。大多数情况下，mixins 都可以通过组件，[高阶组件 HOC](https://reactjs.org/docs/higher-order-components.html)或者工具模块更好的实现。
 
 ## Naming
 
-  - **Extensions**: Use `.jsx` extension for React components.
-  - **Filename**: Use PascalCase for filenames. E.g., `ReservationCard.jsx`.
-  - **Reference Naming**: Use PascalCase for React components and camelCase for their instances. eslint: [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
+  - **扩展名**: 用 `.jsx` 作为组件扩展名。
+  - **文件名**: 用大驼峰作为文件名，如：`ReservationCard.jsx`。
+  - **参数命名**: React 组件用大驼峰，组件的实例用小驼峰。 eslint: [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
 
     ```jsx
     // bad
@@ -98,7 +98,7 @@ This style guide is mostly based on the standards that are currently prevalent i
     const reservationItem = <ReservationCard />;
     ```
 
-  - **Component Naming**: Use the filename as the component name. For example, `ReservationCard.jsx` should have a reference name of `ReservationCard`. However, for root components of a directory, use `index.jsx` as the filename and use the directory name as the component name:
+  - **组件命名**: 文件名作为组件名。例如：`ReservationCard.jsx` 应该用 `ReservationCard` 作为参数名。 然而，对于一个文件夹里的跟组件，应该用 `index.jsx` 作为文件名，同时用文件夹名作为组件名
 
     ```jsx
     // bad
@@ -110,9 +110,9 @@ This style guide is mostly based on the standards that are currently prevalent i
     // good
     import Footer from './Footer';
     ```
-  - **Higher-order Component Naming**: Use a composite of the higher-order component’s name and the passed-in component’s name as the `displayName` on the generated component. For example, the higher-order component `withFoo()`, when passed a component `Bar` should produce a component with a `displayName` of `withFoo(Bar)`.
+  - **高阶组件`HOC`命名**: 用高阶组件名和传入的组件名组合作为生成的组件的 `displayName`。 举个例子，一个高阶组件 `withFoo()`， 当传入一个组件 `Bar` 应该生成一个新的组件，他的 `displayName` 属性是 `withFoo(Bar)`。
 
-    > Why? A component’s `displayName` may be used by developer tools or in error messages, and having a value that clearly expresses this relationship helps people understand what is happening.
+    > Why? 组件的 `displayName` 可以用于开发者工具或者错误信息中，同时还有一个值可以清晰的表达这种组件关系，这可以帮助人们理解到底发生了什么
 
     ```jsx
     // bad
@@ -137,9 +137,9 @@ This style guide is mostly based on the standards that are currently prevalent i
     }
     ```
 
-  - **Props Naming**: Avoid using DOM component prop names for different purposes.
+  - **Props 命名**: 避免用 DOM 组件的属性名表达不同的意义
 
-    > Why? People expect props like `style` and `className` to mean one specific thing. Varying this API for a subset of your app makes the code less readable and less maintainable, and may cause bugs.
+    > Why? 人们期望 `style`、 `className` 这种属性代表一个明确的意义。 为应用程序的一个子集改变此API会使代码的可读性降低，维护性降低，并可能导致错误。
 
     ```jsx
     // bad
@@ -154,7 +154,7 @@ This style guide is mostly based on the standards that are currently prevalent i
 
 ## Declaration
 
-  - Do not use `displayName` for naming components. Instead, name the component by reference.
+  - 不要通过 `displayName` 命名组件。最好通过引用命名组件。
 
     ```jsx
     // bad
@@ -170,7 +170,7 @@ This style guide is mostly based on the standards that are currently prevalent i
 
 ## Alignment
 
-  - Follow these alignment styles for JSX syntax. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md) [`react/jsx-closing-tag-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-tag-location.md)
+  - 对 JSX 语法使用这些对齐风格。 eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md) [`react/jsx-closing-tag-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-tag-location.md)
 
     ```jsx
     // bad
@@ -183,10 +183,10 @@ This style guide is mostly based on the standards that are currently prevalent i
       anotherSuperLongParam="baz"
     />
 
-    // if props fit in one line then keep it on the same line
+    // 如果能放在一行，也可以用单行表示
     <Foo bar="bar" />
 
-    // children get indented normally
+    // Foo 里面的标签正常缩进
     <Foo
       superLongParam="bar"
       anotherSuperLongParam="baz"
@@ -216,9 +216,9 @@ This style guide is mostly based on the standards that are currently prevalent i
 
 ## Quotes
 
-  - Always use double quotes (`"`) for JSX attributes, but single quotes (`'`) for all other JS. eslint: [`jsx-quotes`](https://eslint.org/docs/rules/jsx-quotes)
+  - 在 JSX 属性中用双引号(`"`)，但是在js里用单引号(`'`)。eslint: [`jsx-quotes`](https://eslint.org/docs/rules/jsx-quotes)
 
-    > Why? Regular HTML attributes also typically use double quotes instead of single, so JSX attributes mirror this convention.
+    > Why? 正常的 HTML 属性也通常使用双引号而不是单引号，所以 JSX 属性也使用这个约定。
 
     ```jsx
     // bad
@@ -236,7 +236,7 @@ This style guide is mostly based on the standards that are currently prevalent i
 
 ## Spacing
 
-  - Always include a single space in your self-closing tag. eslint: [`no-multi-spaces`](https://eslint.org/docs/rules/no-multi-spaces), [`react/jsx-tag-spacing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-tag-spacing.md)
+  - 在自闭和标签内空一格。 eslint: [`no-multi-spaces`](https://eslint.org/docs/rules/no-multi-spaces), [`react/jsx-tag-spacing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-tag-spacing.md)
 
     ```jsx
     // bad
@@ -253,7 +253,7 @@ This style guide is mostly based on the standards that are currently prevalent i
     <Foo />
     ```
 
-  - Do not pad JSX curly braces with spaces. eslint: [`react/jsx-curly-spacing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md)
+  - JSX 里的大括号不要空格。 eslint: [`react/jsx-curly-spacing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md)
 
     ```jsx
     // bad
@@ -265,7 +265,7 @@ This style guide is mostly based on the standards that are currently prevalent i
 
 ## Props
 
-  - Always use camelCase for prop names.
+  - props 用小驼峰
 
     ```jsx
     // bad
@@ -281,7 +281,7 @@ This style guide is mostly based on the standards that are currently prevalent i
     />
     ```
 
-  - Omit the value of the prop when it is explicitly `true`. eslint: [`react/jsx-boolean-value`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md)
+  - 如果 prop 的值是 true 可以忽略这个值，直接写 prop 名就可以。 eslint: [`react/jsx-boolean-value`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md)
 
     ```jsx
     // bad
@@ -298,7 +298,7 @@ This style guide is mostly based on the standards that are currently prevalent i
     <Foo hidden />
     ```
 
-  - Always include an `alt` prop on `<img>` tags. If the image is presentational, `alt` can be an empty string or the `<img>` must have `role="presentation"`. eslint: [`jsx-a11y/alt-text`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md)
+  - `<img>` 标签通常会设置 `alt` 属性。如果图片是表现型的， `alt`可以是空字符串或者 `<img>` 必须有 `role="presentation"` 这个属性。 eslint: [`jsx-a11y/alt-text`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md)
 
     ```jsx
     // bad
@@ -314,9 +314,9 @@ This style guide is mostly based on the standards that are currently prevalent i
     <img src="hello.jpg" role="presentation" />
     ```
 
-  - Do not use words like "image", "photo", or "picture" in `<img>` `alt` props. eslint: [`jsx-a11y/img-redundant-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md)
+  - 不要在 `<img>` 的 `alt` 属性里用类似 "image"， "photo"， "picture" 这些单词。 eslint: [`jsx-a11y/img-redundant-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md)
 
-    > Why? Screenreaders already announce `img` elements as images, so there is no need to include this information in the alt text.
+    > Why? 因为屏幕阅读器已经将 `img` 发音为图片了，所以这个信息就不需要出现在 alt 文本里了。
 
     ```jsx
     // bad
@@ -325,6 +325,9 @@ This style guide is mostly based on the standards that are currently prevalent i
     // good
     <img src="hello.jpg" alt="Me waving hello" />
     ```
+
+===================================
+===================================
 
   - Use only valid, non-abstract [ARIA roles](https://www.w3.org/TR/wai-aria/#usage_intro). eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
 
