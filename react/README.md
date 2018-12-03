@@ -6,20 +6,20 @@
 
 ## 目录
 
-  1. [Basic Rules](#basic-rules)
+  1. [基本规则(Basic Rules)](#basic-rules)
   1. [Class vs `React.createClass` vs stateless](#class-vs-reactcreateclass-vs-stateless)
-  1. [Mixins](#mixins)
-  1. [Naming](#naming)
-  1. [Declaration](#declaration)
-  1. [Alignment](#alignment)
-  1. [Quotes](#quotes)
-  1. [Spacing](#spacing)
-  1. [Props](#props)
-  1. [Refs](#refs)
-  1. [Parentheses](#parentheses)
-  1. [Tags](#tags)
-  1. [Methods](#methods)
-  1. [Ordering](#ordering)
+  1. [混合(Mixins)](#mixins)
+  1. [命名(Naming)](#naming)
+  1. [声明(Declaration)](#declaration)
+  1. [对齐(Alignment)](#alignment)
+  1. [引号(Quotes)](#quotes)
+  1. [空格(Spacing)](#spacing)
+  1. [属性(Props)](#props)
+  1. [引用(Refs)](#refs)
+  1. [括号(Parentheses)](#parentheses)
+  1. [标签(Tags)](#tags)
+  1. [方法(Methods)](#methods)
+  1. [排序(Ordering)](#ordering)
   1. [`isMounted`](#ismounted)
 
 ## Basic Rules
@@ -716,4 +716,4 @@
   - ![ua](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Ukraine.png) **Ukrainian**: [ivanzusko/javascript](https://github.com/ivanzusko/javascript/tree/master/react)
   - ![vn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) **Vietnam**: [uetcodecamp/jsx-style-guide](https://github.com/UETCodeCamp/jsx-style-guide)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#目录)**
