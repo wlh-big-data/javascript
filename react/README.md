@@ -2,7 +2,7 @@
 
 *React 和 JSX 的最佳实践*
 
-这个指南大部分基于现在在JavaScript中流行的标准，尽管有些约定(如： async/await 或 class 的 static 字段)根据具体情况也会被包括或者被禁止。当前这个指南不包括也不推荐任何 ECMAScript 第三阶段提案之前的内容。
+这个指南大部分基于现在在JavaScript中流行的标准，尽管有些约定(如： async/await 或 class 的 static 字段)根据具体情况也会被引入或者被禁止。当前这个指南不包括也不推荐任何 ECMAScript stage-3(第三阶段提案) 之前的内容。
 
 ## 目录
 
@@ -326,25 +326,22 @@
     <img src="hello.jpg" alt="Me waving hello" />
     ```
 
-===================================
-===================================
-
-  - Use only valid, non-abstract [ARIA roles](https://www.w3.org/TR/wai-aria/#usage_intro). eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
+  - 只用可用的，不抽象的 [ARIA roles](https://www.w3.org/TR/wai-aria/#usage_intro). eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
 
     ```jsx
-    // bad - not an ARIA role
+    // bad - 不是一个 ARIA role
     <div role="datepicker" />
 
-    // bad - abstract ARIA role
+    // bad - 抽象的 ARIA role
     <div role="range" />
 
     // good
     <div role="button" />
     ```
 
-  - Do not use `accessKey` on elements. eslint: [`jsx-a11y/no-access-key`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md)
+  - 不要在元素上用 `accessKey`。 eslint: [`jsx-a11y/no-access-key`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md)
 
-  > Why? Inconsistencies between keyboard shortcuts and keyboard commands used by people using screenreaders and keyboards complicate accessibility.
+  > Why? 使用屏幕阅读器和键盘的人使用的键盘快捷键和键盘命令之间的不一致使得可访问性变得复杂。
 
   ```jsx
   // bad
@@ -354,11 +351,9 @@
   <div />
   ```
 
-  - Avoid using an array index as `key` prop, prefer a stable ID.
+  - 避免用数组下标作为 `key` 属性，推荐用稳定的 ID
 
-> Why? Not using a stable ID [is an anti-pattern](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) because it can negatively impact performance and cause issues with component state.
-
-We don’t recommend using indexes for keys if the order of items may change.
+  > Why? 不使用稳定杆的 ID [is an anti-pattern](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) 会对组件性能产生消极影响，并且组件状态容易出现问题。 如果数组元素可能会发生变化，我们不推荐使用下标作为key。
 
   ```jsx
   // bad
@@ -378,9 +373,9 @@ We don’t recommend using indexes for keys if the order of items may change.
   ))}
   ```
 
-  - Always define explicit defaultProps for all non-required props.
+  - 对于所有非必须属性，定义一个明确的默认值。
 
-  > Why? propTypes are a form of documentation, and providing defaultProps means the reader of your code doesn’t have to assume as much. In addition, it can mean that your code can omit certain type checks.
+  > Why? propTypes 是一个文档形式，同时提供默认属性意味着使用者不需要假定那么多值。另外，这也意味着你的代码可以忽略类型检查。
 
   ```jsx
   // bad
@@ -408,12 +403,12 @@ We don’t recommend using indexes for keys if the order of items may change.
   };
   ```
 
-  - Use spread props sparingly.
-  > Why? Otherwise you’re more likely to pass unnecessary props down to components. And for React v15.6.1 and older, you could [pass invalid HTML attributes to the DOM](https://reactjs.org/blog/2017/09/08/dom-attributes-in-react-16.html).
+  - 少用props扩展运算符，既 `{...props}`
+  > Why? 除非你更喜欢把不需要的props属性传入组件。而且对于 v15.6.1 及更早以前的 React， 你只能[给DOM元素传非HTML属性的props](https://reactjs.org/blog/2017/09/08/dom-attributes-in-react-16.html)。
 
-  Exceptions:
+  例外：
 
-  - HOCs that proxy down props and hoist propTypes
+  - HOC 是代理 props 并且提成了propTypes
 
   ```jsx
   function HOC(WrappedComponent) {
@@ -430,7 +425,7 @@ We don’t recommend using indexes for keys if the order of items may change.
   }
   ```
 
-  - Spreading objects with known, explicit props. This can be particularly useful when testing React components with Mocha’s beforeEach construct.
+  - 扩展一个已知的，有明确属性的对象也是可以的。这个对用 Mocha 的 beforeEach 函数做单测时尤其有用。
 
   ```jsx
   export default function Foo {
@@ -443,8 +438,8 @@ We don’t recommend using indexes for keys if the order of items may change.
   }
   ```
 
-  Notes for use:
-  Filter out unnecessary props when possible. Also, use [prop-types-exact](https://www.npmjs.com/package/prop-types-exact) to help prevent bugs.
+  使用说明：
+  尽可能过滤出不需要的属性。同时用[prop-type-exact](https://www.npmjs.com/package/prop-types-exact)去帮助避免bug。
 
   ```jsx
   // bad
@@ -462,7 +457,7 @@ We don’t recommend using indexes for keys if the order of items may change.
 
 ## Refs
 
-  - Always use ref callbacks. eslint: [`react/no-string-refs`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md)
+  - 推荐用 ref callback 函数。 eslint: [`react/no-string-refs`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md)
 
     ```jsx
     // bad
@@ -478,7 +473,7 @@ We don’t recommend using indexes for keys if the order of items may change.
 
 ## Parentheses
 
-  - Wrap JSX tags in parentheses when they span more than one line. eslint: [`react/jsx-wrap-multilines`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md)
+  - 当 JSX 标签有多行时，用圆括号包起来。eslint: [`react/jsx-wrap-multilines`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md)
 
     ```jsx
     // bad
@@ -497,7 +492,7 @@ We don’t recommend using indexes for keys if the order of items may change.
       );
     }
 
-    // good, when single line
+    // good, 单行可以直接写
     render() {
       const body = <div>hello</div>;
       return <MyComponent>{body}</MyComponent>;
@@ -506,7 +501,7 @@ We don’t recommend using indexes for keys if the order of items may change.
 
 ## Tags
 
-  - Always self-close tags that have no children. eslint: [`react/self-closing-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md)
+  - 当没有子元素时，最好用自闭合标签。 eslint: [`react/self-closing-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md)
 
     ```jsx
     // bad
@@ -516,7 +511,7 @@ We don’t recommend using indexes for keys if the order of items may change.
     <Foo variant="stuff" />
     ```
 
-  - If your component has multi-line properties, close its tag on a new line. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
+  - 如果你的组件有多行属性，用他的闭合标签单独作为结束行。 eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
 
     ```jsx
     // bad
@@ -533,7 +528,7 @@ We don’t recommend using indexes for keys if the order of items may change.
 
 ## Methods
 
-  - Use arrow functions to close over local variables.
+  - 用箭头函数关闭局部变量。
 
     ```jsx
     function ItemList(props) {
@@ -550,9 +545,9 @@ We don’t recommend using indexes for keys if the order of items may change.
     }
     ```
 
-  - Bind event handlers for the render method in the constructor. eslint: [`react/jsx-no-bind`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
+  - 在构造函数里绑定事件处理函数。 eslint: [`react/jsx-no-bind`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
 
-    > Why? A bind call in the render path creates a brand new function on every single render.
+    > Why? render 函数中的绑定调用在每次 render 的时候都会创建一个新的函数。
 
     ```jsx
     // bad
@@ -584,8 +579,8 @@ We don’t recommend using indexes for keys if the order of items may change.
     }
     ```
 
-  - Do not use underscore prefix for internal methods of a React component.
-    > Why? Underscore prefixes are sometimes used as a convention in other languages to denote privacy. But, unlike those languages, there is no native support for privacy in JavaScript, everything is public. Regardless of your intentions, adding underscore prefixes to your properties does not actually make them private, and any property (underscore-prefixed or not) should be treated as being public. See issues [#1024](https://github.com/airbnb/javascript/issues/1024), and [#490](https://github.com/airbnb/javascript/issues/490) for a more in-depth discussion.
+  - 不要在 React 组件里使用下划线作为内部方法名前缀。
+    > Why? 下划线前缀有时候在其他语言里被用于表示私有。但是 JavaScript 原生并不支持私有，所有东西都是公有的。尽管在你的意图里，对你的属性添加下划线前缀不是真的是他变成私有属性，而且任何属性（不论是不是下划线前缀）都被认为是公有的。详细讨论见问题[#1024](https://github.com/airbnb/javascript/issues/1024)，和[#490](https://github.com/airbnb/javascript/issues/490)
 
     ```jsx
     // bad
@@ -607,7 +602,7 @@ We don’t recommend using indexes for keys if the order of items may change.
     }
     ```
 
-  - Be sure to return a value in your `render` methods. eslint: [`react/require-render-return`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md)
+  - 确保你的 `render` 函数有返回值。 eslint: [`react/require-render-return`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md)
 
     ```jsx
     // bad
@@ -623,9 +618,9 @@ We don’t recommend using indexes for keys if the order of items may change.
 
 ## Ordering
 
-  - Ordering for `class extends React.Component`:
+  - `class extends React.Component` 内部属性的顺序：
 
-  1. optional `static` methods
+  1. 可选的 `static` 方法
   1. `constructor`
   1. `getChildContext`
   1. `componentWillMount`
@@ -635,12 +630,12 @@ We don’t recommend using indexes for keys if the order of items may change.
   1. `componentWillUpdate`
   1. `componentDidUpdate`
   1. `componentWillUnmount`
-  1. *clickHandlers or eventHandlers* like `onClickSubmit()` or `onChangeDescription()`
-  1. *getter methods for `render`* like `getSelectReason()` or `getFooterContent()`
-  1. *optional render methods* like `renderNavigation()` or `renderProfilePicture()`
+  1. *clickHandlers or eventHandlers* 如： `onClickSubmit()`、 `onChangeDescription()`
+  1. *getter methods for `render`* 如： `getSelectReason()`、 `getFooterContent()`
+  1. *optional render methods* 如： `renderNavigation()`、 `renderProfilePicture()`
   1. `render`
 
-  - How to define `propTypes`, `defaultProps`, `contextTypes`, etc...
+  - 如何定义 `propTypes`、 `defaultProps`、 `contextTypes` 等...
 
     ```jsx
     import React from 'react';
@@ -672,7 +667,7 @@ We don’t recommend using indexes for keys if the order of items may change.
     export default Link;
     ```
 
-  - Ordering for `React.createClass`: eslint: [`react/sort-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md)
+  - `React.createClass` 内部属性排序： eslint: [`react/sort-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md)
 
   1. `displayName`
   1. `propTypes`
@@ -691,24 +686,24 @@ We don’t recommend using indexes for keys if the order of items may change.
   1. `componentWillUpdate`
   1. `componentDidUpdate`
   1. `componentWillUnmount`
-  1. *clickHandlers or eventHandlers* like `onClickSubmit()` or `onChangeDescription()`
-  1. *getter methods for `render`* like `getSelectReason()` or `getFooterContent()`
-  1. *optional render methods* like `renderNavigation()` or `renderProfilePicture()`
+  1. *clickHandlers or eventHandlers* 如： `onClickSubmit()`、 `onChangeDescription()`
+  1. *getter methods for `render`* 如： `getSelectReason()`、 `getFooterContent()`
+  1. *optional render methods* 如： `renderNavigation()`、 `renderProfilePicture()`
   1. `render`
 
 ## `isMounted`
 
-  - Do not use `isMounted`. eslint: [`react/no-is-mounted`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md)
+  - 不要用 `isMounted`。 eslint: [`react/no-is-mounted`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md)
 
-  > Why? [`isMounted` is an anti-pattern][anti-pattern], is not available when using ES6 classes, and is on its way to being officially deprecated.
+  > Why? [`isMounted` 是反模式][anti-pattern]， 这个在 ES6 class 里不允许的，而且即将被官方废弃。
 
-  [anti-pattern]: https://facebook.github.io/react/blog/2015/12/16/ismounted-antipattern.html
+  [反模式]: https://facebook.github.io/react/blog/2015/12/16/ismounted-antipattern.html
 
 ## Translation
 
-  This JSX/React style guide is also available in other languages:
+  JSX/REACT 风格指南的其他语言翻译版
 
-  - ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Chinese (Simplified)**: [JasonBoy/javascript](https://github.com/JasonBoy/javascript/tree/master/react)
+  - ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Chinese (Simplified)**: [lin-123/javascript](https://github.com/lin-123/javascript/tree/cn/react)
   - ![tw](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Taiwan.png) **Chinese (Traditional)**: [jigsawye/javascript](https://github.com/jigsawye/javascript/tree/master/react)
   - ![es](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Spain.png) **Español**: [agrcrobles/javascript](https://github.com/agrcrobles/javascript/tree/master/react)
   - ![jp](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Japan.png) **Japanese**: [mitsuruog/javascript-style-guide](https://github.com/mitsuruog/javascript-style-guide/tree/master/react)
