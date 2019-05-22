@@ -947,7 +947,7 @@ Other Style Guides
 
   <a name="7.15"></a>
   <a name="functions--signature-invocation-indentation"></a>
-  - [7.15](#functions--signature-invocation-indentation) 调用或者书写一个包含多个参数的函数应该想这个指南里的其他多行代码写法一样： 每行值包含一个参数，每行逗号结尾。
+  - [7.15](#functions--signature-invocation-indentation) 调用或者书写一个包含多个参数的函数应该像这个指南里的其他多行代码写法一样： 每行值包含一个参数，每行逗号结尾。
 
     ```javascript
     // bad
