@@ -3451,9 +3451,9 @@ Other Style Guides
     export default AirbnbStyleGuide;
     ```
 
-  <a name="22.9"></a>
+  <a name="23.9"></a>
   <a name="naming--Acronyms-and-Initialisms"></a>
-  - [22.9](#naming--Acronyms-and-Initialisms) 简称和缩写应该全部大写或全部小写。
+  - [23.9](#naming--Acronyms-and-Initialisms) 简称和缩写应该全部大写或全部小写。
 
     > Why? 名字都是给人读的，不是为了适应电脑的算法的。
 
