@@ -947,7 +947,7 @@ Other Style Guides
 
   <a name="7.15"></a>
   <a name="functions--signature-invocation-indentation"></a>
-  - [7.15](#functions--signature-invocation-indentation) 调用或者书写一个包含多个参数的函数应该想这个指南里的其他多行代码写法一样： 每行值包含一个参数，每行逗号结尾。
+  - [7.15](#functions--signature-invocation-indentation) 调用或者书写一个包含多个参数的函数应该像这个指南里的其他多行代码写法一样： 每行值包含一个参数，每行逗号结尾。
 
     ```javascript
     // bad
@@ -3550,7 +3550,7 @@ Other Style Guides
 
   <a name="25.1"></a>
   <a name="events--hash"></a>
-  - [25.1](#events--hash) 通过哈希而不是原始值向事件装载数据时(不论是DOM事件还是像Backbone事件的很多属性)。 这使得后续的贡献者（程序员）想这个事件装载更多的数据时不用去找或者更新每个处理器。例如：
+  - [25.1](#events--hash) 通过哈希而不是原始值向事件装载数据时(不论是DOM事件还是像Backbone事件的很多属性)。 这使得后续的贡献者（程序员）向这个事件装载更多的数据时不用去找或者更新每个处理器。例如：
 
     ```javascript
     // bad
