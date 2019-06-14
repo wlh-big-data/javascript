@@ -36,6 +36,7 @@ Other Style Guides
   1. [Hoisting](#hoisting)
   1. [Comparison Operators & Equality](#comparison-operators--equality)
   1. [Blocks](#blocks)
+  1. [Control Statements](#control-statements)
   1. [Comments](#comments)
   1. [Whitespace](#whitespace)
   1. [Commas](#commas)
@@ -47,6 +48,7 @@ Other Style Guides
   1. [jQuery](#jquery)
   1. [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
   1. [ECMAScript 6+ (ES 2015+) Styles](#ecmascript-6-es-2015-styles)
+  1. [Standard Library](#standard-library)
   1. [Testing](#testing)
   1. [Performance](#performance)
   1. [Resources](#resources)
@@ -56,6 +58,7 @@ Other Style Guides
   1. [Chat With Us About JavaScript](#chat-with-us-about-javascript)
   1. [Contributors](#contributors)
   1. [License](#license)
+  1. [Amendments](#amendments)
 
 ## Types
 
@@ -2780,9 +2783,62 @@ Other Style Guides
     }
     ```
 
-  <a name="19.9"></a>
+  <a name="whitespace--no-multiple-blanks"></a>
+  - [19.9](#whitespace--no-multiple-blanks)不要在代码之间使用多个空白行填充。 eslint: [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
+
+    ```javascript
+    // bad
+    class Person {
+      constructor(fullName, email, birthday) {
+        this.fullName = fullName;
+
+
+        this.email = email;
+
+
+        this.setAge(birthday);
+      }
+
+
+      setAge(birthday) {
+        const today = new Date();
+
+
+        const age = this.getAge(today, birthday);
+
+
+        this.age = age;
+      }
+
+
+      getAge(today, birthday) {
+        // ..
+      }
+    }
+    
+    // good
+    class Person {
+      constructor(fullName, email, birthday) {
+        this.fullName = fullName;
+        this.email = email;
+        this.setAge(birthday);
+      }
+    
+      setAge(birthday) {
+        const today = new Date();
+        const age = getAge(today, birthday);
+        this.age = age;
+      }
+    
+      getAge(today, birthday) {
+        // ..
+      }
+    }
+    ```
+
+  <a name="19.10"></a>
   <a name="whitespace--in-parens"></a>
-  - [19.9](#whitespace--in-parens) 圆括号里不要加空格。 eslint: [`space-in-parens`](http://eslint.org/docs/rules/space-in-parens.html)
+  - [19.10](#whitespace--in-parens) 圆括号里不要加空格。 eslint: [`space-in-parens`](http://eslint.org/docs/rules/space-in-parens.html)
 
     ```javascript
     // bad
@@ -2806,9 +2862,9 @@ Other Style Guides
     }
     ```
 
-  <a name="19.10"></a>
+  <a name="19.11"></a>
   <a name="whitespace--in-brackets"></a>
-  - [19.10](#whitespace--in-brackets) 方括号里不要加空格。看示例。 eslint: [`array-bracket-spacing`](http://eslint.org/docs/rules/array-bracket-spacing.html)
+  - [19.11](#whitespace--in-brackets) 方括号里不要加空格。看示例。 eslint: [`array-bracket-spacing`](http://eslint.org/docs/rules/array-bracket-spacing.html)
 
     ```javascript
     // bad
@@ -2820,9 +2876,9 @@ Other Style Guides
     console.log(foo[0]);
     ```
 
-  <a name="19.11"></a>
+  <a name="19.12"></a>
   <a name="whitespace--in-braces"></a>
-  - [19.11](#whitespace--in-braces) 花括号里加空格。 eslint: [`object-curly-spacing`](http://eslint.org/docs/rules/object-curly-spacing.html)
+  - [19.12](#whitespace--in-braces) 花括号里加空格。 eslint: [`object-curly-spacing`](http://eslint.org/docs/rules/object-curly-spacing.html)
 
     ```javascript
     // bad
@@ -2832,9 +2888,9 @@ Other Style Guides
     const foo = { clark: 'kent' };
     ```
 
-  <a name="19.12"></a>
+  <a name="19.13"></a>
   <a name="whitespace--max-len"></a>
-  - [19.12](#whitespace--max-len) 避免一行代码超过100个字符（包含空格）。
+  - [19.13](#whitespace--max-len) 避免一行代码超过100个字符（包含空格）。
   - 注意： 对于[上面——strings--line-length](#strings--line-length)，长字符串不受此规则限制，不应分解。 eslint: [`max-len`](http://eslint.org/docs/rules/max-len.html)
 
     > Why? 这样确保可读性和可维护性
@@ -2864,9 +2920,9 @@ Other Style Guides
       .fail(() => console.log('You have failed this city.'));
     ```
 
-  <a name="19.13"></a>
+  <a name="19.14"></a>
   <a name="whitespace--block-spacing"></a>
-  - [19.13](#whitespace--block-spacing) 作为语句的花括号内也要加空格 —— `{` 后和 `}` 前都需要空格。 eslint: [`block-spacing`](https://eslint.org/docs/rules/block-spacing)
+  - [19.14](#whitespace--block-spacing) 作为语句的花括号内也要加空格 —— `{` 后和 `}` 前都需要空格。 eslint: [`block-spacing`](https://eslint.org/docs/rules/block-spacing)
 
     ```javascript
     // bad
@@ -2878,9 +2934,9 @@ Other Style Guides
     if (foo) { bar = 0; }
     ```
 
-  <a name="19.14"></a>
+  <a name="19.15"></a>
   <a name="whitespace--comma-spacing"></a>
-  - [19.14](#whitespace--comma-spacing) `,` 前不要空格， `,` 后需要空格。 eslint: [`comma-spacing`](https://eslint.org/docs/rules/comma-spacing)
+  - [19.15](#whitespace--comma-spacing) `,` 前不要空格， `,` 后需要空格。 eslint: [`comma-spacing`](https://eslint.org/docs/rules/comma-spacing)
 
     ```javascript
     // bad
@@ -2892,9 +2948,9 @@ Other Style Guides
     var arr = [1, 2];
     ```
 
-  <a name="19.15"></a>
+  <a name="19.16"></a>
   <a name="whitespace--computed-property-spacing"></a>
-  - [19.15](#whitespace--computed-property-spacing) 计算属性内要空格。参考上述花括号和中括号的规则。  eslint: [`computed-property-spacing`](https://eslint.org/docs/rules/computed-property-spacing)
+  - [19.16](#whitespace--computed-property-spacing) 计算属性内要空格。参考上述花括号和中括号的规则。  eslint: [`computed-property-spacing`](https://eslint.org/docs/rules/computed-property-spacing)
 
     ```javascript
     // bad
@@ -2910,9 +2966,9 @@ Other Style Guides
     obj[foo[bar]]
     ```
 
-  <a name="19.16"></a>
+  <a name="19.17"></a>
   <a name="whitespace--func-call-spacing"></a>
-  - [19.16](#whitespace--func-call-spacing) 调用函数时，函数名和小括号之间不要空格。 eslint: [`func-call-spacing`](https://eslint.org/docs/rules/func-call-spacing)
+  - [19.17](#whitespace--func-call-spacing) 调用函数时，函数名和小括号之间不要空格。 eslint: [`func-call-spacing`](https://eslint.org/docs/rules/func-call-spacing)
 
     ```javascript
     // bad
@@ -2925,9 +2981,9 @@ Other Style Guides
     func();
     ```
 
-  <a name="19.17"></a>
+  <a name="19.18"></a>
   <a name="whitespace--key-spacing"></a>
-  - [19.17](#whitespace--key-spacing) 在对象的字面量属性中， `key` `value` 之间要有空格。 eslint: [`key-spacing`](https://eslint.org/docs/rules/key-spacing)
+  - [19.18](#whitespace--key-spacing) 在对象的字面量属性中， `key` `value` 之间要有空格。 eslint: [`key-spacing`](https://eslint.org/docs/rules/key-spacing)
 
     ```javascript
     // bad
@@ -2938,13 +2994,13 @@ Other Style Guides
     var obj = { "foo": 42 };
     ```
 
-  <a name="19.18"></a>
-  <a name="whitespace--no-trailing-spaces"></a>
-  - [19.18](#whitespace--no-trailing-spaces) 行末不要空格。 eslint: [`no-trailing-spaces`](https://eslint.org/docs/rules/no-trailing-spaces)
-
   <a name="19.19"></a>
+  <a name="whitespace--no-trailing-spaces"></a>
+  - [19.19](#whitespace--no-trailing-spaces) 行末不要空格。 eslint: [`no-trailing-spaces`](https://eslint.org/docs/rules/no-trailing-spaces)
+
+  <a name="19.20"></a>
   <a name="whitespace--no-multiple-empty-lines"></a>
-  - [19.19](#whitespace--no-multiple-empty-lines) 避免出现多个空行。 在文件末尾只允许空一行。 eslint: [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
+  - [19.20](#whitespace--no-multiple-empty-lines) 避免出现多个空行。 在文件末尾只允许空一行。 eslint: [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
 
     <!-- markdownlint-disable MD012 -->
     ```javascript
@@ -3395,9 +3451,9 @@ Other Style Guides
     export default AirbnbStyleGuide;
     ```
 
-  <a name="22.9"></a>
+  <a name="23.9"></a>
   <a name="naming--Acronyms-and-Initialisms"></a>
-  - [22.9](#naming--Acronyms-and-Initialisms) 简称和缩写应该全部大写或全部小写。
+  - [23.9](#naming--Acronyms-and-Initialisms) 简称和缩写应该全部大写或全部小写。
 
     > Why? 名字都是给人读的，不是为了适应电脑的算法的。
 
