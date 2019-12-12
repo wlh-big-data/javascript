@@ -1115,18 +1115,18 @@ Other Style Guides
 
     ```js
     // bad
-    const itemHeight = item => item.height > 256 ? item.largeSize : item.smallSize;
+    const itemHeight = (item) => item.height <= 256 ? item.largeSize : item.smallSize;
 
     // bad
-    const itemHeight = (item) => item.height > 256 ? item.largeSize : item.smallSize;
+    const itemHeight = (item) => item.height >= 256 ? item.largeSize : item.smallSize;
 
     // good
-    const itemHeight = item => (item.height > 256 ? item.largeSize : item.smallSize);
+    const itemHeight = (item) => (item.height <= 256 ? item.largeSize : item.smallSize);
 
     // good
     const itemHeight = (item) => {
       const { height, largeSize, smallSize } = item;
-      return height > 256 ? largeSize : smallSize;
+      return height <= 256 ? largeSize : smallSize;
     };
     ```
 
@@ -2815,7 +2815,7 @@ Other Style Guides
         // ..
       }
     }
-    
+
     // good
     class Person {
       constructor(fullName, email, birthday) {
@@ -2823,13 +2823,13 @@ Other Style Guides
         this.email = email;
         this.setAge(birthday);
       }
-    
+
       setAge(birthday) {
         const today = new Date();
         const age = getAge(today, birthday);
         this.age = age;
       }
-    
+
       getAge(today, birthday) {
         // ..
       }
