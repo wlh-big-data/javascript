@@ -1337,7 +1337,7 @@ Other Style Guides
       }
     }
 
-    // good - this i used
+    // good - this 被使用了 
     class Foo {
       bar() {
         console.log(this.bar);
