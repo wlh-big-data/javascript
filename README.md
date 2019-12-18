@@ -1404,7 +1404,7 @@ Other Style Guides
 
   <a name="10.5"></a>
   <a name="modules--no-mutable-exports"></a>
-  - [10.5](#modules--no-mutable-exports) 不要到处可变的东西
+  - [10.5](#modules--no-mutable-exports) 不要导出可变的东西
  eslint: [`import/no-mutable-exports`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-mutable-exports.md)
     > Why? 变化通常都是需要避免，特别是当你要输出可变的绑定。虽然在某些场景下可能需要这种技术，但总的来说应该导出常量。
 
