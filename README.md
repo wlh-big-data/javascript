@@ -478,12 +478,15 @@ Other Style Guides
   <a name="arrays--bracket-newline"></a>
   - [4.8](#arrays--bracket-newline) 如果一个数组有很多行，在数组的 `[` 后和 `]` 前断行。 请看下面示例
 
+     **数组为对象的情况下，可以从第一个对象的{开始换行，两个对象之间的 },{ 可以放在一起。（FangAA 2020-06-13 edit）**
+
     ```javascript
     // bad
     const arr = [
       [0, 1], [2, 3], [4, 5],
     ];
 
+    // good // edit by fangjuan
     const objectInArray = [{
       id: 1,
     }, {
@@ -1326,8 +1329,8 @@ Other Style Guides
     ```
 
  <a name="classes--methods-use-this"></a>
-  - [9.7](#classes--methods-use-this) 除非外部库或框架需要使用特定的非静态方法，否则类方法应该使用`this`或被做成静态方法。
-  作为一个实例方法应该表明它根据接收者的属性有不同的行为。eslint: [`class-methods-use-this`](https://eslint.org/docs/rules/class-methods-use-this)
+  - [9.7](#classes--methods-use-this) ~~除非外部库或框架需要使用特定的非静态方法，否则类方法应该使用`this`或被做成静态方法。
+  作为一个实例方法应该表明它根据接收者的属性有不同的行为。eslint: [`class-methods-use-this`](https://eslint.org/docs/rules/class-methods-use-this)~~**已废弃（edit by FangAA 2020-06-13）**
 
     ```javascript
     // bad
@@ -1337,7 +1340,7 @@ Other Style Guides
       }
     }
 
-    // good - this 被使用了 
+    // good - this 被使用了
     class Foo {
       bar() {
         console.log(this.bar);
@@ -1570,7 +1573,7 @@ Other Style Guides
 
   <a name="11.2"></a>
   <a name="generators--nope"></a>
-  - [11.2](#generators--nope) 现在不要用generator
+  - [11.2](#generators--nope) ~~现在不要用generator~~**reduce中可以使用，其他地方禁止(edit by fangjuan 2020-06-13)**
 
     > Why? 它在es5上支持的不好
 
@@ -1832,6 +1835,8 @@ Other Style Guides
   <a name="variables--unary-increment-decrement"></a>
   - [13.6](#variables--unary-increment-decrement) 不要使用一元自增自减运算符（`++`， `--`）. eslint [`no-plusplus`](http://eslint.org/docs/rules/no-plusplus)
 
+    **循环中可以使用(edit by fangjuan 2020-06-13)**
+
     > Why? 根据eslint文档，一元增量和减量语句受到自动分号插入的影响，并且可能会导致应用程序中的值递增或递减的无声错误。 使用`num + = 1`而不是`num ++`或`num ++`语句来表达你的值也是更有表现力的。 禁止一元增量和减量语句还会阻止您无意地预增/预减值，这也会导致程序出现意外行为。
 
     ```javascript
@@ -2058,7 +2063,7 @@ Other Style Guides
 
   <a name="15.3"></a>
   <a name="comparison--shortcuts"></a>
-  - [15.3](#comparison--shortcuts) 布尔值用缩写，而字符串和数字要明确比较对象
+  - [15.3](#comparison--shortcuts) 布尔值用缩写，~~而字符串和数字要明确比较对象~~**其他类型可以使用短路比较（FangAA 2020-06-13）**
 
     ```javascript
     // bad

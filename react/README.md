@@ -691,6 +691,13 @@
   1. *optional render methods* 如： `renderNavigation()`、 `renderProfilePicture()`
   1. `render`
 
+  **注: 该条顺序改为**
+
+  1.  `type-annotations`,
+  1.  `static-methods`,
+  1.  `lifecycle`,
+  1.  `everything-else`,
+  1.  `render`
 ## `isMounted`
 
   - 不要用 `isMounted`。 eslint: [`react/no-is-mounted`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md)
