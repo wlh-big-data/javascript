@@ -691,7 +691,7 @@
   1. *optional render methods* 如： `renderNavigation()`、 `renderProfilePicture()`
   1. `render`
 
-  **注: 该条顺序改为**
+  **注: 该条顺序改为 FangAA 2020-06-15**
 
   1.  `type-annotations`,
   1.  `static-methods`,
