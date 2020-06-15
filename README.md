@@ -1573,7 +1573,7 @@ Other Style Guides
 
   <a name="11.2"></a>
   <a name="generators--nope"></a>
-  - [11.2](#generators--nope) ~~现在不要用generator~~**reduce中可以使用，其他地方禁止(edit by fangjuan 2020-06-13)**
+  - [11.2](#generators--nope) ~~现在不要用generator~~**dva action中可以使用，其他地方禁止(edit by fangjuan 2020-06-13)**
 
     > Why? 它在es5上支持的不好
 
