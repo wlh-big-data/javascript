@@ -578,6 +578,9 @@
       }
     }
     ```
+  - JSX中不允许使用箭头函数和bind。eslint: [`react/jsx-no-bind`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)(**edit by fangAA 2020-07-01**)
+
+     > Why? render 函数中的绑定调用在每次 render 的时候都会创建一个新的函数。
 
   - 不要在 React 组件里使用下划线作为内部方法名前缀。
     > Why? 下划线前缀有时候在其他语言里被用于表示私有。但是 JavaScript 原生并不支持私有，所有东西都是公有的。尽管在你的意图里，对你的属性添加下划线前缀不是真的是他变成私有属性，而且任何属性（不论是不是下划线前缀）都被认为是公有的。详细讨论见问题[#1024](https://github.com/airbnb/javascript/issues/1024)，和[#490](https://github.com/airbnb/javascript/issues/490)
